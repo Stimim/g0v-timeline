@@ -10,10 +10,19 @@ import { PredefinedEvent } from '../events.service';
 export class EventComponent implements OnInit {
 
   @Input() event!: PredefinedEvent;
+  @Input() offset!: [number, number];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  GetStyle() {
+    return {
+      position: 'absolute',
+      left: `${this.offset[0]}px`,
+      top: `${this.offset[1]}px`,
+    };
   }
 
 }

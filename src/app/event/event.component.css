@@ -1,0 +1,23 @@
+.card {
+  display: inline-block;
+}
+
+.date {
+  padding: 0px 10px;
+  background: #ff00ff;
+}
+
+.subject {
+  padding: 0px 5px;
+  background: #00ffff;
+}
+
+.action {
+  padding: 0px 5px;
+  background: #00ff00;
+}
+
+.object {
+  padding: 0px 5px;
+  background: #ff5555;
+}

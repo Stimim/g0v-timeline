@@ -1,6 +1,6 @@
-<div>
-  <span>{{event.date}}</span>
-  <span>{{event.subject}}</span>
-  <span>{{event.action}}</span>
-  <span>{{event.object}}</span>
+<div class="card" [style]="GetStyle()">
+  <span class="date">{{event.date}}</span>
+  <span *ngIf="event.subject" class="subject">{{event.subject}}</span>
+  <span *ngIf="event.action" class="action">{{event.action}}</span>
+  <span *ngIf="event.object" class="object">{{event.object}}</span>
 </div>

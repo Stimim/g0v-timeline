@@ -1,4 +1,9 @@
-<div [style]="GetStyle()">
-  <app-event *ngFor="let event of predefinedEvents" [event]="event" >
-  </app-event>
+<div [style]="GetStyle()" (wheel)="OnScroll($event)">
+  <ng-template ngFor let-event [ngForOf]="predefinedEvents" let-i="index">
+    <app-event
+      *ngIf="IsVisible(i)"
+      [event]="event"
+      [offset]="GetOffset(i)">
+    </app-event>
+  </ng-template>
 </div>
