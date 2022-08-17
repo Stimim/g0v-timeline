@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { EventComponent } from './event/event.component';
+import { TimelineCanvasComponent } from './timeline-canvas/timeline-canvas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventComponent
+    EventComponent,
+    TimelineCanvasComponent
   ],
   imports: [
     BrowserModule,

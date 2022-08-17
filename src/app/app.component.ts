@@ -19,7 +19,6 @@ export class AppComponent {
 
   constructor(private eventsService: EventsService) {
     this.predefinedEvents = eventsService.GetPredefinedEvents();
-
     let groupEvents: PredefinedEvent[][] = [];
     this.predefinedEvents.forEach(event => {
       let eventDate: Date = new Date(event.date.replace("/", "-"));
@@ -43,7 +42,7 @@ export class AppComponent {
     eventsService.GetOnlineEvents().subscribe((events: PredefinedEvent[]) => {
       this.onlineEvents = events;
     });
-    this.maxX = window.innerWidth * 0.8;
+    this.maxX = window.innerWidth * 0.3;
     this.minX = -50;
   }
 
@@ -57,6 +56,13 @@ export class AppComponent {
     return {
       'width': `${delta/(10 * 24 * 60 * 60 * 1000)}rem`
     };
+  }
+
+  GetStyle() {
+    return {
+      'width': '100%',
+      'height': '400px',
+    }
   }
 
   GetOffset(i: number): [number, number] {
