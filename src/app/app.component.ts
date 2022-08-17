@@ -5,7 +5,7 @@ import { EventsService, PredefinedEvent } from './events.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'g0v-timeline';
