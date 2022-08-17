@@ -1,12 +1,14 @@
 .card {
+  position: relative;
   display: block;
   margin-bottom: 1rem;
-  min-width: 150px;
+  width: 200px;
 }
 
 span {
   font-size: 1rem;
   line-height: 1.6rem;
+  display: inline-block;
 }
 
 .date {
@@ -27,4 +29,5 @@ span {
 .object {
   padding: .25rem .25rem;
   background: #ff5555;
+  word-break: break-all;
 }

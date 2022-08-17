@@ -47,12 +47,24 @@ export class AppComponent {
     this.minX = -50;
   }
 
-  GetStyle() {
-    return { };
+  GetBlankStyle(i: number) {
+    let delta = 0;
+    if(i < this.groupEvents.length - 1) {
+      let d1 = new Date(this.groupEvents[i].slice(-1)[0].date.replace("/", "-"));
+      let d2 = new Date(this.groupEvents[i+1][0].date.replace("/", "-"));
+      delta = d2.getTime()- d1.getTime();
+    }
+    return {
+      'width': `${delta/(10 * 24 * 60 * 60 * 1000)}rem`
+    };
   }
 
   GetOffset(i: number): [number, number] {
     return [30 + i * 100 + this.offsetX, 30 + (i % 4) * 100];
+  }
+
+  GetOffsetByDate(date: string): [number, number] {
+    return [Number(date.split("/")[2])*5,0];
   }
 
   IsVisible(i: number): boolean {
