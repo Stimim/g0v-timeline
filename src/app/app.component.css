@@ -1,0 +1,11 @@
+.scroll-box {
+  display: flex;
+  background-color: gray;
+  width: fit-content;
+}
+.group {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 0;
+}

@@ -1,23 +1,30 @@
 .card {
-  display: inline-block;
+  display: block;
+  margin-bottom: 1rem;
+  min-width: 150px;
+}
+
+span {
+  font-size: 1rem;
+  line-height: 1.6rem;
 }
 
 .date {
-  padding: 0px 10px;
+  padding: .25rem .5rem;
   background: #ff00ff;
 }
 
 .subject {
-  padding: 0px 5px;
+  padding: .25rem .25rem;
   background: #00ffff;
 }
 
 .action {
-  padding: 0px 5px;
+  padding: .25rem .25rem;
   background: #00ff00;
 }
 
 .object {
-  padding: 0px 5px;
+  padding: .25rem .25rem;
   background: #ff5555;
 }

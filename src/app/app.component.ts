@@ -15,27 +15,44 @@ export class AppComponent {
 
   predefinedEvents: PredefinedEvent[] = [];
   onlineEvents: PredefinedEvent[] = [];
+  groupEvents: PredefinedEvent[][] = [];
 
   constructor(private eventsService: EventsService) {
     this.predefinedEvents = eventsService.GetPredefinedEvents();
+
+    let groupEvents: PredefinedEvent[][] = [];
+    this.predefinedEvents.forEach(event => {
+      let eventDate: Date = new Date(event.date.replace("/", "-"));
+      const checkInsert = (group: PredefinedEvent[], index: number) => {
+        let currentDate = new Date(group[0].date.replace("/", "-"));
+        if (currentDate.getFullYear() == eventDate.getFullYear() && currentDate.getMonth() == eventDate.getMonth()) {
+          groupEvents[index].push(event);
+          return false;
+        } else if (currentDate.getFullYear() >= eventDate.getFullYear() && currentDate.getMonth() > eventDate.getMonth()) {
+          groupEvents.splice(index, 0, [event]);
+          return false;
+        }
+        return true;
+      }
+      if (groupEvents.every(checkInsert)) {
+        groupEvents.push([event]);
+      }
+    });
+    this.groupEvents = groupEvents;
+
     eventsService.GetOnlineEvents().subscribe((events: PredefinedEvent[]) => {
       this.onlineEvents = events;
-      console.log(this.onlineEvents);
     });
     this.maxX = window.innerWidth * 0.8;
     this.minX = -50;
   }
 
   GetStyle() {
-    return {
-      'background-color': 'gray',
-      'width': '100%',
-      'height': '400px',
-    };
+    return { };
   }
 
   GetOffset(i: number): [number, number] {
-    return [30 + i * 100 + this.offsetX , 30 + (i % 4) * 100];
+    return [30 + i * 100 + this.offsetX, 30 + (i % 4) * 100];
   }
 
   IsVisible(i: number): boolean {

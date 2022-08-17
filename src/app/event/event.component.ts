@@ -18,11 +18,11 @@ export class EventComponent implements OnInit {
   }
 
   GetStyle() {
-    return {
+    return {/*
       position: 'absolute',
       left: `${this.offset[0]}px`,
       top: `${this.offset[1]}px`,
-    };
+  */};
   }
 
 }
