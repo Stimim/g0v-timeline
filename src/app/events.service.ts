@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 import { EVENTS } from './data/g0v-events';
+import { Observable } from 'rxjs';
 
 enum EventType {
   Predefined = 0,
@@ -32,10 +33,12 @@ type Event = PredefinedEvent | UserSubmittedEvent;
   providedIn: 'root'
 })
 export class EventsService {
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
-
+  GetOnlineEvents(): Observable<PredefinedEvent[]> {
+    return this.http.get<PredefinedEvent[]>('https://g0v-10th-timeline-get-events-wo3ndgqh4q-de.a.run.app/');
+  }
   GetPredefinedEvents(/*beginTime, endTime*/): PredefinedEvent[] {
     return EVENTS;
   }
-}
+};

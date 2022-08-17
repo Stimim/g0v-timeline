@@ -14,9 +14,14 @@ export class AppComponent {
   offsetX: number = 0;
 
   predefinedEvents: PredefinedEvent[] = [];
+  onlineEvents: PredefinedEvent[] = [];
 
   constructor(private eventsService: EventsService) {
     this.predefinedEvents = eventsService.GetPredefinedEvents();
+    eventsService.GetOnlineEvents().subscribe((events: PredefinedEvent[]) => {
+      this.onlineEvents = events;
+      console.log(this.onlineEvents);
+    });
     this.maxX = window.innerWidth * 0.8;
     this.minX = -50;
   }
