@@ -38,6 +38,7 @@ export class EventsService {
   GetOnlineEvents(): Observable<PredefinedEvent[]> {
     return this.http.get<PredefinedEvent[]>('https://g0v-10th-timeline-get-events-wo3ndgqh4q-de.a.run.app/');
   }
+
   GetPredefinedEvents(/*beginTime, endTime*/): PredefinedEvent[] {
     return EVENTS;
   }

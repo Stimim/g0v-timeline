@@ -2,15 +2,17 @@
   <app-timeline-canvas
       [style]="GetStyle()"
       [offsetX]="offsetX"
-      [predefinedEvents]="predefinedEvents"
+      [predefinedEventsOffset]="predefinedEventsOffset"
+      [minVisibleX]="minVisibleX"
+      [maxVisibleX]="maxVisibleX"
   ></app-timeline-canvas>
-  <ng-template ngFor let-group [ngForOf]="groupEvents" let-i="index">
-    <div class="group">
-      <ng-template ngFor let-event [ngForOf]="group" let-j="index">
-        <app-event [event]="event" [offset]="GetOffsetByDate(event.date)">
-        </app-event>
-      </ng-template>
-    </div>
-    <div [style]="GetBlankStyle(i)"></div>
-  </ng-template>
+  <div>
+    <ng-template ngFor let-event [ngForOf]="predefinedEvents" let-i="index">
+      <app-event
+          *ngIf="IsVisible(i)"
+          [event]="event"
+          [offset]="GetOffset(i)">
+      </app-event>
+    </ng-template>
+  </div>
 </div>

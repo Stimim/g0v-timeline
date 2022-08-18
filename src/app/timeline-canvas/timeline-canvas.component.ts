@@ -9,7 +9,9 @@ export class TimelineCanvasComponent implements OnInit {
 
   @Input() offsetX!: number;
   @Input() style!: object;
-  @Input() predefinedEvents!: object[];
+  @Input() predefinedEventsOffset!: number[][];
+  @Input() minVisibleX!: number;
+  @Input() maxVisibleX!: number;
 
   constructor() { }
 
@@ -17,15 +19,15 @@ export class TimelineCanvasComponent implements OnInit {
   }
 
   getFillColor() {
-    const a = (Math.ceil(Math.abs(this.offsetX) / 10)) % 255;
-    const b = Math.abs(a - 128);
+    const a = (Math.ceil(Math.abs(this.offsetX) / 10)) % 128;
+    const b = Math.abs(a - 64);
 
     return `rgb(${b}, ${b}, ${b})`;
   }
 
-  getStarPoints(event: object, index: number) : string {
-    const offsetX = 30 + index * 100 + this.offsetX;
-    const offsetY = 30 + (index % 4) * 100;
+  getStarPoints(offset: number[], index: number) : string {
+    const offsetX = offset[0] + this.offsetX;
+    const offsetY = offset[1];
 
     const points = [];
 
@@ -36,6 +38,11 @@ export class TimelineCanvasComponent implements OnInit {
     }
 
     return points.join(' ');
+  }
+
+  IsVisible(offset: number[]) : boolean {
+    const dx = offset[0] + this.offsetX;
+    return dx < this.minVisibleX || dx > this.maxVisibleX;
   }
 
 }
