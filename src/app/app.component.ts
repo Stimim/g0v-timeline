@@ -20,9 +20,14 @@ export class AppComponent {
 
   constructor(private eventsService: EventsService) {
     this.predefinedEvents = eventsService.GetPredefinedEvents();
+
+    this.predefinedEvents.sort((a, b) => {
+      return a.date.localeCompare(b.date);
+    });
+
     this.maxVisibleX = window.innerWidth * 0.7;
     this.minVisibleX = window.innerWidth * 0.1;
-    
+
     const rowHeight = window.innerHeight * 0.1;
 
     const startingOffset = window.innerWidth * 0.2;
@@ -43,8 +48,16 @@ export class AppComponent {
 
     minOffset -= startingOffset;
 
-    for (let i = 0; i < this.predefinedEvents.length; i++) {
-      this.predefinedEventsOffset[i][0] -= minOffset;
+    let adjustOffset = minOffset;
+    const maxGap = (this.maxVisibleX - this.minVisibleX) * 0.8;
+
+    this.predefinedEventsOffset[0][0] -= adjustOffset;
+    for (let i = 1; i < this.predefinedEvents.length; i++) {
+      this.predefinedEventsOffset[i][0] -= adjustOffset;
+      if (this.predefinedEventsOffset[i][0] - this.predefinedEventsOffset[i - 1][0] > maxGap) {
+        adjustOffset += this.predefinedEventsOffset[i][0] - this.predefinedEventsOffset[i - 1][0] - maxGap;
+        this.predefinedEventsOffset[i][0] = this.predefinedEventsOffset[i - 1][0] + maxGap;
+      }
     }
 
     eventsService.GetOnlineEvents().subscribe((events: PredefinedEvent[]) => {
