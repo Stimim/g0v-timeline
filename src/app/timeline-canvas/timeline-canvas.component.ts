@@ -12,6 +12,7 @@ export class TimelineCanvasComponent implements OnInit {
   @Input() predefinedEventsOffset!: number[][];
   @Input() minVisibleX!: number;
   @Input() maxVisibleX!: number;
+  @Input() links!: number[][];  // [ [p.x, p.y, q.x, q.y] ]
 
   constructor() { }
 
@@ -43,6 +44,15 @@ export class TimelineCanvasComponent implements OnInit {
   IsVisible(offset: number[]) : boolean {
     const dx = offset[0] + this.offsetX;
     return dx < this.minVisibleX || dx > this.maxVisibleX;
+  }
+
+  getLinkPath(link: number[]) : string {
+    const px = link[0] + this.offsetX;
+    const py = link[1];
+    const qx = link[2] + this.offsetX;
+    const qy = link[3];
+
+    return `M ${px} ${py} L ${qx} ${qy}`
   }
 
 }

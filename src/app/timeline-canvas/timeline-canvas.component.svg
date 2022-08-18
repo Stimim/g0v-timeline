@@ -2,8 +2,14 @@
   <rect x="0" y="0" width="100%" height="100%" [attr.fill]="getFillColor()"/>
 
   <g *ngFor="let offset of predefinedEventsOffset; index as i">
-  <polygon 
-    *ngIf="IsVisible(offset)"
-    [attr.points]="getStarPoints(offset, i)" style="fill:yellow" />
+    <polygon 
+      *ngIf="IsVisible(offset)"
+      [attr.points]="getStarPoints(offset, i)" style="fill:yellow" />
+  </g>
+  <g *ngFor="let link of links">
+    <path
+      [attr.d]="getLinkPath(link)"
+      stroke="white"
+      />
   </g>
 </svg>

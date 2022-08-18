@@ -12,9 +12,11 @@ export class AppComponent {
   minVisibleX: number = 0;
   maxVisibleX: number = 0;
   offsetX: number = 0;
+  maxOffsetX: number = 0;
 
   predefinedEvents: PredefinedEvent[] = [];
   predefinedEventsOffset: number[][] = [];
+  links: number[][] = [];
 
   onlineEvents: PredefinedEvent[] = [];
 
@@ -60,6 +62,21 @@ export class AppComponent {
       }
     }
 
+    this.maxOffsetX = this.predefinedEventsOffset[this.predefinedEvents.length - 1][0] - window.innerWidth / 3;
+
+    const lastSeenTopicIndex: {[key: string]: number} = {};
+    for (let i = 0; i < this.predefinedEvents.length; i++) {
+      const event = this.predefinedEvents[i];
+      if (!event.topic) continue;
+
+      if (event.topic in lastSeenTopicIndex) {
+        const j = lastSeenTopicIndex[event.topic];
+        this.links.push([...this.predefinedEventsOffset[j], ...this.predefinedEventsOffset[i]]);
+      }
+      lastSeenTopicIndex[event.topic] = i;
+    }
+    console.info(this.links);
+
     eventsService.GetOnlineEvents().subscribe((events: PredefinedEvent[]) => {
       this.onlineEvents = events;
     });
@@ -89,5 +106,6 @@ export class AppComponent {
     event.preventDefault();
     this.offsetX -= (event.deltaX + event.deltaY) * 2;
     if (this.offsetX > 0) this.offsetX = 0;
+    if (this.offsetX < -this.maxOffsetX) this.offsetX = -this.maxOffsetX;
   }
 }

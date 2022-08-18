@@ -14,6 +14,7 @@ export interface PredefinedEvent {
   subject: string;
   action: string;
   object: string;
+  topic: string;
   description?: string;
   ref_title?: string;
   ref_url?: string;
