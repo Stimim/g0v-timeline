@@ -52,13 +52,18 @@ export class AppComponent {
 
     let adjustOffset = minOffset;
     const maxGap = (this.maxVisibleX - this.minVisibleX) * 0.8;
+    const minGap = 50;
 
     this.predefinedEventsOffset[0][0] -= adjustOffset;
     for (let i = 1; i < this.predefinedEvents.length; i++) {
       this.predefinedEventsOffset[i][0] -= adjustOffset;
-      if (this.predefinedEventsOffset[i][0] - this.predefinedEventsOffset[i - 1][0] > maxGap) {
-        adjustOffset += this.predefinedEventsOffset[i][0] - this.predefinedEventsOffset[i - 1][0] - maxGap;
+      const delta = this.predefinedEventsOffset[i][0] - this.predefinedEventsOffset[i - 1][0];
+      if (delta > maxGap) {
+        adjustOffset += delta - maxGap;
         this.predefinedEventsOffset[i][0] = this.predefinedEventsOffset[i - 1][0] + maxGap;
+      } else if (delta <= minGap) {
+        adjustOffset += minGap - delta;
+        this.predefinedEventsOffset[i][0] = this.predefinedEventsOffset[i - 1][0] + minGap;
       }
     }
 
