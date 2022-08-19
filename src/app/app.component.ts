@@ -82,7 +82,6 @@ export class AppComponent {
       }
       lastSeenTopicIndex[event.topic] = i;
     }
-    console.info(this.links);
 
     eventsService.GetOnlineEvents().subscribe((events: PredefinedEvent[]) => {
       this.onlineEvents = events;
@@ -115,8 +114,6 @@ export class AppComponent {
       event.preventDefault();
     }
 
-    console.log(this.touchX);
-
     switch (event.type) {
       case 'wheel':
         this.offsetX -= (event.deltaX + event.deltaY) * 2;
@@ -136,7 +133,6 @@ export class AppComponent {
         break;
       case 'touchend':
       case 'touchcancel':
-        console.log('touch end!!!');
         if (event.touches.length === 0) {
           this.touchX = undefined;
         }
