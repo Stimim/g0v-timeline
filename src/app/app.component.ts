@@ -20,6 +20,8 @@ export class AppComponent {
 
   onlineEvents: PredefinedEvent[] = [];
 
+  touchX? : number;
+
   constructor(private eventsService: EventsService) {
     this.predefinedEvents = eventsService.GetPredefinedEvents();
 
@@ -107,9 +109,40 @@ export class AppComponent {
   }
 
   OnScroll(event: any) {
-    event.stopPropagation();
-    event.preventDefault();
-    this.offsetX -= (event.deltaX + event.deltaY) * 2;
+    if (event.type === 'wheel' ||
+        event.type === 'touchmove') {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+
+    console.log(this.touchX);
+
+    switch (event.type) {
+      case 'wheel':
+        this.offsetX -= (event.deltaX + event.deltaY) * 2;
+        break;
+      case 'touchstart':
+      case 'touchmove':
+        let currentTouchX = 0;
+        for (let touch of event.touches) {
+          currentTouchX += touch.pageX;
+        }
+        currentTouchX /= event.touches.length;
+
+        if (this.touchX !== undefined) {
+          this.offsetX += (currentTouchX - this.touchX);
+        }
+        this.touchX = currentTouchX;
+        break;
+      case 'touchend':
+      case 'touchcancel':
+        console.log('touch end!!!');
+        if (event.touches.length === 0) {
+          this.touchX = undefined;
+        }
+        break;
+    }
+
     if (this.offsetX > 0) this.offsetX = 0;
     if (this.offsetX < -this.maxOffsetX) this.offsetX = -this.maxOffsetX;
   }

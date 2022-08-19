@@ -1,4 +1,11 @@
-<div [style]="GetStyle()" (wheel)="OnScroll($event)">
+<div
+  [style]="GetStyle()"
+  (wheel)="OnScroll($event)"
+  (touchmove)="OnScroll($event)"
+  (touchstart)="OnScroll($event)"
+  (touchend)="OnScroll($event)"
+  (touchcancel)="OnScroll($event)"
+  >
   <app-timeline-canvas
       [style]="GetStyle()"
       [offsetX]="offsetX"
