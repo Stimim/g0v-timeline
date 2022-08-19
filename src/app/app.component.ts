@@ -122,11 +122,12 @@ export class AppComponent {
       case 'touchmove':
         let currentTouchX = 0;
         for (let touch of event.touches) {
-          currentTouchX += touch.pageX;
+          currentTouchX += touch.clientX;
         }
         currentTouchX /= event.touches.length;
 
-        if (this.touchX !== undefined) {
+        if (this.touchX !== undefined &&
+            Math.abs(this.touchX - currentTouchX) < 100) {
           this.offsetX += (currentTouchX - this.touchX);
         }
         this.touchX = currentTouchX;
