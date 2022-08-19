@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-timeline-canvas',
   templateUrl: './timeline-canvas.component.svg',
-  styleUrls: ['./timeline-canvas.component.css']
+  styleUrls: ['./timeline-canvas.component.scss']
 })
 export class TimelineCanvasComponent implements OnInit {
 
