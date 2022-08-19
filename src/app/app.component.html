@@ -10,6 +10,7 @@
       [style]="GetStyle()"
       [offsetX]="offsetX"
       [predefinedEventsOffset]="predefinedEventsOffset"
+      [onlineEventsOffset]="onlineEventsOffset"
       [minVisibleX]="minVisibleX"
       [maxVisibleX]="maxVisibleX"
       [links]="links"
@@ -17,10 +18,20 @@
   <div>
     <ng-template ngFor let-event [ngForOf]="predefinedEvents" let-i="index">
       <app-event
-          *ngIf="IsVisible(i)"
+          *ngIf="IsVisible(i, false)"
           [event]="event"
-          [offset]="GetOffset(i)">
+          [offset]="GetOffset(i, false)">
       </app-event>
+    </ng-template>
+  </div>
+
+  <div>
+    <ng-template ngFor let-event [ngForOf]="onlineEvents" let-i="index">
+      <app-online-event
+          *ngIf="IsVisible(i, true)"
+          [event]="event"
+          [offset]="GetOffset(i, true)">
+      </app-online-event>
     </ng-template>
   </div>
 </div>

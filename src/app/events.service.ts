@@ -28,7 +28,7 @@ export interface UserSubmittedEvent {
   description: string;
 };
 
-type Event = PredefinedEvent | UserSubmittedEvent;
+export type Event = PredefinedEvent | UserSubmittedEvent;
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +36,8 @@ type Event = PredefinedEvent | UserSubmittedEvent;
 export class EventsService {
   constructor(private http: HttpClient) { }
 
-  GetOnlineEvents(): Observable<PredefinedEvent[]> {
-    return this.http.get<PredefinedEvent[]>('https://g0v-10th-timeline-get-events-wo3ndgqh4q-de.a.run.app/');
+  GetOnlineEvents(): Observable<UserSubmittedEvent[]> {
+    return this.http.get<UserSubmittedEvent[]>('https://g0v-10th-timeline-get-events-wo3ndgqh4q-de.a.run.app/');
   }
 
   GetPredefinedEvents(/*beginTime, endTime*/): PredefinedEvent[] {

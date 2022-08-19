@@ -10,6 +10,7 @@ export class TimelineCanvasComponent implements OnInit {
   @Input() offsetX!: number;
   @Input() style!: object;
   @Input() predefinedEventsOffset!: number[][];
+  @Input() onlineEventsOffset!: number[][];
   @Input() minVisibleX!: number;
   @Input() maxVisibleX!: number;
   @Input() links!: number[][];  // [ [p.x, p.y, q.x, q.y] ]

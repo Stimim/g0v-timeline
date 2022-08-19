@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { EventsService, PredefinedEvent } from './events.service';
+import { EventsService, PredefinedEvent, Event, UserSubmittedEvent } from './events.service';
 
 @Component({
   selector: 'app-root',
@@ -18,9 +18,31 @@ export class AppComponent {
   predefinedEventsOffset: number[][] = [];
   links: number[][] = [];
 
-  onlineEvents: PredefinedEvent[] = [];
+  onlineEvents: UserSubmittedEvent[] = [];
+  onlineEventsOffset: number[][] = [];
 
   touchX? : number;
+
+  computeEventsOffset(events: Event[], rowMap: number[], rowHeight: number) {
+    let offsets = [];
+
+    for (let i = 0; i < events.length; i++) {
+      const event = events[i];
+      const eventDate = new Date(event.date);
+
+      const offset = eventDate.getTime() / 86400000;
+      let dx = offset * 10;
+      let dy = 30 + (rowMap[i % rowMap.length]) * rowHeight;
+
+      dx += (Math.random() - 0.5) * 10;
+      dy += (Math.random() - 0.5) * rowHeight / 2;
+      if (dy < 30) dy = 30;
+
+      offsets.push([dx, dy]);
+    }
+
+    return offsets;
+  }
 
   constructor(private eventsService: EventsService) {
     this.predefinedEvents = eventsService.GetPredefinedEvents();
@@ -32,41 +54,24 @@ export class AppComponent {
     this.maxVisibleX = window.innerWidth * 0.7;
     this.minVisibleX = window.innerWidth * 0.1;
 
-    const rowHeight = window.innerHeight * 0.1;
-
+    const rowHeight = window.innerHeight / 12;
     const startingOffset = window.innerWidth * 0.2;
 
-    const rowMap = [0, 3, 1, 4, 2, 5];
+    const rowMap = [2, 5, 3, 6, 4, 7];
     let minOffset = Infinity;
 
-    for (let i = 0; i < this.predefinedEvents.length; i++) {
-      const event = this.predefinedEvents[i];
-      const eventDate = new Date(event.date);
-
-      const offset = eventDate.getTime() / 86400000;
-      const dx = offset * 10;
-      const dy = 30 + (rowMap[i % rowMap.length] + 2) * rowHeight;
-      this.predefinedEventsOffset[i] = [dx, dy];
+    this.predefinedEventsOffset = this.computeEventsOffset(this.predefinedEvents, rowMap, rowHeight);
+    for (let i = 0; i < this.predefinedEventsOffset.length; i++) {
+      const dx = this.predefinedEventsOffset[i][0];
       minOffset = Math.min(minOffset, dx);
     }
-
     minOffset -= startingOffset;
 
     let adjustOffset = minOffset;
-    const maxGap = (this.maxVisibleX - this.minVisibleX) * 0.8;
-    const minGap = 50;
 
     this.predefinedEventsOffset[0][0] -= adjustOffset;
     for (let i = 1; i < this.predefinedEvents.length; i++) {
       this.predefinedEventsOffset[i][0] -= adjustOffset;
-      const delta = this.predefinedEventsOffset[i][0] - this.predefinedEventsOffset[i - 1][0];
-      if (delta > maxGap) {
-        adjustOffset += delta - maxGap;
-        this.predefinedEventsOffset[i][0] = this.predefinedEventsOffset[i - 1][0] + maxGap;
-      } else if (delta <= minGap) {
-        adjustOffset += minGap - delta;
-        this.predefinedEventsOffset[i][0] = this.predefinedEventsOffset[i - 1][0] + minGap;
-      }
     }
 
     this.maxOffsetX = this.predefinedEventsOffset[this.predefinedEvents.length - 1][0] - window.innerWidth / 3;
@@ -83,10 +88,31 @@ export class AppComponent {
       lastSeenTopicIndex[event.topic] = i;
     }
 
-    eventsService.GetOnlineEvents().subscribe((events: PredefinedEvent[]) => {
-      this.onlineEvents = events;
-    });
+    this.predefinedEvents.reverse();
+    this.predefinedEventsOffset.reverse();
 
+    eventsService.GetOnlineEvents().subscribe((response: any) => {
+      const events = response.results;
+      this.onlineEvents = events;
+      console.log(this.onlineEvents);
+
+      this.onlineEvents.sort((a, b) => {
+        return a.date.localeCompare(b.date);
+      });
+
+      const rowMap = [0, 8, 1, 9];
+
+      this.onlineEventsOffset = this.computeEventsOffset(
+          events, rowMap, rowHeight);
+      for (let i = 0; i < this.onlineEventsOffset.length; i++) {
+        this.onlineEventsOffset[i][0] -= adjustOffset;
+      }
+      this.maxOffsetX = Math.max(
+          this.maxOffsetX,
+          this.onlineEventsOffset[this.onlineEventsOffset.length - 1][0] - window.innerWidth / 3);
+      this.onlineEvents.reverse();
+      this.onlineEventsOffset.reverse();
+    });
   }
 
   GetStyle() {
@@ -96,14 +122,20 @@ export class AppComponent {
     }
   }
 
-  GetOffset(i: number): [number, number] {
+  GetOffset(i: number, online: boolean): [number, number] {
+    if (online) {
+      const dx = this.onlineEventsOffset[i][0];
+      const dy = this.onlineEventsOffset[i][1];
+      return [dx + this.offsetX, dy];
+    }
+
     const dx = this.predefinedEventsOffset[i][0];
     const dy = this.predefinedEventsOffset[i][1];
     return [dx + this.offsetX, dy];
   }
 
-  IsVisible(i: number): boolean {
-    const [x, y] = this.GetOffset(i);
+  IsVisible(i: number, online: boolean): boolean {
+    const [x, y] = this.GetOffset(i, online);
     return this.minVisibleX <= x && x <= this.maxVisibleX;
   }
 
