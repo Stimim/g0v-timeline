@@ -28,6 +28,7 @@ export class EventComponent implements OnInit {
         position: 'absolute',
         left: `${this.offset[0]}px`,
         top: `${this.offset[1]}px`,
+        'z-index': `${Math.floor(window.innerWidth/2 - Math.abs(window.innerWidth/2 - this.offset[0]))}`
       };
     }
   }
