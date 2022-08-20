@@ -16,6 +16,8 @@ def main():
     reader = csv.DictReader(f)
     data = []
     for row in reader:
+      if not row['date']:
+        continue
       data.append(row)
     data.sort(key=lambda row: row['date'])
     print('export const EVENTS = %s;' % json.dumps(data) )
