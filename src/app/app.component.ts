@@ -94,7 +94,6 @@ export class AppComponent {
     eventsService.GetOnlineEvents().subscribe((response: any) => {
       const events = response.results;
       this.onlineEvents = events;
-      console.log(this.onlineEvents);
 
       this.onlineEvents.sort((a, b) => {
         return a.date.localeCompare(b.date);
