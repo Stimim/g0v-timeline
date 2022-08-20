@@ -1,28 +1,40 @@
 date,subject,action,object,topic,description,location,ref_title,ref_url
-2012-10-24,Clkao,註冊,g0v.tw,,,,,
-2012-12-15,"沒有人們: ronny, ddio, isabel, kirby, clkao, ipa......等等",進行,g0v第0次動員戡亂時期黑客松：,,活動相簿：https://www.flickr.com/photos/g0v/albums/72157711184894017,中央研究院的資創中心,,https://g0v-tw.kktix.cc/events/dab224
-2013-01-01,g0v社群首頁,,http://2013.g0v.ronny.tw/index.html,,2021/11/26復活,,,
+2012-10-24,clkao,註冊,g0v.tw,,,,,
+2012-12-15,沒有人,進行,第零次動員戡亂時期黑客松,,活動相簿：https://www.flickr.com/photos/g0v/albums/72157711184894017,中央研究院的資創中心,,https://g0v-tw.kktix.cc/events/dab224
+2013-01-01,ronnywang,建立,g0v 第一個社群網頁,,2021/11/26復活,,,
 2013-01-08,ipa,撰寫,第零次大松紀錄,,搶救國會資料大軍 https://ipaway.org/?p=2334,,,
 2013-01-21,ipa,起草,g0v 宣言,,,,,
-2013-01-27,第壹次公地放領黑客松,,,,,,,
-2013-02-08,,專案,萌典,,,,,https://zh.wikipedia.org/wiki/%E8%90%8C%E5%85%B8
+2013-01-27,沒有人,進行,第壹次公地放領黑客松,,,,,
+2013-02-08,au,發起,萌典,,,,,https://zh.wikipedia.org/wiki/%E8%90%8C%E5%85%B8
 2013-03-13,ipa,撰寫,第壹次大松紀錄,,迎接春天的公民資訊黑客松https://ipaway.org/?p=2518#more-2518,,,
-2013-08-10,零時政府第四次國民大會黑客松,,新聞小幫手,,https://tkirby.org/blog/?p=2395,,,
-2013-12-01,404失蹤兒少協尋專案,提案,,,失蹤兒的資訊需要快速有效的散播，掌握協尋的黃金時段。工程師和設計師們與內政部兒童局/兒童福利聯盟文教基金會共同成立的 失蹤兒童少年資料管理中心 攜手合作，參考 404 missing children 網站，打造台灣版的失蹤兒少開放資料服務。,g0v的hackath0n,,https://github.com/g0v/dev/wiki/Project-ChildNotFound.tw
-2014-01-01,clkao ipa kirby 等發起人,成立,g0v 揪松團,,,,,
-2014-01-01,g0v社群首頁,,http://2014.g0v.ronny.tw/,,2021/11/26復活,,,
-2014-01-04,"在 g0v 歡慶週歲的一年之初，來個輕鬆的聯誼交流、回顧展望：
-
-專案回顧、實作甘苦談
-口述歷史、來年展望
-新手教學、初心小講
-混熟臉孔、好奇問答、各言爾志、促膝長談......
-與原訂於同一天的動民主松、美術松合體舉辦",活動,g0v 2014 新年松,,,BOOKSHOW 說書會,,https://g0v-tw.kktix.cc/events/g0v-newyear2014
-2014-02-22,反核四五六帶了兩千多頁的政治獻金掃描檔案到第八次大松,,,政治獻金,,,,
-2014-03-18,,,g0v.today,太陽花學運,,,,https://www.ithome.com.tw/news/86701
-2014-04-19,第九次大松提案開放政治獻金,,,政治獻金,,,,
+2013-03-23,沒有人,進行,第貳次九大建設黑客松,,,,,
+2013-06-08,沒有人,進行,第參次客廳工廠黑客松,,,,,
+2013-06-23,沒有人,進行,緊急黑客松後松,,,,,
+2013-07-19,沒有人,進行,跨設計哈拉松,,,,,
+2013-08-10,沒有人,進行,第四次國民大會黑客松,,,,,
+2013-09-24,沒有人,進行,秋天松,,,,,
+2013-10-05,沒有人,進行,台南小吃松,,,,,
+2013-10-10,沒有人,進行,雙十松,,,,,
+2013-10-20,沒有人,進行,第伍次美麗島黑客松,,,,,
+2013-11-10,沒有人,進行,立院組小松,,,,,
+2013-12-01,404失蹤兒少協尋專案,提案,,,,,,
+2013-12-21,沒有人,進行,第陸次勞動基準黑客松,,,,,
+2014-01-01,揪松團,成立,,,,,,
+2014-01-01,g0v社群首頁,上線,http://2014.g0v.ronny.tw/,,2021/11/26復活,,,
+2014-01-04,沒有人,進行,新年松,,,BOOKSHOW 說書會,,https://g0v-tw.kktix.cc/events/g0v-newyear2014
+2014-01-20,沒有人,進行,立院組小松,,,,,
+2014-02-22,沒有人,進行,第柒次自由時代黑客松,,,,,
+2014-02-22,反核四五六,帶來,兩千多頁的政治獻金掃描檔案,政治獻金,,,,
+2014-03-08,沒有人,進行,廢核遊行線路松,,,,,
+2014-03-18,台灣青年,發動,太陽花學運,,,,,
+2014-03-18,沒有人,發起,g0v.today,太陽花學運,,,,https://www.ithome.com.tw/news/86701
+2014-04-19,沒有人,進行,第捌次解除戒嚴黑客松,,,,,
+2014-04-19,ronnywang,提案,開放政治獻金,政治獻金,,,,
 2014-04-30,快速掌握公民行動,提案,,公民行動直播 app/  inLiveTW,,中央研究院,,https://www.youtube.com/watch?v=TN1-e_DCGYc
-2014-08-30,一群來自批踢踢的鄉民，有感國家興亡、匹夫有責，今天站出來希望以網路連結實體發起全民罷免運動,提案,,Appendectomy Project 割闌尾計畫,"在服貿黑箱事件中，我們看到立法委員將極具有爭議性的法案，藉由黑箱、搶麥克風30秒的方式，推到立法的下一個階段，違反民意，並且引發著名的318佔領立院、太陽花運動。
+2014-06-21,沒有人,進行,第玖次還我土地黑客松,,,,,
+2014-08-16,沒有人,進行,前端教學松,,,,,
+2014-08-30,沒有人,進行,第拾次資料科學黑客松,,,,,
+2014-08-30,批踢踢鄉民,提案,割闌尾計畫,Appendectomy Project 割闌尾計畫,"在服貿黑箱事件中，我們看到立法委員將極具有爭議性的法案，藉由黑箱、搶麥克風30秒的方式，推到立法的下一個階段，違反民意，並且引發著名的318佔領立院、太陽花運動。
 針對違反民意、表現不良、不適任的代議士，唯有罷免，才是唯一體制內、可讓更多大眾參與的做法，將人民賦予代議士的權力回收，而再交付給更適當的對象手上。
 最終目標：
 我們不能將我們對政治的期待，只放在幾位政治強人身上。我們需要透過良好的選舉與罷免權，讓對的人上台、不對的人下台。割闌尾計畫推動罷免權，完善台灣的民主機制。
@@ -30,6 +42,7 @@ date,subject,action,object,topic,description,location,ref_title,ref_url
 https://www.facebook.com/Appendectomy",中央研究院人文社會科學館,,https://youtu.be/HmMtsnsA7g4?t=4410
 2014-11-08,g0v Summit 2014 啥米零時政府,年會,,g0v 年會,,中央研究院,,https://summit.g0v.tw/2014/zh-TW/index.html
 2014-11-09,g0v Summit 2014 啥米零時政府,年會,,g0v 年會,,中央研究院,,https://summit.g0v.tw/2014/zh-TW/index.html
+2014-12-20,沒有人,進行,第拾壹次開放報禁黑客松,,,,,
 2015-01-01,g0v社群首頁,,http://2015.g0v.ronny.tw/zh-TW/index.html,,,,,
 2015-01-31,g0v-design 第零次設計松,活動,,g0v-design 第零次設計松,"做設計改造社會！
 因設計人害羞，為了建立一個對設計師較親切的新手場合，以強化g0v設計師的社群聚合力、專案補強、經驗交流為主的一個零時整形媒合大會。",伯朗咖啡建國店,,https://g0v.hackpad.tw/g0v-design--7ndCfX4RoBm
@@ -43,16 +56,19 @@ https://www.facebook.com/Appendectomy",中央研究院人文社會科學館,,htt
 2016-05-14,g0v Summit 2016 拆後重建,年會,,g0v 年會,,中央研究院,,https://summit.g0v.tw/2016/
 2016-05-15,g0v Summit 2016 拆後重建,年會,,g0v 年會,,中央研究院,,https://summit.g0v.tw/2016/
 2016-10-15,"mrorz, bil 真的假的LINE bot",提案,,假訊息,https://g0v.hackpad.tw/-LINE-bot-Zb4bFLB7pnv,g0v的hackath21n,,
-2017-01-01,g0v 揪松團,舉辦,g0v 獎助金,,,,,
 2017-01-09,真的假的,曝光,,假訊息,社群貼文、名人轉發後在媒體上初次曝光，LINE bot 好友數破萬,,,"https://www.facebook.com/groups/1847232902175197/permalink/1894866897411797
 https://www.facebook.com/groups/cofacts/posts/1896817880550032/"
+2017-01-31,g0v 揪松團,舉辦,公民科技創新獎助金 - 2017 春季,公民科技創新獎助金,,,,
 2017-03-29,"mrorz, 真的假的",上線,,假訊息,網站上線、chatbot 改版、資料庫換成 Elasticsearch,,,https://www.facebook.com/notes/cofacts-%E7%9C%9F%E7%9A%84%E5%81%87%E7%9A%84%E7%B7%A8%E8%BC%AF%E4%BA%A4%E6%B5%81%E5%A4%A9%E5%9C%B0/2017329%E9%81%8E%E5%8E%BB%E4%B8%80%E5%80%8B%E6%9C%88%E7%9A%84%E6%9B%B4%E6%96%B0/1933902890174864/
 2017-04-04,真的假的,取名,,假訊息,確立英文專案名 Cofacts,,,https://github.com/cofacts/rumors-api/issues/28
 2017-06-19,Cofacts 真的假的,活動,,假訊息,第一次編輯小聚。2017 年每月進行，2018 年改為雙月進行,,,
+2017-07-16,g0v 揪松團,舉辦,公民科技創新獎助金 - 2017 秋季,公民科技創新獎助金,,,,
+2018-01-01,g0v 揪松團,舉辦,公民科技創新獎助金 - 2018,公民科技創新獎助金,,,,
 2018-10-05,g0v Summit 2018 零時政府高峰會,年會,,g0v 年會,,中央研究院,,https://summit.g0v.tw/2018/
 2018-10-06,g0v Summit 2018 零時政府高峰會,年會,,g0v 年會,,中央研究院,,https://summit.g0v.tw/2018/
 2018-11-07,"g0ver, Parti",討論,SGP (Stupid Government Partnership),,"pm5, Chihao, Yutin, Isabel參加OGP會議後，與韓國Parti 社群聚會，發現台韓政府都做了很多奇妙的計畫做了很多奇妙的計畫，比如河流裡放機器魚。",韓國首爾的咖啡店,,
 2018-11-11,沒有人們,討論,g0v 社群的國際交流,國際交流,https://g0v.hackmd.io/7zKnMuMiQ3iLVxbAg-4RKw,,,
+2019-01-01,g0v 揪松團,舉辦,公民科技創新獎助金 - 2019,公民科技創新獎助金,,,,
 2019-03-09,pm5,提案,g0v 國際交流小組,國際交流,https://www.youtube.com/watch?v=vXit-3sJoP4&list=PLdwQWxpS513B0GRQ4b5Yoo5etZgSZvs9f&index=15,g0v的hackath33n,,
 2019-05-26,資料申請小幫手,提案,,開放資料,總統盃黑客松第一次工作坊,,,https://hackmd.io/@y56/r1O6G6vpN?type=view
 2019-06-08,"g0ver, friends from JP/KR",活動,"面海松 2019
@@ -62,10 +78,11 @@ Facing the Ocean (FtO)",國際交流,,日本沖繩的Startup Lab Lagoon in Okina
 2019-07-30,Disfactory農地違章工廠回報系統,提案,,環境保護,農地工廠回報系統第一次提案,g0v的hackath35n,,https://www.youtube.com/watch?v=OOKWIy86-Mk
 2019-09-03,資料申請小幫手,得獎,,開放資料,獲選 2019年 總統盃黑客松Top 10,總統府,,https://presidential-hackathon.taiwan.gov.tw/2019/NewDraft0903.aspx
 2019-10-14,Cofacts 真的假的,得獎,,假訊息,獲選 NPOwer 公益行動家,,,https://npost.tw/archives/53031
-2019-11-04,"pm5, tmonk, chihao, bess, choulin",活動,g0v 國際交流小組參與United Nations of Innovation - #HackingDemocracy,國際交流,"g0v 社群受德國 Friedrich-Naumann-Stiftung für die Freiheit（FNF 基金會）邀請至柏林參與 ""United Nations of Innovation - #HackingDemocracy"" conference. 同時與基金會內部對談g0v的發展運作、向基金會所屬在野黨的議員們分享台灣的公民參與運動。",德國柏林的Cafe Moskau,,
+2019-11-04,"pm5, tmonk, chihao, bess, choulin, g0v 國際交流小組",參與,United Nations of Innovation - #HackingDemocracy,國際交流,"g0v 社群受德國 Friedrich-Naumann-Stiftung für die Freiheit（FNF 基金會）邀請至柏林參與 ""United Nations of Innovation - #HackingDemocracy"" conference. 同時與基金會內部對談g0v的發展運作、向基金會所屬在野黨的議員們分享台灣的公民參與運動。",德國柏林的Cafe Moskau,,
 2020-02-06,藥局口罩採購地圖,上線,,,,Covid-19,,https://link.medium.com/1l8VVhD3Dkb / https://g0v.hackmd.io/@kiang/mask-info
 2020-03-20,Disfactory農地違章工廠回報系統,上線,,環境保護,農地工廠回報系統上線,地球公民基金會的記者會,,https://www.cet-taiwan.org/info/news/3683
-2020-05-16,g0v 揪松團、數位農民組合、竹塹社區大學、臺灣社區協力農業協會,活動,g0v 南庄桐花松 2020,g0v 揪松團、數位農民組合、竹塹社區大學、臺灣社區協力農業協會,,南埔共學空間,,https://g0v.hackmd.io/@jothon/tungflowerthon
+2020-05-16,g0v 揪松團、數位農民組合、竹塹社區大學、臺灣社區協力農業協會,舉辦,g0v 南庄桐花松 2020,g0v 揪松團、數位農民組合、竹塹社區大學、臺灣社區協力農業協會,,南埔共學空間,,https://g0v.hackmd.io/@jothon/tungflowerthon
+2020-11-12,,上線,新版 g0v.tw,,,,,
 2020-12-03,g0v summit 2020 工作群,舉辦,g0v Summit 2020 台灣零時政府雙年會,g0v 年會,,台南,,https://summit.g0v.tw/2020/
 2021-02-04,Cofacts 真的假的,得獎,,假訊息,獲得 AI4SG 獎項,,,https://tw.systex.com/ai4sg-award-2021/
 2021-03-17,真的假的,獲獎,,g0v grant,2017 公民科技創新獎助金,,,
