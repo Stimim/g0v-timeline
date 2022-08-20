@@ -1,7 +1,10 @@
 .card {
   display: block;
   width: 200px;
+  border: 1px solid black;
+  padding: .5rem;
   background: white;
+
   border-radius: 5px 10px;
   border: solid 1px black;
 }
@@ -14,13 +17,13 @@ span {
   font-size: 1rem;
   line-height: 1rem;
   display: inline-block;
-  border-radius: 5px 10px;
+  border-radius: 5px;
   padding: .25rem .5rem;
 }
 
 .date {
   position: relative;
-  top: -0.5em;
+  top: -1rem;
   background: #ff55ff;
 }
 

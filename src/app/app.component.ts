@@ -21,7 +21,7 @@ export class AppComponent {
   onlineEvents: UserSubmittedEvent[] = [];
   onlineEventsOffset: number[][] = [];
 
-  touchX? : number;
+  touchX?: number;
 
   computeEventsOffset(events: Event[], rowMap: number[], rowHeight: number) {
     let offsets = [];
@@ -76,14 +76,18 @@ export class AppComponent {
 
     this.maxOffsetX = this.predefinedEventsOffset[this.predefinedEvents.length - 1][0] - window.innerWidth / 3;
 
-    const lastSeenTopicIndex: {[key: string]: number} = {};
+    const lastSeenTopicIndex: { [key: string]: number } = {};
+    let topics: string[] = [];
     for (let i = 0; i < this.predefinedEvents.length; i++) {
       const event = this.predefinedEvents[i];
       if (!event.topic) continue;
 
+      if (!(event.topic in topics)) {
+        topics.push(event.topic);
+      }
       if (event.topic in lastSeenTopicIndex) {
         const j = lastSeenTopicIndex[event.topic];
-        this.links.push([...this.predefinedEventsOffset[j], ...this.predefinedEventsOffset[i]]);
+        this.links.push([...this.predefinedEventsOffset[j], ...this.predefinedEventsOffset[i],topics.indexOf(event.topic)]);
       }
       lastSeenTopicIndex[event.topic] = i;
     }
@@ -102,13 +106,13 @@ export class AppComponent {
       const rowMap = [0, 8, 1, 9];
 
       this.onlineEventsOffset = this.computeEventsOffset(
-          events, rowMap, rowHeight);
+        events, rowMap, rowHeight);
       for (let i = 0; i < this.onlineEventsOffset.length; i++) {
         this.onlineEventsOffset[i][0] -= adjustOffset;
       }
       this.maxOffsetX = Math.max(
-          this.maxOffsetX,
-          this.onlineEventsOffset[this.onlineEventsOffset.length - 1][0] - window.innerWidth / 3);
+        this.maxOffsetX,
+        this.onlineEventsOffset[this.onlineEventsOffset.length - 1][0] - window.innerWidth / 3);
       this.onlineEvents.reverse();
       this.onlineEventsOffset.reverse();
     });
@@ -141,7 +145,7 @@ export class AppComponent {
 
   OnScroll(event: any) {
     if (event.type === 'wheel' ||
-        event.type === 'touchmove') {
+      event.type === 'touchmove') {
       event.stopPropagation();
       event.preventDefault();
     }
@@ -159,7 +163,7 @@ export class AppComponent {
         currentTouchX /= event.touches.length;
 
         if (this.touchX !== undefined &&
-            Math.abs(this.touchX - currentTouchX) < 100) {
+          Math.abs(this.touchX - currentTouchX) < 100) {
           this.offsetX += (currentTouchX - this.touchX);
         }
         this.touchX = currentTouchX;

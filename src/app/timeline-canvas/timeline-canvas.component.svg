@@ -14,7 +14,8 @@
   <g *ngFor="let link of links">
     <path
       [attr.d]="getLinkPath(link)"
-      stroke="white"
+      [attr.stroke]="getStrokeColor(link[4])"
+      stroke-dasharray="5,1"
       />
   </g>
 </svg>
