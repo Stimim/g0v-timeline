@@ -133,9 +133,10 @@ export class AppComponent {
     return [dx + this.offsetX, dy];
   }
 
-  IsVisible(i: number, online: boolean): boolean {
+  shouldDrawElement(i: number, online: boolean): boolean {
     const [x, y] = this.GetOffset(i, online);
-    return this.minVisibleX <= x && x <= this.maxVisibleX;
+    const width = window.innerWidth;
+    return -(width / 2) <= x && x <= width * 1.5;
   }
 
   OnScroll(event: any) {

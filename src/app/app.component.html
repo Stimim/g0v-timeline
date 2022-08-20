@@ -18,9 +18,11 @@
   <div>
     <ng-template ngFor let-event [ngForOf]="predefinedEvents" let-i="index">
       <app-event
-          *ngIf="IsVisible(i, false)"
+          *ngIf="shouldDrawElement(i, false)"
           [event]="event"
-          [offset]="GetOffset(i, false)">
+          [offset]="GetOffset(i, false)"
+          [minVisibleX]="minVisibleX"
+          [maxVisibleX]="maxVisibleX" >
       </app-event>
     </ng-template>
   </div>
@@ -28,7 +30,7 @@
   <div>
     <ng-template ngFor let-event [ngForOf]="onlineEvents" let-i="index">
       <app-online-event
-          *ngIf="IsVisible(i, true)"
+          *ngIf="shouldDrawElement(i, true)"
           [event]="event"
           [offset]="GetOffset(i, true)">
       </app-online-event>

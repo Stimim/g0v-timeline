@@ -1,4 +1,8 @@
-<div *ngIf="isDialogVisible" class="dialog" (click)="onClick()" [style]="GetStyle()">
+<div
+  *ngIf="isDialogVisible"
+  class="dialog"
+  (click)="onClick()"
+  [style]="GetDialogStyle()">
   <span class="date">{{event.date}}</span><br>
   <span *ngIf="event.subject" class="subject">{{event.subject}}</span>
   <span *ngIf="event.action" class="action">{{event.action}}</span>
@@ -18,10 +22,12 @@
     <br>
     <span class="description">{{event.description}}</span>
   </div>
-
 </div>
 
-<div *ngIf="!isDialogVisible" class="card" [style]="GetStyle()" (click)="onClick()">
+<div
+  class="card"
+  [style]="GetCardStyle()"
+  (click)="onClick()">
   <span class="date">{{event.date}}</span><br>
   <span *ngIf="event.subject" class="subject">{{event.subject}}</span>
   <span *ngIf="event.action" class="action">{{event.action}}</span>

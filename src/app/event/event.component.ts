@@ -9,6 +9,9 @@ import { PredefinedEvent } from '../events.service';
 })
 export class EventComponent implements OnInit {
 
+  @Input() minVisibleX!: number;
+  @Input() maxVisibleX!: number;
+
   @Input() event!: PredefinedEvent;
   @Input() offset!: [number, number];
   isDialogVisible: boolean = false;
@@ -18,19 +21,21 @@ export class EventComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  GetStyle() {
-    if (this.isDialogVisible) {
-      return {
+  GetDialogStyle() {
+    return {};
+  }
+  GetCardStyle() {
+    let z = Math.floor(window.innerWidth*2 - Math.abs(window.innerWidth/2 - this.offset[0]));
+    let shouldDisplay = (this.minVisibleX <= this.offset[0] &&
+                         this.offset[0] <= this.maxVisibleX);
 
-      };
-    } else {
-      return {
-        position: 'absolute',
-        left: `${this.offset[0]}px`,
-        top: `${this.offset[1]}px`,
-        'z-index': `${Math.floor(window.innerWidth/2 - Math.abs(window.innerWidth/2 - this.offset[0]))}`
-      };
-    }
+    return {
+      display: shouldDisplay ? 'block' : 'none',
+      position: 'absolute',
+      left: `${this.offset[0]}px`,
+      top: `${this.offset[1]}px`,
+      'z-index': `${z}`
+    };
   }
 
   onClick() {
