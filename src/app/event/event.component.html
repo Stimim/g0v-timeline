@@ -1,30 +1,4 @@
 <div
-  *ngIf="isDialogVisible"
-  class="dialog"
-  (click)="onClick()"
-  [style]="GetDialogStyle()">
-  <span class="date">{{event.date}}</span><br>
-  <span *ngIf="event.subject" class="subject">{{event.subject}}</span>
-  <span *ngIf="event.action" class="action">{{event.action}}</span>
-  <span *ngIf="event.object" class="object">{{event.object}}</span>
-
-  <div *ngIf="event.topic">
-    <br>
-    <span class="topic">#{{event.topic}}</span>
-  </div>
-
-  <div *ngIf="event.location">
-    <br>
-    <span class="location">@{{event.location}}</span>
-  </div>
-
-  <div *ngIf="event.description">
-    <br>
-    <span class="description">{{event.description}}</span>
-  </div>
-</div>
-
-<div
   class="card"
   [style]="GetCardStyle()"
   (click)="onClick()">

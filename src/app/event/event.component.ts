@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { EventService } from '../event-service.service'
 import { PredefinedEvent } from '../events.service';
 
 @Component({
@@ -14,16 +15,12 @@ export class EventComponent implements OnInit {
 
   @Input() event!: PredefinedEvent;
   @Input() offset!: [number, number];
-  isDialogVisible: boolean = false;
 
-  constructor() { }
+  constructor(private eventService: EventService) { }
 
   ngOnInit(): void {
   }
 
-  GetDialogStyle() {
-    return {};
-  }
   GetCardStyle() {
     let z = Math.floor(window.innerWidth*2 - Math.abs(window.innerWidth/2 - this.offset[0]));
     let shouldDisplay = (this.minVisibleX <= this.offset[0] &&
@@ -39,6 +36,6 @@ export class EventComponent implements OnInit {
   }
 
   onClick() {
-    this.isDialogVisible = !this.isDialogVisible;
+    this.eventService.SetPredefinedEventEvent.emit(this.event);
   }
 }
