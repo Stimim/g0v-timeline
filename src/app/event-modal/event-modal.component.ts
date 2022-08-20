@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 import { EventService } from '../event-service.service';
 import { PredefinedEvent } from '../events.service';
@@ -9,12 +9,15 @@ import { PredefinedEvent } from '../events.service';
   styleUrls: ['./event-modal.component.scss']
 })
 export class EventModalComponent implements OnInit {
+  @ViewChild('modal') modalElement!: ElementRef;
+
   event?: PredefinedEvent;
 
   constructor(private eventService: EventService) {
     this.eventService.SetPredefinedEventEvent.subscribe(
       (event: PredefinedEvent) => {
         this.event = event;
+        this.modalElement.nativeElement.focus();
       }
     );
   }
@@ -22,11 +25,11 @@ export class EventModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick() {
+  onBlur() {
     this.event = undefined;
   }
 
-  GetStyle() {
+  getStyle() {
     return {};
   }
 }

@@ -1,7 +1,10 @@
 <div
+  #modal
   class="dialog"
-  (click)="onClick()"
-  [style]="GetStyle()">
+  (blur)="onBlur()"
+  [style]="getStyle()"
+  tabindex="0"
+  >
   <div *ngIf="event">
 
     <span class="date">{{event.date}}</span><br>
