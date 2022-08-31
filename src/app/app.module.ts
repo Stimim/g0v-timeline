@@ -7,6 +7,7 @@ import { EventComponent } from './event/event.component';
 import { TimelineCanvasComponent } from './timeline-canvas/timeline-canvas.component';
 import { OnlineEventComponent } from './online-event/online-event.component';
 import { EventModalComponent } from './event-modal/event-modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { EventModalComponent } from './event-modal/event-modal.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
