@@ -1,0 +1,39 @@
+<div
+  #modal
+  class="dialog"
+  tabindex="0"
+  >
+
+  <div class="box" *ngIf="enable" >
+    <section>
+      <mat-slide-toggle
+        color="primary"
+        labelPosition="before"
+        (change)="onAutoScrollChanged($event)"
+        >
+        播放模式
+      </mat-slide-toggle>
+    </section>
+
+    <section>
+      播放速度: {{speed}}
+      <mat-slider
+        color="primary"
+        min="20"
+        max="100"
+        [(ngModel)]="speed"
+        (change)="onSpeedChanged()"
+        >
+      </mat-slider>
+    </section>
+
+    <section class="close-button-section">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="onClose()"
+        >Close</button>
+    </section>
+  </div>
+</div>
+

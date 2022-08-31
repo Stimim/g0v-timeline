@@ -40,4 +40,15 @@
   </div>
 
   <app-event-modal> </app-event-modal>
+
+  <button mat-raised-button class="auto-scroll" (click)="showSettings()">
+    設定
+  </button>
+
+  <app-settings-modal
+    [(enable)]="settingsModalEnabled"
+    (speedChangedEvent)="onSpeedChanged($event)"
+    (autoScrollChangedEvent)="onAutoScrollChanged($event)"
+    >
+  </app-settings-modal>
 </div>

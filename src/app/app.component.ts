@@ -14,6 +14,8 @@ export class AppComponent {
   offsetX: number = 0;
   maxOffsetX: number = 0;
 
+  autoScrolling: boolean = false;
+
   predefinedEvents: PredefinedEvent[] = [];
   predefinedEventsOffset: number[][] = [];
   links: number[][] = [];
@@ -22,6 +24,8 @@ export class AppComponent {
   onlineEventsOffset: number[][] = [];
 
   touchX?: number;
+  rowHeight!: number;
+  adjustOffset!: number;
 
   computeEventsOffset(events: Event[], rowMap: number[], rowHeight: number) {
     let offsets = [];
@@ -54,24 +58,24 @@ export class AppComponent {
     this.maxVisibleX = window.innerWidth * 0.7;
     this.minVisibleX = window.innerWidth * 0.1;
 
-    const rowHeight = window.innerHeight / 12;
+    this.rowHeight = window.innerHeight / 12;
     const startingOffset = window.innerWidth * 0.2;
 
     const rowMap = [2, 5, 3, 6, 4, 7];
     let minOffset = Infinity;
 
-    this.predefinedEventsOffset = this.computeEventsOffset(this.predefinedEvents, rowMap, rowHeight);
+    this.predefinedEventsOffset = this.computeEventsOffset(this.predefinedEvents, rowMap, this.rowHeight);
     for (let i = 0; i < this.predefinedEventsOffset.length; i++) {
       const dx = this.predefinedEventsOffset[i][0];
       minOffset = Math.min(minOffset, dx);
     }
     minOffset -= startingOffset;
 
-    let adjustOffset = minOffset;
+    this.adjustOffset = minOffset;
 
-    this.predefinedEventsOffset[0][0] -= adjustOffset;
+    this.predefinedEventsOffset[0][0] -= this.adjustOffset;
     for (let i = 1; i < this.predefinedEvents.length; i++) {
-      this.predefinedEventsOffset[i][0] -= adjustOffset;
+      this.predefinedEventsOffset[i][0] -= this.adjustOffset;
     }
 
     this.maxOffsetX = this.predefinedEventsOffset[this.predefinedEvents.length - 1][0] - window.innerWidth / 3;
@@ -95,7 +99,11 @@ export class AppComponent {
     this.predefinedEvents.reverse();
     this.predefinedEventsOffset.reverse();
 
-    eventsService.GetOnlineEvents().subscribe((response: any) => {
+    this.getOnlineEvents();
+  }
+
+  getOnlineEvents() {
+    this.eventsService.GetOnlineEvents().subscribe((response: any) => {
       const events = response.results;
       this.onlineEvents = events;
 
@@ -106,9 +114,9 @@ export class AppComponent {
       const rowMap = [0, 8, 1, 9];
 
       this.onlineEventsOffset = this.computeEventsOffset(
-        events, rowMap, rowHeight);
+        events, rowMap, this.rowHeight);
       for (let i = 0; i < this.onlineEventsOffset.length; i++) {
-        this.onlineEventsOffset[i][0] -= adjustOffset;
+        this.onlineEventsOffset[i][0] -= this.adjustOffset;
       }
       this.maxOffsetX = Math.max(
         this.maxOffsetX,
@@ -178,5 +186,59 @@ export class AppComponent {
 
     if (this.offsetX > 0) this.offsetX = 0;
     if (this.offsetX < -this.maxOffsetX) this.offsetX = -this.maxOffsetX;
+  }
+
+  previousTimeStamp?: number;
+  speed: number = 20;
+  rewinding = false;
+
+  autoScrollOnce(timestamp: number) {
+    if (!this.autoScrolling) return;
+
+    if (this.previousTimeStamp === undefined) {
+      this.previousTimeStamp = timestamp;
+    }
+
+    if (this.offsetX > 0) {
+      this.rewinding = false;
+      // loop
+      this.getOnlineEvents();
+    } else if (this.offsetX < -this.maxOffsetX) {
+      this.rewinding = true;
+    }
+
+    const dt = timestamp - this.previousTimeStamp;
+    if (this.rewinding) {
+      this.offsetX += dt * this.speed * 20 / 1000;
+    } else {
+      this.offsetX -= dt * this.speed / 1000;
+    }
+    this.previousTimeStamp = timestamp;
+
+    requestAnimationFrame((t) => this.autoScrollOnce(t));
+  }
+
+  settingsModalEnabled: boolean = false;
+
+  showSettings() {
+    this.settingsModalEnabled = true;
+  }
+
+  startScrolling() {
+    this.previousTimeStamp = undefined;
+    this.rewinding = false;
+
+    requestAnimationFrame((t) => this.autoScrollOnce(t));
+  }
+
+  onAutoScrollChanged(newValue: boolean) {
+    this.autoScrolling = newValue;
+    if (this.autoScrolling) {
+      this.startScrolling();
+    }
+  }
+
+  onSpeedChanged(newSpeed: number) {
+    this.speed = newSpeed;
   }
 }
