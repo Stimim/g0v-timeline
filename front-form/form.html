@@ -6,21 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>timeline form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="form.css">
 </head>
 
-<body>
-  <form id="form">
-    <label for="date">Date</label><br>
-    <input type="date" id="date" name="date"><br>
-    <label for="subject">subject</label><br>
-    <input type="text" id="subject" name="subject" value="subject"><br>
-    <label for="description">description</label><br>
-    <input type="text" id="description" name="description" value="description"><br>
-    <hr>
-    <input type="submit" value="Submit">
-  </form>
+<body class="bg-dark text-light">
+  <div class="container d-flex justify-content-center vh-100 pb-4">
+    <form class="w-50 m-auto" id="form">
+      <label class="form-label" for="date">Date</label><br>
+      <input class="form-control" type="date" id="date" name="date"><br>
+      <label class="form-label" for="subject">subject</label><br>
+      <input class="form-control" type="text" id="subject" name="subject" value="subject"><br>
+      <label class="form-label" for="description">description</label><br>
+      <input class="form-control" type="text" id="description" name="description" value="description"><br>
+      <hr>
+      <div class="d-grid">
+        <input class="btn btn-primary" type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script>
   form = document.getElementById("form");
   form.onsubmit = async (e) => {
