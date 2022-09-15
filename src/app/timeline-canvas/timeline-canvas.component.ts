@@ -21,7 +21,7 @@ export class TimelineCanvasComponent implements OnInit {
   }
 
   getStrokeColor(i:number) {
-    const colors = ['ffadad','ffd6a5','fdffb6','caffbf','9bf6ff','a0c4ff','bdb2ff','ffc6ff'];
+    const colors = ['FF56C2','59FFF6','FAF000','FF5720','7D55FF','EFA9DD'];
     return '#' + colors[i%colors.length] + "AA";
   }
 
