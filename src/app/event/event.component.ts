@@ -27,7 +27,9 @@ export class EventComponent implements OnInit {
                          this.offset[0] <= this.maxVisibleX);
 
     return {
-      display: shouldDisplay ? 'block' : 'none',
+      display: 'block',
+      transition: 'opacity .3s',
+      opacity: shouldDisplay ? '1' : '0',
       position: 'absolute',
       left: `${this.offset[0]}px`,
       top: `${this.offset[1]}px`,

@@ -1,16 +1,13 @@
 .card {
   display: block;
   width: 200px;
-  border: 1px solid black;
   padding: .5rem;
   background: white;
-
   border-radius: 5px 10px;
-  border: solid 1px black;
-}
-
-.card:hover {
-  z-index: 9999 !important;
+  filter: drop-shadow(2px 2px 4px #333A);
+  &:hover {
+    z-index: 9999 !important;
+  }
 }
 
 span {
@@ -19,23 +16,24 @@ span {
   display: inline-block;
   border-radius: 5px;
   padding: .25rem .5rem;
+  filter: drop-shadow(1px 1px 2px #3333);
 }
 
 .date {
   position: relative;
   top: -1rem;
-  background: #ff55ff;
+  background: #FF56C2;
 }
 
 .subject {
-  background: #55ffff;
+  background: #59FFF6;
 }
 
 .action {
-  background: #55ff55;
+  background: #FAF000;
 }
 
 .object {
-  background: #ff5555;
+  background: #FF5720;
   word-break: break-all;
 }
