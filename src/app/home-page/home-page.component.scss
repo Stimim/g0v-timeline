@@ -12,5 +12,9 @@
   position: absolute;
   top: 0px;
   right: 0px;
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+  }
 }
 
