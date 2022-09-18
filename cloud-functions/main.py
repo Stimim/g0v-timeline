@@ -16,9 +16,14 @@ def GetDatastoreClient():
   return _DATASTORE_CLIENT
 
 
-@functions_framework.http
-def hello_get(request):
-  return {'message': 'hello world!'}
+def CheckLength(string, limit):
+  try:
+    string.decode('ascii')
+  except UnicodeEncodeError:
+    # This is an ASCII string, let's be more generous.
+    return len(string) <= limit * 3
+  else:
+    return len(string) <= limit
 
 
 @functions_framework.http
@@ -53,13 +58,10 @@ def add_event(request):
     # This follows the HTML format.
     datetime.datetime.strptime(date, '%Y-%m-%d')
   except ValueError:
-    return 'Date should be in %Y-%m-%d format', 400
+    return {'message': 'Date should be in %Y-%m-%d format'}, 400
 
-  if len(subject) + len(description) > 20:
-    return (
-      {'message':
-          'Total length of "subject" and "description" should not exeed 20'},
-      400)
+  if not CheckLength(subject, 10) or not CheckLength(description, 20):
+    return ({'message': 'The subject or description is too long...'}, 400)
 
   added_time = datetime.datetime.now().isoformat()
 
