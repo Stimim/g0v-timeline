@@ -18,13 +18,19 @@ form {
   padding: 10px;
   width: 50%;
   min-width: 350px;
-  
+
   mat-form-field {
     width: 100%;
-  } 
+  }
 
-  button {
+  .actions {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    button {
+    }
   }
 }
 

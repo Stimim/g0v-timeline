@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 
 
-import { PredefinedEvent } from './events.service';
+import { PredefinedEvent, UserSubmittedEvent } from './events.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +9,15 @@ import { PredefinedEvent } from './events.service';
 export class EventService {
 
   SetPredefinedEventEvent = new EventEmitter<PredefinedEvent>();
+  SetUserEventEvent = new EventEmitter<UserSubmittedEvent>();
 
   constructor() { }
 
   SetPredefinedEvent(event: PredefinedEvent) {
     this.SetPredefinedEventEvent.emit(event);
+  }
+
+  SetUserEvent(event: UserSubmittedEvent) {
+    this.SetUserEventEvent.emit(event);
   }
 }

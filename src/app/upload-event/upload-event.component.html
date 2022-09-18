@@ -22,6 +22,11 @@
 
     <br>
 
-    <button mat-raised-button color="primary" (click)="onClick()">送出</button>
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="onClick()">送出</button>
+      <button mat-raised-button color="primary" (click)="showPreview()">預覽</button>
+    </div>
   </form>
+
+  <app-event-modal></app-event-modal>
 </div>
