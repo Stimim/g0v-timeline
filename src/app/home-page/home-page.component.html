@@ -1,0 +1,54 @@
+<div
+  [style]="GetStyle()"
+  (wheel)="OnScroll($event)"
+  (touchmove)="OnScroll($event)"
+  (touchstart)="OnScroll($event)"
+  (touchend)="OnScroll($event)"
+  (touchcancel)="OnScroll($event)"
+  >
+  <app-timeline-canvas
+      [style]="GetStyle()"
+      [offsetX]="offsetX"
+      [predefinedEventsOffset]="predefinedEventsOffset"
+      [onlineEventsOffset]="onlineEventsOffset"
+      [minVisibleX]="minVisibleX"
+      [maxVisibleX]="maxVisibleX"
+      [links]="links"
+  ></app-timeline-canvas>
+  <div>
+    <ng-template ngFor let-event [ngForOf]="predefinedEvents" let-i="index">
+      <app-event
+          *ngIf="shouldDrawElement(i, false)"
+          [event]="event"
+          [offset]="GetOffset(i, false)"
+          [minVisibleX]="minVisibleX"
+          [maxVisibleX]="maxVisibleX" >
+      </app-event>
+    </ng-template>
+  </div>
+
+  <div>
+    <ng-template ngFor let-event [ngForOf]="onlineEvents" let-i="index">
+      <app-online-event
+          *ngIf="shouldDrawElement(i, true)"
+          [event]="event"
+          [offset]="GetOffset(i, true)"
+          [minVisibleX]="minVisibleX"
+          [maxVisibleX]="maxVisibleX" >
+      </app-online-event>
+    </ng-template>
+  </div>
+
+  <app-event-modal> </app-event-modal>
+
+  <button mat-raised-button class="auto-scroll" (click)="showSettings()">
+    設定
+  </button>
+
+  <app-settings-modal
+    [(enable)]="settingsModalEnabled"
+    (speedChangedEvent)="onSpeedChanged($event)"
+    (autoScrollChangedEvent)="onAutoScrollChanged($event)"
+    >
+  </app-settings-modal>
+</div>
