@@ -28,7 +28,7 @@ def add_event(request):
     # header and caches preflight response for an 3600s
     headers = {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type',
         'Access-Control-Max-Age': '3600'
     }
@@ -46,7 +46,8 @@ def add_event(request):
   subject = request.form.get('subject')
   description = request.form.get('description')
   if not (date and subject and description):
-    return 'Fields "date", "subject", "description" are required', 400
+    return ({'message': 'Fields "date", "subject", "description" are required'},
+            400)
 
   try:
     # This follows the HTML format.
@@ -55,8 +56,10 @@ def add_event(request):
     return 'Date should be in %Y-%m-%d format', 400
 
   if len(subject) + len(description) > 20:
-    return ('Total length of "subject" and "description" should not exeed 20',
-            400)
+    return (
+      {'message':
+          'Total length of "subject" and "description" should not exeed 20'},
+      400)
 
   added_time = datetime.datetime.now().isoformat()
 
@@ -70,7 +73,7 @@ def add_event(request):
   })
   client.put(entity)
 
-  return ({'message': f'wrote: {date}, {subject}, {description} to DB'},
+  return ({'message': f'wrote: {date!r}, {subject!r}, {description!r} to DB'},
           200,
           headers)
 
