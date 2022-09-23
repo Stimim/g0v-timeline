@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
-import { EventService } from '../event-service.service';
+import { EventBus } from '../event-bus.service';
 import { UserSubmittedEvent, EventsService } from '../events.service';
 
 function getToday() {
@@ -28,7 +28,7 @@ export class UploadEventComponent implements OnInit {
 
   constructor(
     private eventsService: EventsService,
-    private eventService: EventService,
+    private eventBus: EventBus,
     private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -53,6 +53,6 @@ export class UploadEventComponent implements OnInit {
       return;
     }
 
-    this.eventService.SetUserEvent(this.form.value);
+    this.eventBus.SetUserEvent(this.form.value);
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
-import { EventService } from '../event-service.service';
+import { EventBus } from '../event-bus.service';
 import { PredefinedEvent, UserSubmittedEvent } from '../events.service';
 
 @Component({
@@ -14,8 +14,8 @@ export class EventModalComponent implements OnInit {
   predefinedEvent?: PredefinedEvent;
   userEvent?: UserSubmittedEvent;
 
-  constructor(private eventService: EventService) {
-    this.eventService.SetPredefinedEventEvent.subscribe(
+  constructor(private eventBus: EventBus) {
+    this.eventBus.SetPredefinedEventEvent.subscribe(
       (predefinedEvent: PredefinedEvent) => {
         this.clearEvents();
         this.predefinedEvent = predefinedEvent;
@@ -23,7 +23,7 @@ export class EventModalComponent implements OnInit {
       }
     );
 
-    this.eventService.SetUserEventEvent.subscribe(
+    this.eventBus.SetUserEventEvent.subscribe(
       (userEvent: UserSubmittedEvent) => {
         this.clearEvents();
         this.userEvent = userEvent;

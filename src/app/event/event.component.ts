@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { EventService } from '../event-service.service'
+import { EventBus } from '../event-bus.service'
 import { PredefinedEvent } from '../events.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class EventComponent implements OnInit {
   @Input() event!: PredefinedEvent;
   @Input() offset!: [number, number];
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventBus: EventBus) { }
 
   ngOnInit(): void {
   }
@@ -38,6 +38,6 @@ export class EventComponent implements OnInit {
   }
 
   onClick() {
-    this.eventService.SetPredefinedEventEvent.emit(this.event);
+    this.eventBus.SetPredefinedEventEvent.emit(this.event);
   }
 }
