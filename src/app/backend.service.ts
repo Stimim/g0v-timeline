@@ -35,7 +35,7 @@ export type Event = PredefinedEvent | UserSubmittedEvent;
 @Injectable({
   providedIn: 'root'
 })
-export class EventsService {
+export class BackendService {
   constructor(private http: HttpClient) { }
 
   GetOnlineEvents(): Observable<UserSubmittedEvent[]> {

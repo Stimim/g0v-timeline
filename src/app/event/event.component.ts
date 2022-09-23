@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { EventBus } from '../event-bus.service'
-import { PredefinedEvent } from '../events.service';
+import { PredefinedEvent } from '../backend.service';
 
 @Component({
   selector: 'app-event',

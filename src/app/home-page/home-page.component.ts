@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { EventsService, PredefinedEvent, Event, UserSubmittedEvent } from '../events.service';
+import { BackendService, PredefinedEvent, Event, UserSubmittedEvent } from '../backend.service';
 
 @Component({
   selector: 'app-home-page',
@@ -49,8 +49,8 @@ export class HomePageComponent implements OnInit {
     return offsets;
   }
 
-  constructor(private eventsService: EventsService) {
-    this.predefinedEvents = eventsService.GetPredefinedEvents();
+  constructor(private backendService: BackendService) {
+    this.predefinedEvents = backendService.GetPredefinedEvents();
 
     this.predefinedEvents.sort((a, b) => {
       return a.date.localeCompare(b.date);
@@ -107,7 +107,7 @@ export class HomePageComponent implements OnInit {
   }
 
   getOnlineEvents() {
-    this.eventsService.GetOnlineEvents().subscribe((response: any) => {
+    this.backendService.GetOnlineEvents().subscribe((response: any) => {
       const events = response.results;
       this.onlineEvents = events;
 

@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 
-import { PredefinedEvent, UserSubmittedEvent } from './events.service';
+import { PredefinedEvent, UserSubmittedEvent } from './backend.service';
 
 
 @Injectable({

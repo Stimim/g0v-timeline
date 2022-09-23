@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 import { EventBus } from '../event-bus.service';
-import { PredefinedEvent, UserSubmittedEvent } from '../events.service';
+import { PredefinedEvent, UserSubmittedEvent } from '../backend.service';
 
 @Component({
   selector: 'app-event-modal',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { EventsService, PredefinedEvent, Event, UserSubmittedEvent } from './events.service';
+import { BackendService, PredefinedEvent, Event, UserSubmittedEvent } from './backend.service';
 
 @Component({
   selector: 'app-root',

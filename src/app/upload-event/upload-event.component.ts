@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 import { EventBus } from '../event-bus.service';
-import { UserSubmittedEvent, EventsService } from '../events.service';
+import { UserSubmittedEvent, BackendService } from '../backend.service';
 
 function getToday() {
   const now = new Date();
@@ -27,7 +27,7 @@ export class UploadEventComponent implements OnInit {
   });
 
   constructor(
-    private eventsService: EventsService,
+    private backendService: BackendService,
     private eventBus: EventBus,
     private snackBar: MatSnackBar) { }
 
@@ -42,7 +42,7 @@ export class UploadEventComponent implements OnInit {
     const value = this.form.value;
     console.info(value);
 
-    this.eventsService.SubmitOneOnline(value).subscribe((result: any) => {
+    this.backendService.SubmitOneOnline(value).subscribe((result: any) => {
       const message = result.message;
       this.snackBar.open(message, 'OK');
     });

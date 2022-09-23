@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { UserSubmittedEvent } from '../events.service';
+import { UserSubmittedEvent } from '../backend.service';
 
 @Component({
   selector: 'app-online-event',
