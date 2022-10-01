@@ -18,11 +18,11 @@ def GetDatastoreClient():
 
 def CheckLength(string, limit):
   try:
-    string.decode('ascii')
-  except UnicodeEncodeError:
+    string.encode('ascii')
     # This is an ASCII string, let's be more generous.
     return len(string) <= limit * 3
-  else:
+  except UnicodeEncodeError:
+    # Contains non-ascii characters, assume it's Chinese.
     return len(string) <= limit
 
 
