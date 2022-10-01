@@ -1,6 +1,6 @@
 .dialog {
   display: block;
-  background: white;
+  background: black;
   border-radius: 5px 10px;
   width: 400px;
   position: absolute;
@@ -10,7 +10,7 @@
   filter: drop-shadow(2px 2px 4px #333A);
   transform: translate(-50%, -50%);
   z-index: 9999 !important;
-  
+
   & > div {
     padding: .5rem;
   }
@@ -29,18 +29,19 @@ span {
   position: relative;
   top: -1rem;
   background: #FF56C2;
+  color: white;
 }
 
 .subject {
-  background: #59FFF6;
+  color: white;
 }
 
 .action {
-  background: #FAF000;
+  color: #59FFF6;
 }
 
 .object {
-  background: #FF5720;
+  color: #59FFF6;
   word-break: break-all;
 }
 

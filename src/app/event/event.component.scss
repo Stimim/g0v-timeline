@@ -2,7 +2,8 @@
   display: block;
   width: 200px;
   padding: .5rem;
-  background: white;
+  background: black;
+  border: white solid;
   border-radius: 5px 10px;
   filter: drop-shadow(2px 2px 4px #333A);
   &:hover {
@@ -15,7 +16,7 @@ span {
   line-height: 1rem;
   display: inline-block;
   border-radius: 5px;
-  padding: .25rem .5rem;
+  padding: .25rem .25rem;
   filter: drop-shadow(1px 1px 2px #3333);
 }
 
@@ -23,17 +24,18 @@ span {
   position: relative;
   top: -1rem;
   background: #FF56C2;
+  color: white;
 }
 
 .subject {
-  background: #59FFF6;
+  color: white;
 }
 
 .action {
-  background: #FAF000;
+  color: #59FFF6;
 }
 
 .object {
-  background: #FF5720;
+  color: #59FFF6;
   word-break: break-all;
 }

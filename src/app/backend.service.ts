@@ -49,7 +49,7 @@ export class BackendService {
     formData.append('subject', event.subject);
     formData.append('description', event.description);
     return this.http.post<UserSubmittedEvent>(
-      'https://g0v-10th-timeline-add-event-wo3ndgqh4q-de.a.run.app',
+      'https://g0v-10th-timeline-add-event-wo3ndgqh4q-de.a.run.app/',
       formData);
   }
 
