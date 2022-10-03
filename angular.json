@@ -115,5 +115,7 @@
       "style": "scss"
     }
   },
-  "defaultProject": "g0v-timeline"
+  "cli": {
+    "analytics": false
+  }
 }

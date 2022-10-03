@@ -35,24 +35,32 @@ export class UploadEventComponent implements OnInit {
   }
 
   onClick() {
-    if (this.form.invalid) {
-      return;
-    }
+    const event = this.getEventFromFormValue();
+    if (event === null) return;
 
-    const value = this.form.value;
-    console.info(value);
-
-    this.backendService.SubmitOneOnline(value).subscribe((result: any) => {
+    this.backendService.SubmitOneOnline(event).subscribe((result: any) => {
       const message = result.message;
       this.snackBar.open(message, 'OK');
     });
   }
 
   showPreview() {
+    const event = this.getEventFromFormValue();
+    if (event === null) return;
+
+    this.eventBus.SetUserEvent(event);
+  }
+
+  getEventFromFormValue(): UserSubmittedEvent | null {
     if (this.form.invalid) {
-      return;
+      return null;
     }
 
-    this.eventBus.SetUserEvent(this.form.value);
+    const event: UserSubmittedEvent = {
+      date: this.form.value.date!,
+      subject: this.form.value.subject!,
+      description: this.form.value.description!,
+    };
+    return event;
   }
 }
