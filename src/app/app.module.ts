@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
@@ -43,12 +44,15 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatSlideToggleModule,
     MatSliderModule,
     MatSnackBarModule,
+    RecaptchaV3Module,
     RouterModule.forRoot([
       {path: '', component: HomePageComponent},
       {path: 'here-am-i', component: UploadEventComponent},
     ]),
   ],
-  providers: [],
+  providers: [
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: '6Lf6LlAiAAAAADnjjM8tVhqagrb7HKO5t-R9QoA4' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

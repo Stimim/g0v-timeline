@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
+import { ReCaptchaV3Service } from 'ng-recaptcha';
+
 import { EventBus } from '../event-bus.service';
 import { UserSubmittedEvent, BackendService } from '../backend.service';
+
 
 function getToday() {
   const now = new Date();
@@ -29,7 +32,8 @@ export class UploadEventComponent implements OnInit {
   constructor(
     private backendService: BackendService,
     private eventBus: EventBus,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+    private recaptchaV3Service: ReCaptchaV3Service) { }
 
   ngOnInit(): void {
   }
@@ -38,10 +42,19 @@ export class UploadEventComponent implements OnInit {
     const event = this.getEventFromFormValue();
     if (event === null) return;
 
-    this.backendService.SubmitOneOnline(event).subscribe((result: any) => {
-      const message = result.message;
-      this.snackBar.open(message, 'OK');
-    });
+    this.recaptchaV3Service.execute('submit_user_event').subscribe(
+      (token) => {
+        this.backendService.SubmitOneOnline(event, token).subscribe(
+          (result: any) => {
+            const message = result.message;
+            this.snackBar.open(message, 'OK');
+          },
+          ({error}) => {
+            console.error(error);
+            this.snackBar.open(`error: ${error.message}`, 'OK');
+          }
+        );
+      });
   }
 
   showPreview() {

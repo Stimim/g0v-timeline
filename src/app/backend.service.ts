@@ -43,11 +43,12 @@ export class BackendService {
       'https://g0v-10th-timeline-get-events-wo3ndgqh4q-de.a.run.app/');
   }
 
-  SubmitOneOnline(event: UserSubmittedEvent) : Observable<object> {
+  SubmitOneOnline(event: UserSubmittedEvent, token: string) : Observable<object> {
     const formData = new FormData();
     formData.append('date', event.date);
     formData.append('subject', event.subject);
     formData.append('description', event.description);
+    formData.append('token', token);
     return this.http.post<UserSubmittedEvent>(
       'https://g0v-10th-timeline-add-event-wo3ndgqh4q-de.a.run.app/',
       formData);
