@@ -1,4 +1,6 @@
 import datetime
+import logging
+import os
 
 import functions_framework
 from google.cloud import datastore as datastore_module
@@ -8,6 +10,25 @@ _DATASTORE_NAMESPACE = 'g0v-timeline'
 _DATASTORE_KEY = 'user-event'
 
 _DATASTORE_CLIENT = None
+
+
+def _VerifyReCaptchaV3Token(token):
+  import requests
+
+  secret_key = os.environ.get('RECAPTCHA_V3_SECRET_KEY')
+  if not secret_key:
+    return False
+
+  response = requests.post(
+      'https://www.google.com/recaptcha/api/siteverify',
+      data={
+        'secret': secret_key,
+        'response': token,
+      })
+  response = response.json()
+  logging.info('verify response: %r', response)
+  return response['success']
+
 
 def GetDatastoreClient():
   global _DATASTORE_CLIENT
@@ -26,33 +47,53 @@ def CheckLength(string, limit):
     return len(string) <= limit
 
 
-@functions_framework.http
-def add_event(request):
-  if request.method == 'OPTIONS':
-    # Allows GET requests from any origin with the Content-Type
-    # header and caches preflight response for an 3600s
+def allow_cors(func):
+  def wrapped(request):
+    if request.method == 'OPTIONS':
+      # Allows GET requests from any origin with the Content-Type
+      # header and caches preflight response for an 3600s
+      headers = {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Max-Age': '3600'
+      }
+      return ('', 204, headers)
+
+    # Set CORS headers for the main request
     headers = {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Max-Age': '3600'
+        'Access-Control-Allow-Origin': '*'
     }
-    return ('', 204, headers)
 
-  # Set CORS headers for the main request
-  headers = {
-      'Access-Control-Allow-Origin': '*'
-  }
+    try:
+      retval = func(request)
+      if isinstance(retval, tuple):
+        response, status = retval
+      else:
+        response, status = retval, 200
 
+      return response, status, headers
+    except Exception as e:
+      return (str(e), 500, headers)
+
+  return wrapped
+
+@functions_framework.http
+@allow_cors
+def add_event(request):
   if request.method != 'POST':
     return 'Please use POST method', 400
 
   date = request.form.get('date')
   subject = request.form.get('subject')
   description = request.form.get('description')
+  token = request.form.get('token')
   if not (date and subject and description):
     return ({'message': 'Fields "date", "subject", "description" are required'},
             400)
+
+  if not (token and _VerifyReCaptchaV3Token(token)):
+    return ({'message': 'A valid ReCaptchaV3 Token is required'}, 400)
 
   try:
     # This follows the HTML format.
@@ -61,7 +102,8 @@ def add_event(request):
     return {'message': 'Date should be in %Y-%m-%d format'}, 400
 
   if not CheckLength(subject, 10) or not CheckLength(description, 20):
-    return ({'message': 'The subject or description is too long...'}, 400)
+    return ({'message': 'The subject or description is too long...'},
+            400)
 
   added_time = datetime.datetime.now().isoformat()
 
@@ -76,28 +118,11 @@ def add_event(request):
   client.put(entity)
 
   return ({'message': f'wrote: {date!r}, {subject!r}, {description!r} to DB'},
-          200,
-          headers)
+          200)
 
 
 @functions_framework.http
 def get_events(request):
-  if request.method == 'OPTIONS':
-    # Allows GET requests from any origin with the Content-Type
-    # header and caches preflight response for an 3600s
-    headers = {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Max-Age': '3600'
-    }
-    return ('', 204, headers)
-
-  # Set CORS headers for the main request
-  headers = {
-      'Access-Control-Allow-Origin': '*'
-  }
-
   client = GetDatastoreClient()
   query = client.query(kind=_DATASTORE_KEY)
   query.order = ['-added_time']
@@ -105,4 +130,4 @@ def get_events(request):
   for result in query.fetch(limit=100):
     results.append(dict(**result))
 
-  return ({'results': results}, 200, headers)
+  return ({'results': results}, 200)
