@@ -122,6 +122,7 @@ def add_event(request):
 
 
 @functions_framework.http
+@allow_cors
 def get_events(request):
   client = GetDatastoreClient()
   query = client.query(kind=_DATASTORE_KEY)
