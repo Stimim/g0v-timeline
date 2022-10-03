@@ -9,7 +9,8 @@
       <mat-slide-toggle
         color="primary"
         labelPosition="before"
-        (change)="onAutoScrollChanged($event)"
+        (change)="onAutoScrollChanged()"
+        [(ngModel)]="autoScrollEnabled"
         >
         播放模式
       </mat-slide-toggle>

@@ -15,6 +15,7 @@ export class SettingsModalComponent implements OnInit {
   @ViewChild('modal') modalElement!: ElementRef;
 
   speed: number = 20;
+  autoScrollEnabled = false;
 
   constructor() { }
 
@@ -25,8 +26,8 @@ export class SettingsModalComponent implements OnInit {
     this.speedChangedEvent.emit(this.speed);
   }
 
-  onAutoScrollChanged(event: any) {
-    this.autoScrollChangedEvent.emit(event.checked);
+  onAutoScrollChanged() {
+    this.autoScrollChangedEvent.emit(this.autoScrollEnabled);
   }
 
   onClose() {
