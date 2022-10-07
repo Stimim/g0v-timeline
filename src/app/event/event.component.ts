@@ -28,7 +28,8 @@ export class EventComponent implements OnInit {
 
     return {
       display: 'block',
-      transition: 'opacity .3s',
+      transition: 'opacity .5s',
+      'transition-timing-function': 'linear',
       opacity: shouldDisplay ? '1' : '0',
       position: 'absolute',
       left: `${this.offset[0]}px`,
