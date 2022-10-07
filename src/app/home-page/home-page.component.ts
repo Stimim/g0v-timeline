@@ -152,7 +152,7 @@ export class HomePageComponent implements OnInit {
   shouldDrawElement(i: number, online: boolean): boolean {
     const [x, y] = this.GetOffset(i, online);
     const width = window.innerWidth;
-    return -(width / 2) <= x && x <= width * 1.5;
+    return 0 <= x && x <= width * 0.8;
   }
 
   OnScroll(event: any) {
