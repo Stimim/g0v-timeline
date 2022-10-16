@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BackendService, PredefinedEvent, Event, UserSubmittedEvent } from '../backend.service';
+import { BackendService, PredefinedEvent, Event, UserSubmittedEvent, OnlineEventObserverMessage } from '../backend.service';
 
 @Component({
   selector: 'app-home-page',
@@ -107,27 +107,29 @@ export class HomePageComponent implements OnInit {
   }
 
   getOnlineEvents() {
-    this.backendService.GetOnlineEvents().subscribe((response: any) => {
-      const events = response.results;
-      this.onlineEvents = events;
+    this.backendService.GetOnlineEventsObserver().subscribe(
+      ({events, is_update}: OnlineEventObserverMessage) => {
+        if (is_update && !events) return;
 
-      this.onlineEvents.sort((a, b) => {
-        return a.date.localeCompare(b.date);
+        this.onlineEvents.push(...events);
+
+        this.onlineEvents.sort((a, b) => {
+          return a.date.localeCompare(b.date);
+        });
+
+        const rowMap = [0, 8, 1, 9];
+
+        this.onlineEventsOffset = this.computeEventsOffset(
+            this.onlineEvents, rowMap, this.rowHeight);
+        for (let i = 0; i < this.onlineEventsOffset.length; i++) {
+          this.onlineEventsOffset[i][0] -= this.adjustOffset;
+        }
+        this.maxOffsetX = Math.max(
+          this.maxOffsetX,
+          this.onlineEventsOffset[this.onlineEventsOffset.length - 1][0] - window.innerWidth / 3);
+        this.onlineEvents.reverse();
+        this.onlineEventsOffset.reverse();
       });
-
-      const rowMap = [0, 8, 1, 9];
-
-      this.onlineEventsOffset = this.computeEventsOffset(
-        events, rowMap, this.rowHeight);
-      for (let i = 0; i < this.onlineEventsOffset.length; i++) {
-        this.onlineEventsOffset[i][0] -= this.adjustOffset;
-      }
-      this.maxOffsetX = Math.max(
-        this.maxOffsetX,
-        this.onlineEventsOffset[this.onlineEventsOffset.length - 1][0] - window.innerWidth / 3);
-      this.onlineEvents.reverse();
-      this.onlineEventsOffset.reverse();
-    });
   }
 
   GetStyle() {
