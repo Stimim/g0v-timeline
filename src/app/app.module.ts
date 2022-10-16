@@ -11,6 +11,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { EventComponent } from './event/event.component';
@@ -21,6 +22,7 @@ import { SettingsModalComponent } from './settings-modal/settings-modal.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UploadEventComponent } from './upload-event/upload-event.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { NotificationAreaComponent } from './notification-area/notification-area.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     SettingsModalComponent,
     UploadEventComponent,
     HomePageComponent,
+    NotificationAreaComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -40,6 +43,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,
+    MatCardModule,
     MatInputModule,
     MatSlideToggleModule,
     MatSliderModule,

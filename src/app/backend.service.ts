@@ -26,6 +26,7 @@ export interface PredefinedEvent {
 export interface UserSubmittedEvent {
   //type: EventType;
   id?: number;
+  added_time?: number;
   date: string;
   subject: string;
   description: string;
@@ -38,6 +39,10 @@ export interface OnlineEventObserverMessage {
   events: UserSubmittedEvent[];
   is_update: boolean;
 };
+
+
+const _SYNC_INTERVAL_MS = 10 * 1000;
+
 
 @Injectable({
   providedIn: 'root'
@@ -76,7 +81,7 @@ export class BackendService {
           last_timestamp = (new Date()).getTime() / 1000;
           is_update = true;
 
-          setTimeout(looper, 30 * 1000);
+          setTimeout(looper, _SYNC_INTERVAL_MS);
         };
 
         const looper = () => {

@@ -206,9 +206,10 @@ export class HomePageComponent implements OnInit {
     }
 
     if (this.offsetX > 0) {
+      // Done rewind, start another loop.  We don't need to get online event
+      // again, the observer should keep receiving new events if it's
+      // available.
       this.rewinding = false;
-      // loop
-      this.getOnlineEvents();
     } else if (this.offsetX < -this.maxOffsetX) {
       this.rewinding = true;
     }
