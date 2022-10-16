@@ -105,7 +105,7 @@ def add_event(request):
     return ({'message': 'The subject or description is too long...'},
             400)
 
-  added_time = datetime.datetime.now().isoformat()
+  added_time = datetime.datetime.now().timestamp()
 
   client = GetDatastoreClient()
   entity = datastore_module.Entity(client.key(_DATASTORE_KEY))
@@ -125,10 +125,22 @@ def add_event(request):
 @allow_cors
 def get_events(request):
   client = GetDatastoreClient()
+
+  try:
+    limit = int(request.args.get('limit'))
+  except Exception:
+    limit = 500
+  try:
+    after_timestamp = float(request.args.get('after_timestamp'))
+  except Exception:
+    after_timestamp = None
+
   query = client.query(kind=_DATASTORE_KEY)
+  if after_timestamp is not None:
+    query.add_filter('added_time', '>=', after_timestamp)
   query.order = ['-added_time']
   results = []
-  for result in query.fetch(limit=100):
-    results.append(dict(**result))
+  for result in query.fetch(limit=limit):
+    results.append(dict(id=result.id, **result))
 
   return ({'results': results}, 200)
