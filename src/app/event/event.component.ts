@@ -32,8 +32,8 @@ export class EventComponent implements OnInit {
       'transition-timing-function': 'linear',
       opacity: shouldDisplay ? '1' : '0',
       position: 'absolute',
-      left: `${this.offset[0]}px`,
-      top: `${this.offset[1]}px`,
+      left: `${this.offset[0] - 10}px`,
+      top: `${this.offset[1] - 10}px`,
       'z-index': `${z}`
     };
   }
