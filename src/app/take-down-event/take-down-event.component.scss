@@ -1,0 +1,36 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h2 {
+  height: fit-content;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+form {
+  padding: 10px;
+  width: 50%;
+  min-width: 350px;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    button {
+    }
+  }
+}
+

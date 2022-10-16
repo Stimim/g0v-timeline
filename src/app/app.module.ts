@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UploadEventComponent } from './submit-user-event/submit-user-event.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotificationAreaComponent } from './notification-area/notification-area.component';
+import { TakeDownEventComponent } from './take-down-event/take-down-event.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { NotificationAreaComponent } from './notification-area/notification-area
     UploadEventComponent,
     HomePageComponent,
     NotificationAreaComponent,
+    TakeDownEventComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -52,6 +54,7 @@ import { NotificationAreaComponent } from './notification-area/notification-area
     RouterModule.forRoot([
       {path: '', component: HomePageComponent},
       {path: 'here-am-i', component: UploadEventComponent},
+      {path: 'take-down-event', component: TakeDownEventComponent},
     ]),
   ],
   providers: [

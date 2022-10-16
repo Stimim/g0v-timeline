@@ -54,11 +54,6 @@ export class BackendService {
   UserEventsEmitter = new EventEmitter<UserEventObserverMessage>();
   user_events_observable?: Observable<UserEventObserverMessage> = undefined;
 
-  GetUserEvents(): Observable<UserSubmittedEvent[]> {
-    return this.http.get<UserSubmittedEvent[]>(
-      'https://g0v-10th-timeline-get-events-wo3ndgqh4q-de.a.run.app/');
-  }
-
   SubscribeUserEvents(callback: (v: UserEventObserverMessage) => void) {
     if (this.user_events_observable === undefined) {
       this.user_events_observable = new Observable((subscriber) => {
@@ -115,5 +110,15 @@ export class BackendService {
 
   GetPredefinedEvents(/*beginTime, endTime*/): PredefinedEvent[] {
     return EVENTS;
+  }
+
+  TakeDownEvent(event_id: string, secret: string) {
+    const formData = new FormData();
+    formData.append('event_id', event_id);
+    formData.append('secret', secret);
+    return this.http.post<UserSubmittedEvent>(
+      'https://g0v-10th-timeline-take-down-event-wo3ndgqh4q-de.a.run.app/',
+      formData);
+
   }
 };
