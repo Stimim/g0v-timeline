@@ -45,3 +45,39 @@ span {
   word-break: break-all;
 }
 
+.user-event {
+  span {
+    font-size: 1rem;
+    line-height: 1rem;
+    display: inline-block;
+    border-radius: 5px;
+    padding: .25rem .5rem;
+    filter: drop-shadow(1px 1px 2px #3333);
+  }
+
+  .date {
+    position: relative;
+    top: -1em;
+    background: #FF56C2;
+    color: white;
+  }
+
+  .subject {
+    color: black;
+    background: #59FFF6;
+  }
+
+  .description {
+    color: black;
+    background: #FAF000;
+  }
+
+  .id {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .id span {
+    font-size: x-small;
+    color: gray;
+  }
+}

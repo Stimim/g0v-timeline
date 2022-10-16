@@ -1,4 +1,4 @@
-<div class="card" [style]="GetStyle()">
+<div class="card" [style]="GetStyle()" (click)="onClick()">
   <span class="date">{{event.date}}</span><br>
   <span *ngIf="event.subject" class="subject">{{event.subject}}</span>
   <span *ngIf="event.description" class="description">{{event.description}}</span>

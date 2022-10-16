@@ -27,12 +27,16 @@
     </div>
   </div>
 
-  <div *ngIf="userEvent">
+  <div *ngIf="userEvent" class="user-event">
     <span class="date">{{userEvent.date}}</span><br>
     <span *ngIf="userEvent.subject" class="subject">{{userEvent.subject}}</span>
     <div *ngIf="userEvent.description">
-      <br>
       <span class="description">{{userEvent.description}}</span>
     </div>
+
+    <div *ngIf="userEvent.id" class="id">
+      <span>id: {{userEvent.id}}</span>
+    </div>
+
   </div>
 </div>
