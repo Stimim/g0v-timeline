@@ -17,9 +17,9 @@ function getToday() {
 }
 
 @Component({
-  selector: 'app-upload-event',
-  templateUrl: './upload-event.component.html',
-  styleUrls: ['./upload-event.component.scss']
+  selector: 'app-submit-user-event',
+  templateUrl: './submit-user-event.component.html',
+  styleUrls: ['./submit-user-event.component.scss']
 })
 export class UploadEventComponent implements OnInit {
 

@@ -20,7 +20,7 @@ import { UserEventComponent } from './user-event/user-event.component';
 import { EventModalComponent } from './event-modal/event-modal.component';
 import { SettingsModalComponent } from './settings-modal/settings-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UploadEventComponent } from './upload-event/upload-event.component';
+import { UploadEventComponent } from './submit-user-event/submit-user-event.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotificationAreaComponent } from './notification-area/notification-area.component';
 

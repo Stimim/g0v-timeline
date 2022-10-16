@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UploadEventComponent } from './upload-event.component';
+import { UploadEventComponent } from './submit-user-event.component';
 
 describe('UploadEventComponent', () => {
   let component: UploadEventComponent;
