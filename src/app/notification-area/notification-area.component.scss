@@ -11,4 +11,25 @@
 }
 
 .card {
+  border: 1px solid black;
+}
+
+span {
+  display: inline-block;
+  border-radius: 5px;
+  padding: .1rem .2rem;
+  filter: drop-shadow(1px 1px 2px #3333);
+}
+
+.date {
+  background: #FF56C2;
+  color: white;
+}
+
+.subject {
+  background: #59FFF6;
+}
+
+.description {
+  background: #FAF000;
 }

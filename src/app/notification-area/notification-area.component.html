@@ -1,5 +1,7 @@
 <div class="notification-area">
   <mat-card *ngFor="let x of notifications; index as i" class="card">
-    {{x.subject}} 在 {{x.date}} {{x.description}}
+    <span class="date">{{x.date}}</span>
+    <span class="subject">{{x.subject}}</span>
+    <span class="description">{{x.description}}</span>
   </mat-card>
 </div>
