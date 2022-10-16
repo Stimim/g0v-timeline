@@ -114,6 +114,7 @@ def add_event(request):
     'subject': subject,
     'description': description,
     'added_time': added_time,
+    'hidden': False,
   })
   client.put(entity)
 
@@ -138,9 +139,30 @@ def get_events(request):
   query = client.query(kind=_DATASTORE_KEY)
   if after_timestamp is not None:
     query.add_filter('added_time', '>=', after_timestamp)
+  query.add_filter('hidden', '=', False)
   query.order = ['-added_time']
   results = []
   for result in query.fetch(limit=limit):
     results.append(dict(id=result.id, **result))
 
   return ({'results': results}, 200)
+
+
+@functions_framework.http
+@allow_cors
+def take_down_event(request):
+  client = GetDatastoreClient()
+
+  try:
+    event_id = int(request.form.get('event_id'))
+    assert request.form.get('secret') == os.environ.get('TAKE_DOWN_SECRET')
+  except Exception:
+    return ({'message': 'bad request'}, 401)
+
+  key = client.key(_DATASTORE_KEY, event_id)
+  entity = client.get(key)
+  if entity is None:
+    return ({'message': 'No such event'}, 200)
+  entity.update({'hidden': True})
+  client.put(entity)
+  return ({'message': 'Ok'}, 200)

@@ -1,0 +1,7 @@
+indexes:
+
+- kind: user-event
+  properties:
+  - name: hidden
+  - name: added_time
+    direction: desc
