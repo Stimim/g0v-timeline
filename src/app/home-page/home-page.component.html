@@ -10,7 +10,7 @@
       [style]="GetStyle()"
       [offsetX]="offsetX"
       [predefinedEventsOffset]="predefinedEventsOffset"
-      [onlineEventsOffset]="onlineEventsOffset"
+      [userEventsOffset]="userEventsOffset"
       [minVisibleX]="minVisibleX"
       [maxVisibleX]="maxVisibleX"
       [links]="links"
@@ -28,14 +28,14 @@
   </div>
 
   <div>
-    <ng-template ngFor let-event [ngForOf]="onlineEvents" let-i="index">
-      <app-online-event
+    <ng-template ngFor let-event [ngForOf]="userEvents" let-i="index">
+      <app-user-event
           *ngIf="shouldDrawElement(i, true)"
           [event]="event"
           [offset]="GetOffset(i, true)"
           [minVisibleX]="minVisibleX"
           [maxVisibleX]="maxVisibleX" >
-      </app-online-event>
+      </app-user-event>
     </ng-template>
   </div>
 

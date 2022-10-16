@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BackendService, PredefinedEvent, Event, UserSubmittedEvent, OnlineEventObserverMessage } from '../backend.service';
+import { BackendService, PredefinedEvent, Event, UserSubmittedEvent, UserEventObserverMessage } from '../backend.service';
 
 @Component({
   selector: 'app-home-page',
@@ -21,8 +21,8 @@ export class HomePageComponent implements OnInit {
   predefinedEventsOffset: number[][] = [];
   links: number[][] = [];
 
-  onlineEvents: UserSubmittedEvent[] = [];
-  onlineEventsOffset: number[][] = [];
+  userEvents: UserSubmittedEvent[] = [];
+  userEventsOffset: number[][] = [];
 
   touchX?: number;
   rowHeight!: number;
@@ -100,35 +100,35 @@ export class HomePageComponent implements OnInit {
     this.predefinedEvents.reverse();
     this.predefinedEventsOffset.reverse();
 
-    this.getOnlineEvents();
+    this.getUserEvents();
   }
 
   ngOnInit(): void {
   }
 
-  getOnlineEvents() {
-    this.backendService.SubscribeOnlineEvents(
-      ({events, is_update}: OnlineEventObserverMessage) => {
+  getUserEvents() {
+    this.backendService.SubscribeUserEvents(
+      ({events, is_update}: UserEventObserverMessage) => {
         if (is_update && events.length === 0) return;
 
-        this.onlineEvents.push(...events);
+        this.userEvents.push(...events);
 
-        this.onlineEvents.sort((a, b) => {
+        this.userEvents.sort((a, b) => {
           return a.date.localeCompare(b.date);
         });
 
         const rowMap = [0, 8, 1, 9];
 
-        this.onlineEventsOffset = this.computeEventsOffset(
-            this.onlineEvents, rowMap, this.rowHeight);
-        for (let i = 0; i < this.onlineEventsOffset.length; i++) {
-          this.onlineEventsOffset[i][0] -= this.adjustOffset;
+        this.userEventsOffset = this.computeEventsOffset(
+            this.userEvents, rowMap, this.rowHeight);
+        for (let i = 0; i < this.userEventsOffset.length; i++) {
+          this.userEventsOffset[i][0] -= this.adjustOffset;
         }
         this.maxOffsetX = Math.max(
           this.maxOffsetX,
-          this.onlineEventsOffset[this.onlineEventsOffset.length - 1][0] - window.innerWidth / 3);
-        this.onlineEvents.reverse();
-        this.onlineEventsOffset.reverse();
+          this.userEventsOffset[this.userEventsOffset.length - 1][0] - window.innerWidth / 3);
+        this.userEvents.reverse();
+        this.userEventsOffset.reverse();
       });
   }
 
@@ -139,10 +139,10 @@ export class HomePageComponent implements OnInit {
     }
   }
 
-  GetOffset(i: number, online: boolean): [number, number] {
-    if (online) {
-      const dx = this.onlineEventsOffset[i][0];
-      const dy = this.onlineEventsOffset[i][1];
+  GetOffset(i: number, is_user_event: boolean): [number, number] {
+    if (is_user_event) {
+      const dx = this.userEventsOffset[i][0];
+      const dy = this.userEventsOffset[i][1];
       return [dx + this.offsetX, dy];
     }
 
@@ -151,8 +151,8 @@ export class HomePageComponent implements OnInit {
     return [dx + this.offsetX, dy];
   }
 
-  shouldDrawElement(i: number, online: boolean): boolean {
-    const [x, y] = this.GetOffset(i, online);
+  shouldDrawElement(i: number, is_user_event: boolean): boolean {
+    const [x, y] = this.GetOffset(i, is_user_event);
     const width = window.innerWidth;
     return 0 <= x && x <= width * 0.8;
   }
@@ -206,7 +206,7 @@ export class HomePageComponent implements OnInit {
     }
 
     if (this.offsetX > 0) {
-      // Done rewind, start another loop.  We don't need to get online event
+      // Done rewind, start another loop.  We don't need to get user event
       // again, the observer should keep receiving new events if it's
       // available.
       this.rewinding = false;

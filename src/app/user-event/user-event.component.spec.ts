@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OnlineEventComponent } from './online-event.component';
+import { UserEventComponent } from './user-event.component';
 
-describe('OnlineEventComponent', () => {
-  let component: OnlineEventComponent;
-  let fixture: ComponentFixture<OnlineEventComponent>;
+describe('UserEventComponent', () => {
+  let component: UserEventComponent;
+  let fixture: ComponentFixture<UserEventComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OnlineEventComponent ]
+      declarations: [ UserEventComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OnlineEventComponent);
+    fixture = TestBed.createComponent(UserEventComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

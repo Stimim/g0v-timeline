@@ -6,7 +6,7 @@
       *ngIf="IsVisible(offset)"
       [attr.points]="getStarPoints(offset, i)" style="fill:yellow" />
   </g>
-  <g *ngFor="let offset of onlineEventsOffset; index as i">
+  <g *ngFor="let offset of userEventsOffset; index as i">
     <polygon
       *ngIf="IsVisible(offset)"
       [attr.points]="getStarPoints(offset, i)" style="fill:cyan" />

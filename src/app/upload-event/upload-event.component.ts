@@ -44,7 +44,7 @@ export class UploadEventComponent implements OnInit {
 
     this.recaptchaV3Service.execute('submit_user_event').subscribe(
       (token) => {
-        this.backendService.SubmitOneOnline(event, token).subscribe(
+        this.backendService.SubmitOneUserEvent(event, token).subscribe(
           (result: any) => {
             const message = result.message;
             this.snackBar.open(message, 'OK');

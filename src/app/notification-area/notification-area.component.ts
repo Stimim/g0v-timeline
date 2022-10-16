@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BackendService, PredefinedEvent, Event, UserSubmittedEvent, OnlineEventObserverMessage } from '../backend.service';
+import { BackendService, PredefinedEvent, Event, UserSubmittedEvent, UserEventObserverMessage } from '../backend.service';
 
 
 interface Notification {
@@ -22,8 +22,8 @@ export class NotificationAreaComponent implements OnInit {
   constructor(private backendService: BackendService) { }
 
   ngOnInit(): void {
-    this.backendService.SubscribeOnlineEvents(
-      ({events, is_update}: OnlineEventObserverMessage) => {
+    this.backendService.SubscribeUserEvents(
+      ({events, is_update}: UserEventObserverMessage) => {
         if (events.length === 0) return;
 
         for (let event of events) {

@@ -36,7 +36,7 @@ export interface UserSubmittedEvent {
 export type Event = PredefinedEvent | UserSubmittedEvent;
 
 
-export interface OnlineEventObserverMessage {
+export interface UserEventObserverMessage {
   events: UserSubmittedEvent[];
   is_update: boolean;
 };
@@ -51,17 +51,17 @@ const _SYNC_INTERVAL_MS = 10 * 1000;
 export class BackendService {
   constructor(private http: HttpClient) { }
 
-  OnlineEventsEmitter = new EventEmitter<OnlineEventObserverMessage>();
-  online_events_observable?: Observable<OnlineEventObserverMessage> = undefined;
+  UserEventsEmitter = new EventEmitter<UserEventObserverMessage>();
+  user_events_observable?: Observable<UserEventObserverMessage> = undefined;
 
-  GetOnlineEvents(): Observable<UserSubmittedEvent[]> {
+  GetUserEvents(): Observable<UserSubmittedEvent[]> {
     return this.http.get<UserSubmittedEvent[]>(
       'https://g0v-10th-timeline-get-events-wo3ndgqh4q-de.a.run.app/');
   }
 
-  SubscribeOnlineEvents(callback: (v: OnlineEventObserverMessage) => void) {
-    if (this.online_events_observable === undefined) {
-      this.online_events_observable = new Observable((subscriber) => {
+  SubscribeUserEvents(callback: (v: UserEventObserverMessage) => void) {
+    if (this.user_events_observable === undefined) {
+      this.user_events_observable = new Observable((subscriber) => {
         const url = 'https://g0v-10th-timeline-get-events-wo3ndgqh4q-de.a.run.app/';
         const known_events: {[key: number]: boolean} = {};
         let last_timestamp = 0;
@@ -94,15 +94,15 @@ export class BackendService {
         this.http.get<UserSubmittedEvent[]>(url).subscribe(callback);
       });
 
-      this.online_events_observable.subscribe(
+      this.user_events_observable.subscribe(
         (message) => {
-          this.OnlineEventsEmitter.emit(message);
+          this.UserEventsEmitter.emit(message);
         });
     }
-    return this.OnlineEventsEmitter.subscribe(callback);
+    return this.UserEventsEmitter.subscribe(callback);
   }
 
-  SubmitOneOnline(event: UserSubmittedEvent, token: string) : Observable<object> {
+  SubmitOneUserEvent(event: UserSubmittedEvent, token: string) : Observable<object> {
     const formData = new FormData();
     formData.append('date', event.date);
     formData.append('subject', event.subject);

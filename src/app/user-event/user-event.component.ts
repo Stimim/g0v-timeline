@@ -3,11 +3,11 @@ import { UserSubmittedEvent } from '../backend.service';
 import { EventBus } from '../event-bus.service'
 
 @Component({
-  selector: 'app-online-event',
-  templateUrl: './online-event.component.html',
-  styleUrls: ['./online-event.component.scss']
+  selector: 'app-user-event',
+  templateUrl: './user-event.component.html',
+  styleUrls: ['./user-event.component.scss']
 })
-export class OnlineEventComponent implements OnInit {
+export class UserEventComponent implements OnInit {
   @Input() minVisibleX!: number;
   @Input() maxVisibleX!: number;
   @Input() event!: UserSubmittedEvent;
