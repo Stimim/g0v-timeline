@@ -107,9 +107,9 @@ export class HomePageComponent implements OnInit {
   }
 
   getOnlineEvents() {
-    this.backendService.GetOnlineEventsObserver().subscribe(
+    this.backendService.SubscribeOnlineEvents(
       ({events, is_update}: OnlineEventObserverMessage) => {
-        if (is_update && !events) return;
+        if (is_update && events.length === 0) return;
 
         this.onlineEvents.push(...events);
 

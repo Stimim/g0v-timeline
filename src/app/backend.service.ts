@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { EVENTS } from './data/g0v-events';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { EventEmitter } from '@angular/core';
 
 
 enum EventType {
@@ -50,16 +51,17 @@ const _SYNC_INTERVAL_MS = 10 * 1000;
 export class BackendService {
   constructor(private http: HttpClient) { }
 
-  online_events_observer?: Observable<OnlineEventObserverMessage> = undefined;
+  OnlineEventsEmitter = new EventEmitter<OnlineEventObserverMessage>();
+  online_events_observable?: Observable<OnlineEventObserverMessage> = undefined;
 
   GetOnlineEvents(): Observable<UserSubmittedEvent[]> {
     return this.http.get<UserSubmittedEvent[]>(
       'https://g0v-10th-timeline-get-events-wo3ndgqh4q-de.a.run.app/');
   }
 
-  GetOnlineEventsObserver() {
-    if (this.online_events_observer === undefined) {
-      this.online_events_observer = new Observable((subscriber) => {
+  SubscribeOnlineEvents(callback: (v: OnlineEventObserverMessage) => void) {
+    if (this.online_events_observable === undefined) {
+      this.online_events_observable = new Observable((subscriber) => {
         const url = 'https://g0v-10th-timeline-get-events-wo3ndgqh4q-de.a.run.app/';
         const known_events: {[key: number]: boolean} = {};
         let last_timestamp = 0;
@@ -91,8 +93,13 @@ export class BackendService {
 
         this.http.get<UserSubmittedEvent[]>(url).subscribe(callback);
       });
+
+      this.online_events_observable.subscribe(
+        (message) => {
+          this.OnlineEventsEmitter.emit(message);
+        });
     }
-    return this.online_events_observer!;
+    return this.OnlineEventsEmitter.subscribe(callback);
   }
 
   SubmitOneOnline(event: UserSubmittedEvent, token: string) : Observable<object> {

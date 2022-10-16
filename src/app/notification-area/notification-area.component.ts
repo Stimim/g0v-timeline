@@ -22,9 +22,9 @@ export class NotificationAreaComponent implements OnInit {
   constructor(private backendService: BackendService) { }
 
   ngOnInit(): void {
-    this.backendService.GetOnlineEventsObserver().subscribe(
+    this.backendService.SubscribeOnlineEvents(
       ({events, is_update}: OnlineEventObserverMessage) => {
-        if (!events) return;
+        if (events.length === 0) return;
 
         for (let event of events) {
           const time = new Date(event.added_time! * 1000);
