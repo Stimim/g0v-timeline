@@ -248,4 +248,8 @@ export class HomePageComponent implements OnInit {
   onSpeedChanged(newSpeed: number) {
     this.speed = newSpeed;
   }
+
+  gotoHereAmI() {
+    window.open('here-am-i', '_blank')!.focus();
+  }
 }
