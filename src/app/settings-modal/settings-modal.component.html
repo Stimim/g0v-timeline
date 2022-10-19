@@ -23,7 +23,7 @@
         min="20"
         max="100"
         [(ngModel)]="speed"
-        (change)="onSpeedChanged()"
+        (input)="onSpeedChanged($event)"
         >
       </mat-slider>
     </section>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BackendService, PredefinedEvent, Event, UserSubmittedEvent, UserEventObserverMessage } from '../backend.service';
+import { BackendService, UserSubmittedEvent, UserEventObserverMessage } from '../backend.service';
+import { EventBus } from '../event-bus.service'
 
 
 interface Notification {
@@ -8,6 +9,7 @@ interface Notification {
   date: string,
   subject: string,
   description: string,
+  event: UserSubmittedEvent,
 };
 
 
@@ -19,7 +21,7 @@ interface Notification {
 export class NotificationAreaComponent implements OnInit {
   notifications: Notification[] = [];
 
-  constructor(private backendService: BackendService) { }
+  constructor(private backendService: BackendService, private eventBus: EventBus) { }
 
   ngOnInit(): void {
     this.backendService.SubscribeUserEvents(
@@ -33,6 +35,7 @@ export class NotificationAreaComponent implements OnInit {
             date: event.date,
             subject: event.subject,
             description: event.description,
+            event: event,
           }
           this.notifications.push(notification);
         }
@@ -48,6 +51,10 @@ export class NotificationAreaComponent implements OnInit {
         });
         this.notifications = this.notifications.slice(-10);
       });
+  }
+
+  onClick(index: number) {
+    this.eventBus.SetUserEvent(this.notifications[index].event);
   }
 
 }

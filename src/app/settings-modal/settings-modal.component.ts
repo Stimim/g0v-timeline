@@ -22,7 +22,8 @@ export class SettingsModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSpeedChanged() {
+  onSpeedChanged(event: any) {
+    this.speed = event.value;
     this.speedChangedEvent.emit(this.speed);
   }
 
