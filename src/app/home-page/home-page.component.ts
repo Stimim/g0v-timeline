@@ -108,10 +108,8 @@ export class HomePageComponent implements OnInit {
 
   getUserEvents() {
     this.backendService.SubscribeUserEvents(
-      ({events, is_update}: UserEventObserverMessage) => {
-        if (is_update && events.length === 0) return;
-
-        this.userEvents.push(...events);
+      ({events}: UserEventObserverMessage) => {
+        this.userEvents = events;
 
         this.userEvents.sort((a, b) => {
           return a.date.localeCompare(b.date);

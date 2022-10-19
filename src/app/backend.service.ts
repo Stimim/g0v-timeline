@@ -38,7 +38,6 @@ export type Event = PredefinedEvent | UserSubmittedEvent;
 
 export interface UserEventObserverMessage {
   events: UserSubmittedEvent[];
-  is_update: boolean;
 };
 
 
@@ -58,35 +57,19 @@ export class BackendService {
     if (this.user_events_observable === undefined) {
       this.user_events_observable = new Observable((subscriber) => {
         const url = 'https://g0v-10th-timeline-get-events-wo3ndgqh4q-de.a.run.app/';
-        const known_events: {[key: number]: boolean} = {};
-        let last_timestamp = 0;
-        let is_update = false;
 
         const callback = (response: any) => {
           const events: UserSubmittedEvent[] = response.results;
-          const retval: UserSubmittedEvent[] = [];
-          for (let event of events) {
-            const id = event.id!;
-            if (id in known_events) {
-              continue;
-            }
-            retval.push(event);
-            known_events[id] = true;
-          }
-          subscriber.next({events: retval, is_update});
-
-          last_timestamp = (new Date()).getTime() / 1000;
-          is_update = true;
+          subscriber.next({events});
 
           setTimeout(looper, _SYNC_INTERVAL_MS);
         };
 
         const looper = () => {
-          const param = `?after_timestamp=${last_timestamp}`;
-          this.http.get<UserSubmittedEvent[]>(url + param).subscribe(callback);
+          this.http.get<UserSubmittedEvent[]>(url).subscribe(callback);
         };
 
-        this.http.get<UserSubmittedEvent[]>(url).subscribe(callback);
+        looper();
       });
 
       this.user_events_observable.subscribe(

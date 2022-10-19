@@ -23,8 +23,8 @@ export class NotificationAreaComponent implements OnInit {
 
   ngOnInit(): void {
     this.backendService.SubscribeUserEvents(
-      ({events, is_update}: UserEventObserverMessage) => {
-        if (events.length === 0) return;
+      ({events}: UserEventObserverMessage) => {
+        this.notifications = [];
 
         for (let event of events) {
           const time = new Date(event.added_time! * 1000);
