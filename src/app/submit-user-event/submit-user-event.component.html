@@ -1,32 +1,36 @@
 <div class="container">
-  <h2>g0v timeline</h2>
-  <form [formGroup]="form">
-    <mat-form-field appearance="fill">
-      <mat-label>什麼時候 (When)</mat-label>
-      <input matInput type="date" formControlName="date" required>
-    </mat-form-field>
+  <mat-card>
+    <mat-card-title>g0v timeline</mat-card-title>
+    <mat-card-subtitle>輸入你的關鍵字</mat-card-subtitle>
 
-    <br>
+    <mat-card-content>
+      <form [formGroup]="form">
+        <mat-form-field appearance="fill">
+          <mat-label>什麼時候 (When)</mat-label>
+          <input matInput type="date" formControlName="date" required>
+        </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>誰 (Who)</mat-label>
-      <input matInput type="text" formControlName="subject" required maxlength=100>
-    </mat-form-field>
+        <br>
 
-    <br>
+        <mat-form-field appearance="fill">
+          <mat-label>誰 (Who)</mat-label>
+          <input matInput type="text" formControlName="subject" required maxlength=100>
+        </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>做什麼 (What)</mat-label>
-      <input matInput type="text" formControlName="description" required maxlength=100>
-    </mat-form-field>
+        <br>
 
-    <br>
+        <mat-form-field appearance="fill">
+          <mat-label>做什麼 (What)</mat-label>
+          <input matInput type="text" formControlName="description" required maxlength=100>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
 
-    <div class="actions">
+    <mat-card-actions>
       <button mat-raised-button color="primary" (click)="onClick()">送出</button>
       <button mat-raised-button color="primary" (click)="showPreview()">預覽</button>
-    </div>
-  </form>
+    </mat-card-actions>
+  </mat-card>
 
   <app-event-modal></app-event-modal>
 </div>
