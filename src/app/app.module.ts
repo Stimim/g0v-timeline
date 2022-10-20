@@ -52,9 +52,21 @@ import { TakeDownEventComponent } from './take-down-event/take-down-event.compon
     MatSnackBarModule,
     RecaptchaV3Module,
     RouterModule.forRoot([
-      {path: '', component: HomePageComponent},
-      {path: 'here-am-i', component: UploadEventComponent},
-      {path: 'take-down-event', component: TakeDownEventComponent},
+      {
+        path: '',
+        component: HomePageComponent,
+        title: 'g0v Timeline',
+      },
+      {
+        path: 'here-am-i',
+        component: UploadEventComponent,
+        title: 'g0v Timeline - 輸入你的關鍵字',
+      },
+      {
+        path: 'take-down-event',
+        component: TakeDownEventComponent,
+        title: 'g0v Timeline - Take Down Event',
+      },
     ]),
   ],
   providers: [
