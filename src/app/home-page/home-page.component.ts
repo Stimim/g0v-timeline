@@ -213,13 +213,14 @@ export class HomePageComponent implements OnInit {
     }
 
     const dt = timestamp - this.previousTimeStamp;
-    if (this.rewinding) {
-      this.offsetX += dt * this.speed * 20 / 1000;
-    } else {
-      this.offsetX -= dt * this.speed / 1000;
+    if(dt > 16) {
+      if (this.rewinding) {
+        this.offsetX += dt * this.speed * 20 / 1000;
+      } else {
+        this.offsetX -= dt * this.speed / 1000;
+      }
+      this.previousTimeStamp = timestamp;  
     }
-    this.previousTimeStamp = timestamp;
-
     requestAnimationFrame((t) => this.autoScrollOnce(t));
   }
 

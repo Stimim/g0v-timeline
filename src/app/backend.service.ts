@@ -40,10 +40,6 @@ export interface UserEventObserverMessage {
   events: UserSubmittedEvent[];
 };
 
-
-const _SYNC_INTERVAL_MS = 10 * 1000;
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -52,35 +48,24 @@ export class BackendService {
 
   UserEventsEmitter = new EventEmitter<UserEventObserverMessage>();
   user_events_observable?: Observable<UserEventObserverMessage> = undefined;
+  worker?: Worker = undefined;
 
   SubscribeUserEvents(callback: (v: UserEventObserverMessage) => void) {
-    if (this.user_events_observable === undefined) {
-      this.user_events_observable = new Observable((subscriber) => {
-        const url = 'https://g0v-10th-timeline-get-events-wo3ndgqh4q-de.a.run.app/';
-
-        const callback = (response: any) => {
-          const events: UserSubmittedEvent[] = response.results;
-          subscriber.next({events});
-
-          setTimeout(looper, _SYNC_INTERVAL_MS);
-        };
-
-        const looper = () => {
-          this.http.get<UserSubmittedEvent[]>(url).subscribe(callback);
-        };
-
-        looper();
-      });
-
-      this.user_events_observable.subscribe(
-        (message) => {
-          this.UserEventsEmitter.emit(message);
-        });
+    if (this.worker === undefined && typeof Worker !== 'undefined') {
+      // Create a new
+      this.worker = new Worker(new URL('./app.worker', import.meta.url));
+      this.worker.onmessage = (message : any) => {
+        this.UserEventsEmitter.emit(message.data);
+      };
+      this.worker.postMessage('hello');
+    } else {
+      // Web workers are not supported in this environment.
+      // You should add a fallback so that your program still executes correctly.
     }
     return this.UserEventsEmitter.subscribe(callback);
   }
 
-  SubmitOneUserEvent(event: UserSubmittedEvent, token: string) : Observable<object> {
+  SubmitOneUserEvent(event: UserSubmittedEvent, token: string): Observable<object> {
     const formData = new FormData();
     formData.append('date', event.date);
     formData.append('subject', event.subject);
@@ -102,6 +87,5 @@ export class BackendService {
     return this.http.post<UserSubmittedEvent>(
       'https://g0v-10th-timeline-take-down-event-wo3ndgqh4q-de.a.run.app/',
       formData);
-
   }
 };
