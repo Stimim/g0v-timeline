@@ -80,8 +80,13 @@ export class HomePageComponent implements OnInit {
     for (let i = 1; i < this.predefinedEvents.length; i++) {
       this.predefinedEventsOffset[i][0] -= this.adjustOffset;
     }
+    for (let i = 0; i < this.predefinedEvents.length; i++) {
+      this.predefinedEventsOffset[i][0] = Math.floor(this.predefinedEventsOffset[i][0]);
+      this.predefinedEventsOffset[i][1] = Math.floor(this.predefinedEventsOffset[i][1]);
+    }
 
     this.maxOffsetX = this.predefinedEventsOffset[this.predefinedEvents.length - 1][0] - window.innerWidth / 3;
+    this.maxOffsetX = Math.ceil(this.maxOffsetX);
 
     const lastSeenTopicIndex: { [key: string]: number } = {};
     let topics: string[] = [];
@@ -133,7 +138,7 @@ export class HomePageComponent implements OnInit {
         }
         this.maxOffsetX = Math.max(
           this.maxOffsetX,
-          this.userEventsOffset[this.userEventsOffset.length - 1][0] - window.innerWidth / 3);
+          this.userEventsOffset[this.userEventsOffset.length - 1][0] + window.innerWidth / 3);
         this.userEvents.reverse();
         this.userEventsOffset.reverse();
       });
@@ -225,17 +230,13 @@ export class HomePageComponent implements OnInit {
     const ctx = this.inMemoryCanvasForPredefinedEvents.getContext('2d')!;
     ctx.setTransform(1, 0, 0, 1, 0, 0);
 
-    //ctx.fillStyle = 'black';
-    //ctx.rect(
-        //0, 0, this.inMemoryCanvasForPredefinedEvents.width, this.inMemoryCanvasForPredefinedEvents.height);
-    //ctx.fill();
-
     const colors = ['FF56C2','59FFF6','FAF000','FF5720','7D55FF','EFA9DD'];
     ctx.lineWidth = 3;
     ctx.setLineDash([5, 1]);
     for (let index = 0; index < this.links.length; index++) {
       const link = this.links[index];
-      const color = '#' + colors[index % colors.length] + 'AA';
+      const linkIndex = link[4];
+      const color = '#' + colors[linkIndex % colors.length] + 'AA';
       const px = link[0];
       const py = link[1];
       const qx = link[2];
@@ -271,6 +272,102 @@ export class HomePageComponent implements OnInit {
     }
   }
 
+  drawUserEventStars(canvas: HTMLCanvasElement) {
+    const ctx = canvas.getContext('2d')!;
+    for (let index = 0; index <this.userEventsOffset.length; index++) {
+      const offset = this.userEventsOffset[index];
+      let [offsetX, offsetY] = offset;
+      offsetX += this.offsetX;
+      offsetX = Math.ceil(offsetX);
+      offsetY = Math.ceil(offsetY);
+      if (offsetX < 0 || offsetX >= window.innerWidth) continue;
+
+      ctx.beginPath();
+      ctx.fillStyle = '#59FFF6';
+
+      const points = [];
+      for (let i = 0; i < 5; i++) {
+        const x = offsetX + 10 * Math.cos(2 * Math.PI / 5 * i * 2);
+        const y = offsetY + 10 * Math.sin(2 * Math.PI / 5 * i * 2);
+        points.push([x, y]);
+      }
+      ctx.moveTo(points[0][0], points[0][1]);
+      ctx.lineTo(points[1][0], points[1][1]);
+      ctx.lineTo(points[2][0], points[2][1]);
+      ctx.lineTo(points[3][0], points[3][1]);
+      ctx.lineTo(points[4][0], points[4][1]);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+  }
+
+  drawUserEvent(canvas: HTMLCanvasElement, event: UserSubmittedEvent, index: number) {
+    let baseX = Math.ceil(this.userEventsOffset[index][0] + this.offsetX - 10);
+    let baseY = Math.ceil(this.userEventsOffset[index][1] - 10);
+
+    const date = event.date;
+    const subject = event.subject;
+    const desc = event.description;
+
+    const ctx: any = canvas.getContext('2d')!;
+    const fontStyle = '600 20px sans-serif'
+
+    ctx.font = fontStyle;
+    let maxWidth = 0;
+    let dateWidth = ctx.measureText(date).width;
+    let subjectWidth = 0;
+    let descWidth = 0;
+
+    maxWidth = Math.max(maxWidth, dateWidth);
+    if (subject) {
+      subjectWidth = ctx.measureText(subject).width;
+      maxWidth += subjectWidth;
+    }
+    if (desc) {
+      descWidth = ctx.measureText(desc).width;
+      maxWidth += descWidth;
+    }
+    maxWidth = Math.max(Math.ceil(maxWidth) + 50, 200);
+
+    ctx.beginPath();
+    ctx.roundRect(baseX, baseY + 20, maxWidth + 10, 45, [5, 10]);
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.fillStyle = 'black';
+    ctx.fill();
+
+    ctx.fillStyle = '#FF56C2';
+    ctx.beginPath();
+    ctx.roundRect(baseX, baseY + 3, dateWidth + 10, 20, [5, 10]);
+    ctx.fill();
+    ctx.fillStyle = 'white';
+    ctx.font = fontStyle;
+    ctx.fillText(date, baseX + 5, baseY + 20);
+
+    baseY += 25;
+    if (subject) {
+      ctx.fillStyle = '#59FFF6';
+      ctx.beginPath();
+      ctx.roundRect(baseX + 5, baseY + 5, subjectWidth + 10, 25, [5, 10]);
+      ctx.fill();
+      ctx.fillStyle = 'black';
+      ctx.font = fontStyle;
+      ctx.fillText(subject, baseX + 10, baseY + 5 + 20);
+    }
+    baseX += subjectWidth + 20;
+    if (desc) {
+      ctx.fillStyle = '#FAF000';
+      ctx.beginPath();
+      ctx.roundRect(baseX + 5, baseY + 5, descWidth + 10, 25, [5, 10]);
+      ctx.fill();
+      ctx.fillStyle = 'black';
+      ctx.font = fontStyle;
+      ctx.fillText(desc, baseX + 10, baseY + 25);
+    }
+  }
+
   predefinedEventsCanvas: HTMLCanvasElement[] = [];
   initPredefinedEventsCanvas() {
     for (let index = 0; index < this.predefinedEvents.length; index++) {
@@ -282,18 +379,17 @@ export class HomePageComponent implements OnInit {
   }
 
   drawPredefinedEvent(canvas: HTMLCanvasElement, event: PredefinedEvent) {
-    //const baseX = this.predefinedEventsOffset[index][0] + this.offsetX - 10;
-    //const baseY = this.predefinedEventsOffset[index][1] - 10;
-    const baseX = 1;
-    const baseY = 1;
+    let baseX = 1;
+    let baseY = 1;
     const date = event.date;
     const subject = event.subject;
     const action = event.action;
     const object = event.object;
 
     const ctx: any = canvas.getContext('2d')!;
+    const fontStyle = '600 20px sans-serif'
 
-    ctx.font = '20px sans-serif';
+    ctx.font = fontStyle;
     let maxWidth = 200;
     let dateWidth = ctx.measureText(date).width;
     let subjectWidth = 0;
@@ -313,6 +409,7 @@ export class HomePageComponent implements OnInit {
       objectWidth = ctx.measureText(object).width;
       maxWidth = Math.max(maxWidth, objectWidth);
     }
+    maxWidth = Math.ceil(maxWidth);
 
     canvas.width = maxWidth + 15;
     canvas.height = 125;
@@ -330,23 +427,21 @@ export class HomePageComponent implements OnInit {
     ctx.roundRect(baseX, baseY + 3, dateWidth + 10, 20, [5, 10]);
     ctx.fill();
     ctx.fillStyle = 'white';
-    ctx.font = '20px sans-serif';
+    ctx.font = fontStyle;
     ctx.fillText(date, baseX + 5, baseY + 20);
 
+    baseY += 5;
     if (subject) {
       ctx.fillStyle = 'white';
-      ctx.font = '20px sans-serif';
-      ctx.fillText(subject, baseX, baseY + 40);
+      ctx.fillText(subject, baseX + 5, baseY + 40);
     }
     if (action) {
       ctx.fillStyle = '#59FFF6';
-      ctx.font = '20px sans-serif';
-      ctx.fillText(action, baseX, baseY + 60);
+      ctx.fillText(action, baseX + 5, baseY + 63);
     }
     if (object) {
       ctx.fillStyle = '#59FFF6';
-      ctx.font = '20px sans-serif';
-      ctx.fillText(object, baseX, baseY + 80);
+      ctx.fillText(object, baseX + 5, baseY + 86);
     }
   }
 
@@ -366,6 +461,7 @@ export class HomePageComponent implements OnInit {
         0, 0, window.innerWidth, window.innerHeight);
 
     const w = window.innerWidth;
+    /************ PredefinedEvents **************/
     let eventsToDraw = [];
     for (let index = 0; index < this.predefinedEvents.length; index++) {
       if (this.shouldDrawElement(index, false)) {
@@ -388,6 +484,30 @@ export class HomePageComponent implements OnInit {
       ctx.drawImage(canvas,
                     0, 0, canvas.width, canvas.height,
                     offsetX + thisOffsetX - 10, offsetY - 15, canvas.width, canvas.height);
+    }
+    ctx.globalAlpha = 1;
+
+    /************ UserSubmittedEvents **************/
+    //this.drawUserEventStars(actualCanvas);
+    eventsToDraw = [];
+    for (let index = 0; index < this.userEvents.length; index++) {
+      if (this.shouldDrawElement(index, true)) {
+        let [offsetX, offsetY] = this.userEventsOffset[index];
+        offsetX += thisOffsetX;
+        const z = Math.floor(w * 2 - Math.abs(w / 2 - offsetX) + offsetY);
+        eventsToDraw.push([index, z]);
+      }
+    }
+
+    eventsToDraw.sort(([i, z1], [j, z2]) => {
+      return z1 - z2;
+    });
+
+    for (let [index, z] of eventsToDraw) {
+      const [offsetX, offsetY] = this.userEventsOffset[index];
+      let opacity = Math.min(1, (w * 0.8 - (offsetX + thisOffsetX)) / 150);
+      ctx.globalAlpha = opacity;
+      this.drawUserEvent(actualCanvas, this.userEvents[index], index);
     }
     ctx.globalAlpha = 1;
   }
@@ -413,7 +533,7 @@ export class HomePageComponent implements OnInit {
     }
 
     const dt = timestamp - this.previousTimeStamp;
-    if(dt > 16) {
+    if(dt > 30) {
       if (this.rewinding) {
         this.offsetX += dt * this.speed * 20 / 1000;
       } else {
@@ -421,6 +541,7 @@ export class HomePageComponent implements OnInit {
       }
       this.previousTimeStamp = timestamp;
       this.updateActualCanvas();
+      //console.log('dt: ', Math.floor(dt));
     }
   }
 

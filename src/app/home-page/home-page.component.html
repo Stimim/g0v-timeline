@@ -12,18 +12,6 @@
     >
   </canvas>
 
-  <div>
-    <ng-template ngFor let-event [ngForOf]="userEvents" let-i="index">
-      <app-user-event
-          *ngIf="shouldDrawElement(i, true)"
-          [event]="event"
-          [offset]="GetOffset(i, true)"
-          [minVisibleX]="minVisibleX"
-          [maxVisibleX]="maxVisibleX" >
-      </app-user-event>
-    </ng-template>
-  </div>
-
   <app-event-modal> </app-event-modal>
 
   <button mat-raised-button class="settings-button" (click)="showSettings()">
