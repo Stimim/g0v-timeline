@@ -6,26 +6,11 @@
   (touchend)="OnScroll($event)"
   (touchcancel)="OnScroll($event)"
   >
-  <app-timeline-canvas
-      [style]="GetStyle()"
-      [offsetX]="offsetX"
-      [predefinedEventsOffset]="predefinedEventsOffset"
-      [userEventsOffset]="userEventsOffset"
-      [minVisibleX]="minVisibleX"
-      [maxVisibleX]="maxVisibleX"
-      [links]="links"
-  ></app-timeline-canvas>
-  <div>
-    <ng-template ngFor let-event [ngForOf]="predefinedEvents" let-i="index">
-      <app-event
-          *ngIf="shouldDrawElement(i, false)"
-          [event]="event"
-          [offset]="GetOffset(i, false)"
-          [minVisibleX]="minVisibleX"
-          [maxVisibleX]="maxVisibleX" >
-      </app-event>
-    </ng-template>
-  </div>
+  <canvas
+    #actualCanvas
+    [style]="GetCanvasStyle()"
+    >
+  </canvas>
 
   <div>
     <ng-template ngFor let-event [ngForOf]="userEvents" let-i="index">
