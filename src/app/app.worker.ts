@@ -20,18 +20,21 @@ addEventListener('message', ({ data }) => {
     const callback = (response: any) => {
       const events: UserSubmittedEvent[] = response.results;
       subscriber.next({ events })
-      setTimeout(looper, _SYNC_INTERVAL_MS);
     };
 
     const looper = async () => {
-      let response = await fetch(url);
+      try {
+        let response = await fetch(url);
 
-      if (response.ok) { // if HTTP-status is 200-299
-        // get the response body (the method explained below)
-        let json = await response.json();
-        callback(json);
-      } else {
-        console.log("HTTP-Error: " + response.status);
+        if (response.ok) { // if HTTP-status is 200-299
+          // get the response body (the method explained below)
+          let json = await response.json();
+          callback(json);
+        } else {
+          console.log("HTTP-Error: " + response.status);
+        }
+      } finally {
+        setTimeout(looper, _SYNC_INTERVAL_MS);
       }
     };
     looper();

@@ -38,22 +38,30 @@ export class UploadEventComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submitting = false;
+
   onClick() {
     const event = this.getEventFromFormValue();
     if (event === null) return;
 
+    this.submitting = true;
     this.recaptchaV3Service.execute('submit_user_event').subscribe(
       (token) => {
         this.backendService.SubmitOneUserEvent(event, token).subscribe(
           (result: any) => {
             const message = result.message;
             this.snackBar.open(message, 'OK');
+            this.submitting = false;
           },
           ({error}) => {
             console.error(error);
             this.snackBar.open(`error: ${error.message}`, 'OK');
+            this.submitting = false;
           }
         );
+      },
+      (error: any) => {
+        this.submitting = false;
       });
   }
 

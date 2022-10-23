@@ -27,7 +27,7 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="onClick()">送出</button>
+      <button mat-raised-button color="primary" (click)="onClick()" [disabled]="submitting">送出</button>
       <button mat-raised-button color="primary" (click)="showPreview()">預覽</button>
     </mat-card-actions>
   </mat-card>
