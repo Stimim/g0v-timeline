@@ -138,7 +138,7 @@ export class HomePageComponent implements OnInit {
         }
         this.maxOffsetX = Math.max(
           this.maxOffsetX,
-          this.userEventsOffset[this.userEventsOffset.length - 1][0] + window.innerWidth / 3);
+          this.userEventsOffset[this.userEventsOffset.length - 1][0]);
         this.userEvents.reverse();
         this.userEventsOffset.reverse();
       });

@@ -18,7 +18,11 @@
     設定
   </button>
 
-  <button mat-raised-button class="here-am-i-button" (click)="gotoHereAmI()">
+  <button
+    *ngIf="!autoScrolling"
+    mat-raised-button
+    class="here-am-i-button"
+    (click)="gotoHereAmI()">
     輸入你的關鍵字
   </button>
 
