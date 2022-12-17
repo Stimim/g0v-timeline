@@ -1,7 +1,15 @@
 import { AfterViewInit, Component, OnInit, ElementRef, ViewChild, } from '@angular/core';
 
 import { BackendService, PredefinedEvent, Event, UserSubmittedEvent, UserEventObserverMessage } from '../backend.service';
-import { TimelineCanvasComponent } from '../timeline-canvas/timeline-canvas.component';
+import { EventBus } from '../event-bus.service'
+
+interface BoundingBox {
+  userEventIndex: number;
+  left: number;
+  top: number;
+  right: number;
+  bottom: number;
+};
 
 @Component({
   selector: 'app-home-page',
@@ -25,6 +33,9 @@ export class HomePageComponent implements OnInit {
 
   userEvents: UserSubmittedEvent[] = [];
   userEventsOffset: number[][] = [];
+  // The bounding box are sorted by their z-Index, only contains visible
+  // events.
+  userEventsBoundingBox: BoundingBox[] = [];
 
   touchX?: number;
   rowHeight!: number;
@@ -51,7 +62,9 @@ export class HomePageComponent implements OnInit {
     return offsets;
   }
 
-  constructor(private backendService: BackendService) {
+  constructor(
+      private backendService: BackendService,
+      private eventBus: EventBus) {
     this.predefinedEvents = this.backendService.GetPredefinedEvents();
 
     this.predefinedEvents.sort((a, b) => {
@@ -306,6 +319,14 @@ export class HomePageComponent implements OnInit {
     let baseX = Math.ceil(this.userEventsOffset[index][0] + this.offsetX - 10);
     let baseY = Math.ceil(this.userEventsOffset[index][1] - 10);
 
+    const boundingBox: BoundingBox = {
+      userEventIndex: index,
+      left: baseX,
+      right: baseX,
+      top: baseY,
+      bottom: baseY,
+    };
+
     const date = event.date;
     const subject = event.subject;
     const desc = event.description;
@@ -338,6 +359,9 @@ export class HomePageComponent implements OnInit {
     ctx.fillStyle = 'black';
     ctx.fill();
 
+    boundingBox['right'] = baseX + maxWidth + 10;
+    boundingBox['bottom'] = baseY + 20 + 45;
+
     ctx.fillStyle = '#FF56C2';
     ctx.beginPath();
     ctx.roundRect(baseX, baseY + 3, dateWidth + 10, 20, [5, 10]);
@@ -366,6 +390,8 @@ export class HomePageComponent implements OnInit {
       ctx.font = fontStyle;
       ctx.fillText(desc, baseX + 10, baseY + 25);
     }
+
+    return boundingBox;
   }
 
   predefinedEventsCanvas: HTMLCanvasElement[] = [];
@@ -503,11 +529,13 @@ export class HomePageComponent implements OnInit {
       return z1 - z2;
     });
 
+    this.userEventsBoundingBox = [];
     for (let [index, z] of eventsToDraw) {
       const [offsetX, offsetY] = this.userEventsOffset[index];
       let opacity = Math.min(1, (w * 0.8 - (offsetX + thisOffsetX)) / 150);
       ctx.globalAlpha = opacity;
-      this.drawUserEvent(actualCanvas, this.userEvents[index], index);
+      const boundingBox = this.drawUserEvent(actualCanvas, this.userEvents[index], index);
+      this.userEventsBoundingBox.push(boundingBox);
     }
     ctx.globalAlpha = 1;
   }
@@ -575,5 +603,27 @@ export class HomePageComponent implements OnInit {
 
   gotoHereAmI() {
     window.open('here-am-i', '_blank')!.focus();
+  }
+
+  onUserEventClick(index: number) {
+    //console.info(index);
+    this.eventBus.SetUserEvent(this.userEvents[index]);
+  }
+
+  onCanvasClick(event: MouseEvent) {
+    console.log(event);
+
+    const x = event.offsetX;
+    const y = event.offsetY;
+
+    for (let i = this.userEventsBoundingBox.length - 1;
+         i >= 0; i--) {
+      const box = this.userEventsBoundingBox[i];
+      if (box.left <= x && x <= box.right &&
+          box.top <= y && y <= box.bottom) {
+        this.onUserEventClick(box.userEventIndex);
+        return;
+      }
+    }
   }
 }

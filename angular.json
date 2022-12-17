@@ -106,7 +106,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/g0v-timeline/"
+            "cname": "timeline.g0v.tw"
           }
         }
       }
