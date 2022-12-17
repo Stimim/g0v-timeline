@@ -159,20 +159,6 @@ export class HomePageComponent implements OnInit {
       });
   }
 
-  GetStyle() {
-    return {
-      width: '100%',
-      height: `${window.innerHeight}px`,
-    }
-  }
-
-  GetCanvasStyle() {
-    return {
-      width: '100%',
-      height: `${window.innerHeight}px`,
-    }
-  }
-
   GetOffset(i: number, is_user_event: boolean): [number, number] {
     if (is_user_event) {
       const dx = this.userEventsOffset[i][0];

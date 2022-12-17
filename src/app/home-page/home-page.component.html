@@ -1,5 +1,4 @@
 <div
-  [style]="GetStyle()"
   (wheel)="OnScroll($event)"
   (touchmove)="OnScroll($event)"
   (touchstart)="OnScroll($event)"
@@ -8,7 +7,6 @@
   >
   <canvas
     #actualCanvas
-    [style]="GetCanvasStyle()"
     (click)="onCanvasClick($event)"
     >
   </canvas>
