@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="574124136027615791" datatype="html">
+        <source>g0v timeline</source>
+        <target>g0v 時間軸</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.module.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/submit-user-event/submit-user-event.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7713380586144274794" datatype="html">
+        <source>g0v timeline - Enter Your Keywords</source>
+        <target>g0v timeline - 輸入你的關鍵字</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.module.ts</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3100526111836637574" datatype="html">
+        <source>g0v timeline - Take Down Event</source>
+        <target>g0v timeline - 移除事件</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.module.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4426319772533875265" datatype="html">
+        <source> Settings </source>
+        <target> 設定 </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">21,23</context>
+        </context-group>
+        <note priority="1" from="description">button: settings</note>
+      </trans-unit>
+      <trans-unit id="7448794535513393858" datatype="html">
+        <source> Enter Your Keywords </source>
+        <target> 輸入你的關鍵字 </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">30,32</context>
+        </context-group>
+        <note priority="1" from="description">button: enter your keywords</note>
+      </trans-unit>
+      <trans-unit id="5998635500992346430" datatype="html">
+        <source> AutoPlay Mode </source>
+        <target> 自動撥放模式 </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/settings-modal/settings-modal.component.html</context>
+          <context context-type="linenumber">15,17</context>
+        </context-group>
+        <note priority="1" from="description">slide-toggle: autoplay mode</note>
+      </trans-unit>
+      <trans-unit id="173831186269646084" datatype="html">
+        <source> AutoPlay Speed: <x id="INTERPOLATION" equiv-text="{{speed}}"/> </source>
+        <target> 自動撥放速度: <x id="INTERPOLATION" equiv-text="{{speed}}"/> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/settings-modal/settings-modal.component.html</context>
+          <context context-type="linenumber">23,25</context>
+        </context-group>
+        <note priority="1" from="description">text: sleep</note>
+      </trans-unit>
+      <trans-unit id="5547981558491672240" datatype="html">
+        <source> Close </source>
+        <target> 關閉 </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/settings-modal/settings-modal.component.html</context>
+          <context context-type="linenumber">42,44</context>
+        </context-group>
+        <note priority="1" from="description">button: close</note>
+      </trans-unit>
+      <trans-unit id="8014760824795368994" datatype="html">
+        <source>Enter Your Keywords</source>
+        <target>輸入你的關鍵字</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/submit-user-event/submit-user-event.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">subtitle: enter your keywords</note>
+      </trans-unit>
+      <trans-unit id="3198123723060667787" datatype="html">
+        <source>When</source>
+        <target>什麼時候</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/submit-user-event/submit-user-event.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">label: when</note>
+      </trans-unit>
+      <trans-unit id="4923863058967659304" datatype="html">
+        <source>Who</source>
+        <target>誰</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/submit-user-event/submit-user-event.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">label: who</note>
+      </trans-unit>
+      <trans-unit id="1583399193111493692" datatype="html">
+        <source>What</source>
+        <target>做什麼</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/submit-user-event/submit-user-event.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description">label: what</note>
+      </trans-unit>
+      <trans-unit id="935187492052582731" datatype="html">
+        <source>Submit</source>
+        <target>送出</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/submit-user-event/submit-user-event.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">button: submit</note>
+      </trans-unit>
+      <trans-unit id="1295614462098694869" datatype="html">
+        <source>Preview</source>
+        <target>預覽</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/submit-user-event/submit-user-event.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">button: preview</note>
+      </trans-unit>
+      <trans-unit id="7492772448255916346" datatype="html">
+        <source>Nobody</source>
+        <target>沒有人</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/submit-user-event/submit-user-event.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">placeholder for subject</note>
+      </trans-unit>
+      <trans-unit id="3750102672604724515" datatype="html">
+        <source> Event ID </source>
+        <target> 事件 ID </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/take-down-event/take-down-event.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+        <note priority="1" from="description">label: event-id</note>
+      </trans-unit>
+      <trans-unit id="6222810267750611095" datatype="html">
+        <source> Secret </source>
+        <target> 密碼 </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/take-down-event/take-down-event.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+        <note priority="1" from="description">label: secret</note>
+      </trans-unit>
+      <trans-unit id="4943998242904350511" datatype="html">
+        <source> Submit </source>
+        <target> 送出 </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/take-down-event/take-down-event.component.html</context>
+          <context context-type="linenumber">27,29</context>
+        </context-group>
+        <note priority="1" from="description">button: submit</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,34 +1,43 @@
 <div class="container">
   <mat-card>
-    <mat-card-title>g0v timeline</mat-card-title>
-    <mat-card-subtitle>輸入你的關鍵字</mat-card-subtitle>
+    <mat-card-title i18n="title">g0v timeline</mat-card-title>
+    <mat-card-subtitle i18n="subtitle: enter your keywords">Enter Your Keywords</mat-card-subtitle>
 
     <mat-card-content>
       <form [formGroup]="form">
         <mat-form-field appearance="fill">
-          <mat-label>什麼時候 (When)</mat-label>
+          <mat-label i18n="label: when">When</mat-label>
           <input matInput type="date" formControlName="date" required>
         </mat-form-field>
 
         <br>
 
         <mat-form-field appearance="fill">
-          <mat-label>誰 (Who)</mat-label>
+          <mat-label i18n="label: who">Who</mat-label>
           <input matInput type="text" formControlName="subject" required maxlength=100>
         </mat-form-field>
 
         <br>
 
         <mat-form-field appearance="fill">
-          <mat-label>做什麼 (What)</mat-label>
+          <mat-label i18n="label: what">What</mat-label>
           <input matInput type="text" formControlName="description" required maxlength=100>
         </mat-form-field>
       </form>
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="onClick()" [disabled]="submitting">送出</button>
-      <button mat-raised-button color="primary" (click)="showPreview()">預覽</button>
+      <button
+        i18n="button: submit"
+        mat-raised-button
+        color="primary"
+        (click)="onClick()"
+        [disabled]="submitting">Submit</button>
+      <button
+        i18n="button: preview"
+        mat-raised-button
+        color="primary"
+        (click)="showPreview()">Preview</button>
     </mat-card-actions>
   </mat-card>
 

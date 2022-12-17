@@ -25,7 +25,7 @@ export class UploadEventComponent implements OnInit {
 
   form = new FormGroup({
     date: new FormControl(getToday()),
-    subject: new FormControl('沒有人'),
+    subject: new FormControl($localize `:placeholder for subject:Nobody`),
     description: new FormControl(),
   });
 

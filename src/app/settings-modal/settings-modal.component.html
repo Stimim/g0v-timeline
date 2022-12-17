@@ -7,17 +7,22 @@
   <div class="box" *ngIf="enable" >
     <section>
       <mat-slide-toggle
+        i18n="slide-toggle: autoplay mode"
         color="primary"
         labelPosition="before"
         (change)="onAutoScrollChanged()"
         [(ngModel)]="autoScrollEnabled"
         >
-        播放模式
+        AutoPlay Mode
       </mat-slide-toggle>
     </section>
 
     <section>
-      播放速度: {{speed}}
+      <span
+        i18n="text: sleep"
+        >
+        AutoPlay Speed: {{speed}}
+      </span>
       <mat-slider
         color="primary"
         min="20"
@@ -30,10 +35,13 @@
 
     <section class="close-button-section">
       <button
+        i18n="button: close"
         mat-raised-button
         color="primary"
         (click)="onClose()"
-        >Close</button>
+        >
+        Close
+      </button>
     </section>
   </div>
 </div>
