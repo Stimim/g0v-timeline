@@ -4,11 +4,13 @@ import { BackendService, PredefinedEvent, Event, UserSubmittedEvent, UserEventOb
 import { EventBus } from '../event-bus.service'
 
 interface BoundingBox {
-  userEventIndex: number;
+  userEventIndex?: number;
+  predefinedEventIndex?: number;
   left: number;
   top: number;
   right: number;
   bottom: number;
+  z: number;
 };
 
 @Component({
@@ -35,7 +37,7 @@ export class HomePageComponent implements OnInit {
   userEventsOffset: number[][] = [];
   // The bounding box are sorted by their z-Index, only contains visible
   // events.
-  userEventsBoundingBox: BoundingBox[] = [];
+  eventsBoundingBox: BoundingBox[] = [];
 
   touchX?: number;
   rowHeight!: number;
@@ -315,7 +317,10 @@ export class HomePageComponent implements OnInit {
 
   }
 
-  drawUserEvent(canvas: HTMLCanvasElement, event: UserSubmittedEvent, index: number) {
+  drawUserEvent(
+      canvas: HTMLCanvasElement,
+      event: UserSubmittedEvent,
+      index: number) {
     let baseX = Math.ceil(this.userEventsOffset[index][0] + this.offsetX - 10);
     let baseY = Math.ceil(this.userEventsOffset[index][1] - 10);
 
@@ -325,6 +330,7 @@ export class HomePageComponent implements OnInit {
       right: baseX,
       top: baseY,
       bottom: baseY,
+      z: 0, // this will be filled by caller.
     };
 
     const date = event.date;
@@ -502,14 +508,29 @@ export class HomePageComponent implements OnInit {
       return z1 - z2;
     });
 
+    // Clear bounding boxes
+    this.eventsBoundingBox = [];
+
     for (let [index, z] of eventsToDraw) {
       const canvas = this.predefinedEventsCanvas[index];
       const [offsetX, offsetY] = this.predefinedEventsOffset[index];
       let opacity = Math.min(1, (w * 0.8 - (offsetX + thisOffsetX)) / 150);
       ctx.globalAlpha = opacity;
+      const left = offsetX + thisOffsetX - 10;
+      const top = offsetY - 15;
       ctx.drawImage(canvas,
                     0, 0, canvas.width, canvas.height,
-                    offsetX + thisOffsetX - 10, offsetY - 15, canvas.width, canvas.height);
+                    left, top, canvas.width, canvas.height);
+      this.eventsBoundingBox.push(
+        {
+          predefinedEventIndex: index,
+          z,
+          left,
+          top,
+          right: left + canvas.width,
+          bottom: top + canvas.height,
+        }
+      );
     }
     ctx.globalAlpha = 1;
 
@@ -529,15 +550,19 @@ export class HomePageComponent implements OnInit {
       return z1 - z2;
     });
 
-    this.userEventsBoundingBox = [];
     for (let [index, z] of eventsToDraw) {
       const [offsetX, offsetY] = this.userEventsOffset[index];
       let opacity = Math.min(1, (w * 0.8 - (offsetX + thisOffsetX)) / 150);
       ctx.globalAlpha = opacity;
       const boundingBox = this.drawUserEvent(actualCanvas, this.userEvents[index], index);
-      this.userEventsBoundingBox.push(boundingBox);
+      boundingBox.z = z;
+      this.eventsBoundingBox.push(boundingBox);
     }
     ctx.globalAlpha = 1;
+
+    this.eventsBoundingBox.sort((box1, box2) => {
+      return box2.z - box1.z;
+    });
   }
 
   previousTimeStamp?: number;
@@ -610,19 +635,27 @@ export class HomePageComponent implements OnInit {
     this.eventBus.SetUserEvent(this.userEvents[index]);
   }
 
+  onPredefinedEventClick(index: number) {
+    this.eventBus.SetPredefinedEvent(this.predefinedEvents[index]);
+  }
+
   onCanvasClick(event: MouseEvent) {
     console.log(event);
 
     const x = event.offsetX;
     const y = event.offsetY;
 
-    for (let i = this.userEventsBoundingBox.length - 1;
-         i >= 0; i--) {
-      const box = this.userEventsBoundingBox[i];
+    for (let i = 0; i < this.eventsBoundingBox.length; i++) {
+      const box = this.eventsBoundingBox[i];
       if (box.left <= x && x <= box.right &&
           box.top <= y && y <= box.bottom) {
-        this.onUserEventClick(box.userEventIndex);
-        return;
+        if (box.userEventIndex !== undefined) {
+          this.onUserEventClick(box.userEventIndex);
+          return;
+        } else if (box.predefinedEventIndex !== undefined) {
+          this.onPredefinedEventClick(box.predefinedEventIndex);
+          return;
+        }
       }
     }
   }
