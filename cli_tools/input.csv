@@ -1,234 +1,253 @@
-date,subject,action,object,topic,description,location,ref_title,ref_url
-2012-10-21,中央政府預算視覺化,上線,,基礎建設,,,,
-2012-10-24,clkao,註冊,g0v.tw,基礎建設,,,,
-2012-12-15,第零次動員戡亂時期黑客松,,,大松,活動相簿：https://www.flickr.com/photos/g0v/albums/72157711184894017,中央研究院的資創中心,,https://g0v-tw.kktix.cc/events/dab224
-2013-01-01,g0v 社群網頁,建立,,基礎建設,2021/11/26復活,,,
-2013-01-08,ipa,撰寫,第零次大松紀錄,基礎建設,搶救國會資料大軍 https://ipaway.org/?p=2334,,,
-2013-01-21,ipa,起草,g0v 宣言,基礎建設,,,,
-2013-01-27,第壹次公地放領黑客松,,,大松,,,,https://g0v.hackpad.tw/g0v-hackath1n--aMUe1ynlv8y
-2013-01-27,葉平,提案,還文於民 (萌典前身),萌典,,,,https://zh.wikipedia.org/wiki/%E8%90%8C%E5%85%B8
-2013-01-27,ETBlue,提案,404失蹤兒少協尋專案,兒少,,,,
-2013-03-13,ipa,撰寫,第壹次大松紀錄,基礎建設,迎接春天的公民資訊黑客松,,,https://ipaway.org/?p=2518#more-2518
-2013-03-23,第貳次九大建設黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath2n
-2013-06-08,第參次客廳工廠黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath3n
-2013-06-23,緊急黑客松後松,,,小松,,,,https://g0v.hackpad.com/g0v-post-hackath3n-S1vBJjWnPnB
-2013-07-19,跨設計哈拉松,,,小松,,,,
-2013-08-10,第肆次國民大會黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath4n
-2013-08-10,ronnywang,提案,新聞小幫手,假訊息,,,,
-2013-08-10,nchild,提案,你被服貿了嗎？,服貿,,,,
-2013-08-10,ETBlue,提案,動民主,政治,,,,
-2013-08-20,g0v Youtube 頻道,成立,,揪松,,,,
-2013-09-24,秋天松,,,小松,,,,https://g0v.hackpad.tw/g0v-pre-hackath5n-EGJ462uUndj
-2013-10-05,台南小吃松,,,小松,,,,https://g0v-tw.kktix.cc/events/g0v-tainan
-2013-10-10,雙十松,,,小松,,,,https://g0v-tw.kktix.cc/events/doubleten-hackathon
-2013-10-20,第伍次美麗島黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath5n
-2013-11-10,立院組小松,,,國會,,,,https://g0v.hackpad.com/1110--KJrp3C7RusA
-2013-11-23,第一次萌典松,,,萌典,,,,https://g0v-tw.kktix.cc/events/moedict
-2013-12-21,第陸次勞動基準黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath6n
-2013-12-21,pm5,提案,環境儀表板,環境,,,,
-2013-12-21,Johnny,提案,立委投票指南,國會,,,,
-2014-01-01,揪松團,成立,,揪松,,,,
-2014-01-04,新年松,,,小松,,BOOKSHOW 說書會,,https://g0v-tw.kktix.cc/events/g0v-newyear2014
-2014-01-20,立院組小松,,,國會,,,,https://g0v.hackpad.com/KJrp3C7RusA
-2014-02-22,第柒次自由時代黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath7n
-2014-02-22,a0kman,提案,超農域,農業,,,,
-2014-02-22,hcchien,提案,g0v summit,summit,,,,
-2014-03-08,廢核遊行線路松,,,服貿,,,,https://g0v.hackpad.tw/2014-03-08--jG9uno4d9H8
-2014-03-18,太陽花學運,,,服貿,,,,
-2014-03-18,g0v.today,上線,,社運,,,,https://www.ithome.com.tw/news/86701
-2014-03-22,第二次萌典松,,,萌典,,,,https://g0v-tw.kktix.cc/events/moedict-3-22
-2014-03-29,第三次萌典松,,,萌典,,,,https://g0v.hackpad.tw/3-moed2ct-mo3dict-VP1m9n8937o
-2014-04-19,第捌次解除戒嚴黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath8n
-2014-04-19,shuhua,提案,島嶼天光學潮實紀錄,服貿,,,,
-2014-04-19,isabel,提案,打道掛 123 護台灣,服貿,,,,
-2014-04-19,ronny,提案,開放政治獻金,政治獻金,,,,
-2014-05-13,第零次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2014-05-25,第四次萌典松,,,萌典,,,,https://g0v-tw.kktix.cc/events/moedict-8-2
-2014-06-21,第玖次還我土地黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath9n
-2014-06-21,Afeyhsu,提案,公有地大行動,土地,,,,
-2014-06-21,Lee,提案,inLiveTW ,社運,,,,
-2014-08-01,高雄氣爆資訊整合,,,災難救助,,,,https://beta.hackfoldr.org/Kaohsiung-explode-20140801/
-2014-08-12,第五次萌典松,,,萌典,,,,https://g0v-tw.kktix.cc/events/moedict-5-25
-2014-08-16,g0v Slack,首次啟用,,基礎建設,,,,
-2014-08-16,前端教學松,,,小松,,,,https://g0v-tw.kktix.cc/events/fr0ntend-br3dge
-2014-08-30,第拾次資料科學黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath10n
-2014-08-30,miaoski,提案,阿美語萌典,萌典,,,,
-2014-08-30,台北林先生,發起,割闌尾計畫,國會,"在服貿黑箱事件中，我們看到立法委員將極具有爭議性的法案，藉由黑箱、搶麥克風30秒的方式，推到立法的下一個階段，違反民意，並且引發著名的318佔領立院、太陽花運動。
+date,subject,subject_en,action,action_en,object,object_en,topic,topic_en,description,description_en,location,location_en,ref_title,ref_title_en,ref_url
+2012-10-21,中央政府預算視覺化,Government Budget Visualization,上線,is online,,,基礎建設,,,,,,,,
+2012-10-24,clkao,,註冊,,g0v.tw,,基礎建設,,,,,,,,
+2012-12-15,第零次動員戡亂時期黑客松,,,,,,大松,,活動相簿：https://www.flickr.com/photos/g0v/albums/72157711184894017,,中央研究院的資創中心,,,,https://g0v-tw.kktix.cc/events/dab224
+2013-01-01,g0v 社群網頁,,建立,,,,基礎建設,,2021/11/26復活,,,,,,
+2013-01-08,ipa,,撰寫,,第零次大松紀錄,,基礎建設,,搶救國會資料大軍 https://ipaway.org/?p=2334,,,,,,
+2013-01-21,ipa,,起草,,g0v 宣言,,基礎建設,,,,,,,,
+2013-01-27,第壹次公地放領黑客松,,,,,,大松,,,,,,,,https://g0v.hackpad.tw/g0v-hackath1n--aMUe1ynlv8y
+2013-01-27,葉平,,提案,,還文於民 (萌典前身),,萌典,,,,,,,,https://zh.wikipedia.org/wiki/%E8%90%8C%E5%85%B8
+2013-01-27,ETBlue,,提案,,404失蹤兒少協尋專案,,兒少,,,,,,,,
+2013-03-13,ipa,,撰寫,,第壹次大松紀錄,,基礎建設,,迎接春天的公民資訊黑客松,,,,,,https://ipaway.org/?p=2518#more-2518
+2013-03-23,第貳次九大建設黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath2n
+2013-06-08,第參次客廳工廠黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath3n
+2013-06-23,緊急黑客松後松,,,,,,小松,,,,,,,,https://g0v.hackpad.com/g0v-post-hackath3n-S1vBJjWnPnB
+2013-07-19,跨設計哈拉松,,,,,,小松,,,,,,,,
+2013-08-10,第肆次國民大會黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath4n
+2013-08-10,ronnywang,,提案,,新聞小幫手,,假訊息,,,,,,,,
+2013-08-10,nchild,,提案,,你被服貿了嗎？,,服貿,,,,,,,,
+2013-08-10,ETBlue,,提案,,動民主,,政治,,,,,,,,
+2013-08-20,g0v Youtube 頻道,,成立,,,,揪松,,,,,,,,
+2013-09-24,秋天松,,,,,,小松,,,,,,,,https://g0v.hackpad.tw/g0v-pre-hackath5n-EGJ462uUndj
+2013-10-05,台南小吃松,,,,,,小松,,,,,,,,https://g0v-tw.kktix.cc/events/g0v-tainan
+2013-10-10,雙十松,,,,,,小松,,,,,,,,https://g0v-tw.kktix.cc/events/doubleten-hackathon
+2013-10-20,第伍次美麗島黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath5n
+2013-11-10,立院組小松,,,,,,國會,,,,,,,,https://g0v.hackpad.com/1110--KJrp3C7RusA
+2013-11-23,第一次萌典松,,,,,,萌典,,,,,,,,https://g0v-tw.kktix.cc/events/moedict
+2013-12-21,第陸次勞動基準黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath6n
+2013-12-21,pm5,,提案,,環境儀表板,,環境,,,,,,,,
+2013-12-21,Johnny,,提案,,立委投票指南,,國會,,,,,,,,
+2014-01-01,揪松團,,成立,,,,揪松,,,,,,,,
+2014-01-04,新年松,,,,,,小松,,,,BOOKSHOW 說書會,,,,https://g0v-tw.kktix.cc/events/g0v-newyear2014
+2014-01-20,立院組小松,,,,,,國會,,,,,,,,https://g0v.hackpad.com/KJrp3C7RusA
+2014-02-22,第柒次自由時代黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath7n
+2014-02-22,a0kman,,提案,,超農域,,農業,,,,,,,,
+2014-02-22,hcchien,,提案,,g0v summit,,summit,,,,,,,,
+2014-03-08,廢核遊行線路松,,,,,,服貿,,,,,,,,https://g0v.hackpad.tw/2014-03-08--jG9uno4d9H8
+2014-03-18,太陽花學運,,,,,,服貿,,,,,,,,
+2014-03-18,g0v.today,,上線,,,,社運,,,,,,,,https://www.ithome.com.tw/news/86701
+2014-03-22,第二次萌典松,,,,,,萌典,,,,,,,,https://g0v-tw.kktix.cc/events/moedict-3-22
+2014-03-29,第三次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/3-moed2ct-mo3dict-VP1m9n8937o
+2014-04-19,第捌次解除戒嚴黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath8n
+2014-04-19,shuhua,,提案,,島嶼天光學潮實紀錄,,服貿,,,,,,,,
+2014-04-19,isabel,,提案,,打道掛 123 護台灣,,服貿,,,,,,,,
+2014-04-19,ronny,,提案,,開放政治獻金,,政治獻金,,,,,,,,
+2014-05-13,第零次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2014-05-25,第四次萌典松,,,,,,萌典,,,,,,,,https://g0v-tw.kktix.cc/events/moedict-8-2
+2014-06-21,第玖次還我土地黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath9n
+2014-06-21,Afeyhsu,,提案,,公有地大行動,,土地,,,,,,,,
+2014-06-21,Lee,,提案,,inLiveTW ,,社運,,,,,,,,
+2014-08-01,高雄氣爆資訊整合,,,,,,災難救助,,,,,,,,https://beta.hackfoldr.org/Kaohsiung-explode-20140801/
+2014-08-12,第五次萌典松,,,,,,萌典,,,,,,,,https://g0v-tw.kktix.cc/events/moedict-5-25
+2014-08-16,g0v Slack,,首次啟用,,,,基礎建設,,,,,,,,
+2014-08-16,前端教學松,,,,,,小松,,,,,,,,https://g0v-tw.kktix.cc/events/fr0ntend-br3dge
+2014-08-30,第拾次資料科學黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath10n
+2014-08-30,miaoski,,提案,,阿美語萌典,,萌典,,,,,,,,
+2014-08-30,台北林先生,,發起,,割闌尾計畫,,國會,,"在服貿黑箱事件中，我們看到立法委員將極具有爭議性的法案，藉由黑箱、搶麥克風30秒的方式，推到立法的下一個階段，違反民意，並且引發著名的318佔領立院、太陽花運動。
 針對違反民意、表現不良、不適任的代議士，唯有罷免，才是唯一體制內、可讓更多大眾參與的做法，將人民賦予代議士的權力回收，而再交付給更適當的對象手上。
 最終目標：
 我們不能將我們對政治的期待，只放在幾位政治強人身上。我們需要透過良好的選舉與罷免權，讓對的人上台、不對的人下台。割闌尾計畫推動罷免權，完善台灣的民主機制。
 8/30 在黑客松現場，割闌尾計劃團隊，介紹了V計劃，並招募做網站的工程師、設計師。
-https://www.facebook.com/Appendectomy",中央研究院人文社會科學館,,https://youtu.be/HmMtsnsA7g4?t=4410
-2014-09-20,第六次萌典松,,,萌典,,,,https://g0v-tw.kktix.cc/events/moedict-9-20
-2014-11-08,g0v Summit 2014 啥米零時政府,,,summit ,,中央研究院,,https://summit.g0v.tw/2014/zh-TW/index.html
-2014-11-09,g0v Summit 2014 啥米零時政府,,,summit ,,中央研究院,,https://summit.g0v.tw/2014/zh-TW/index.html
-2014-11-22,第七次萌典松,,,萌典,,,,https://g0v-tw.kktix.cc/events/moedict-11-22
-2014-11-22,g0v華府零時起義黑客松,,,美東松,,"DC, USA",,https://www.facebook.com/g0vus/photos/a.1478649959090493.1073741828.1476317585990397/1478793569076132/?type=3&theater
-2014-11-23,g0v華府零時起義黑客松,,,美東松,,"DC, USA",,
-2014-12-20,第拾壹次開放報禁黑客松,,,大松,,,,https://g0v-tw.kktix.cc/events/g0v-hackath11n
-2014-12-20,南港林先生,提案,開放政府資料授權條款-民間建議版,開放資料,,,,
-2014-12-20,蔡玉玲,提案,可以不去開曼設公司嗎？(vTaiwan 前身),vTaiwan,,,,
-2015-01-18,第八次萌典,,,萌典,,,,https://g0v-tw.kktix.cc/events/moedict-1-18
-2015-01-31,第零次設計松,,,小松,"做設計改造社會！
-因設計人害羞，為了建立一個對設計師較親切的新手場合，以強化g0v設計師的社群聚合力、專案補強、經驗交流為主的一個零時整形媒合大會。",伯朗咖啡建國店,,https://g0v.hackpad.tw/g0v-design--7ndCfX4RoBm
-2015-02-14,第拾貳次不得宣傳罷免黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath12n
-2015-02-14,MrOrz,提案,ppt 政治承諾追蹤網,政治,,,,
-2015-02-14,雨蒼,提案,司改會Open data,司法,,,,
-2015-03-28,第九次萌典,,,萌典,,,,https://g0v-tw.kktix.cc/events/moedict-3-28
-2015-04-11,零時前端x設計松,,,零時前端x設計松,"本次為第四次零時前端教學松與第一次零時設計松的松併松
+https://www.facebook.com/Appendectomy",,中央研究院人文社會科學館,,,,https://youtu.be/HmMtsnsA7g4?t=4410
+2014-09-20,第六次萌典松,,,,,,萌典,,,,,,,,https://g0v-tw.kktix.cc/events/moedict-9-20
+2014-11-08,g0v Summit 2014 啥米零時政府,,,,,,summit ,,,,中央研究院,,,,https://summit.g0v.tw/2014/zh-TW/index.html
+2014-11-09,g0v Summit 2014 啥米零時政府,,,,,,summit ,,,,中央研究院,,,,https://summit.g0v.tw/2014/zh-TW/index.html
+2014-11-22,第七次萌典松,,,,,,萌典,,,,,,,,https://g0v-tw.kktix.cc/events/moedict-11-22
+2014-11-22,g0v華府零時起義黑客松,,,,,,美東松,,,,"DC, USA",,,,https://www.facebook.com/g0vus/photos/a.1478649959090493.1073741828.1476317585990397/1478793569076132/?type=3&theater
+2014-11-23,g0v華府零時起義黑客松,,,,,,美東松,,,,"DC, USA",,,,
+2014-12-20,第拾壹次開放報禁黑客松,,,,,,大松,,,,,,,,https://g0v-tw.kktix.cc/events/g0v-hackath11n
+2014-12-20,南港林先生,,提案,,開放政府資料授權條款-民間建議版,,開放資料,,,,,,,,
+2014-12-20,蔡玉玲,,提案,,可以不去開曼設公司嗎？(vTaiwan 前身),,vTaiwan,,,,,,,,
+2015-01-18,第八次萌典,,,,,,萌典,,,,,,,,https://g0v-tw.kktix.cc/events/moedict-1-18
+2015-01-31,第零次設計松,,,,,,小松,,"做設計改造社會！
+因設計人害羞，為了建立一個對設計師較親切的新手場合，以強化g0v設計師的社群聚合力、專案補強、經驗交流為主的一個零時整形媒合大會。",,伯朗咖啡建國店,,,,https://g0v.hackpad.tw/g0v-design--7ndCfX4RoBm
+2015-02-02,vTaiwan野生官網,,上線,,,,vTaiwan,,http://vtaiwan.tw/ ,,,,,,vTaiwan.tw 宣傳文案 - g0v.hackpad.tw
+2015-02-02,虛擬世界法規調適交流平台(官網),,上線,,,,vTaiwan,,https://org.vtaiwan.tw/VTAIWAN_ORG/INDEX_2.HTM,,,,,,vTaiwan.tw 宣傳文案 - g0v.hackpad.tw
+2015-02-14,第拾貳次不得宣傳罷免黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath12n
+2015-02-14,MrOrz,,提案,,ppt 政治承諾追蹤網,,政治,,,,,,,,
+2015-02-14,雨蒼,,提案,,司改會Open data,,司法,,,,,,,,
+2015-03-28,第九次萌典,,,,,,萌典,,,,,,,,https://g0v-tw.kktix.cc/events/moedict-3-28
+2015-04-11,零時前端x設計松,,,,,,零時前端x設計松,,"本次為第四次零時前端教學松與第一次零時設計松的松併松
 
-希望參與的設計師、前端工程師，都能從彼此身上學到東西，形成學伴的概念",遠傳大樓,,https://g0v.hackpad.tw/x-FrFF9dZJK6z
-2015-04-18,第拾參次無殼蝸牛黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath13n
-2015-05-02,g0v summit 2014 回味松,,,summit,,,,https://g0v.hackpad.tw/g0v-summit-2014--XmxOuuxLxpo
-2015-05-30,第十次萌典松,,,萌典,,,,https://g0v.hackpad.tw/5-moed10ct#5-moed10ct
-2015-06-13,第拾肆次野百合黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath14n
-2015-06-27,沒有人,製作,八仙粉塵爆炸傷者開放資料查詢,八仙粉塵爆炸,八仙粉塵爆炸傷者開放資料查詢,,,https://g0v.github.io/color/
-2015-06-28,沒有人,彙整,八仙塵暴資訊,八仙粉塵爆炸,八仙塵爆資訊匯整,,,https://beta.hackfoldr.org/627pray/?fbclid=IwAR0RS6GOPXYuK88pXA2wJTaUtk2eNxUQDLJXORInkXmkZMzFNVLiBFXZnmI
-2015-07-18,第十一次萌典松,,,萌典,,,,https://g0v.hackpad.tw/7-moed11ct#7-moed11ct
-2015-08-22,第拾伍次資料科學黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath15n
-2015-10-03,第十二次萌典松,,,萌典,,,,https://g0v.hackpad.tw/10-moed12ct
-2015-10-24,第拾陸次刑法一百黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath16n
-2015-11-14,第十三次萌典松,,,萌典,,,,https://g0v.hackpad.tw/-moed13ct-fC9waMmFmnN
-2015-12-26,第拾柒次立委改選黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath17n
-2015-12-26,Liz,提案,iTaigi嘛愛講台語,萌典,,,,
-2016-01-01,g0v 揪松團,招募,職工,揪松,,,,
-2016-02-20,第十四次萌典松,,,萌典,,,,https://g0v.hackpad.tw/-moed14ct-oeBceDBeNA2
-2016-03-05,第拾捌次亞太營運黑客松,,,大松,,,,http://beta.hackfoldr.org/g0v-hackath18n
-2016-04-16,第十五次萌典松,,,萌典,,,,https://g0v.hackpad.tw/-moed15ct-Ksr7HH0T9Pd
-2016-05-14,g0v Summit 2016 拆後重建,,,summit ,,中央研究院,,https://summit.g0v.tw/2016/
-2016-05-15,g0v Summit 2016 拆後重建,,,summit ,,中央研究院,,https://summit.g0v.tw/2016/
-2016-06-12,第壹次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2016-06-18,第拾玖次飛彈試射黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath19n
-2016-06-18,Lafudoci,提案,g0v 零時空汙觀測網,環境,,,,
-2016-06-18,Y.D Lin,提案,看見思法：屬於人民的視覺司法資料庫,司法,,,,
-2016-07-03,第貳次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2016-07-23,第十六次萌典松,,,萌典,,,,https://g0v.hackpad.tw/-moed16ct-5u9QrhicuIy
-2016-07-23,第參次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2016-08-06,第貳拾次總統直選黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath20n
-2016-08-06,Yuren,提案,勞基法計算機 - 變形工時實作,勞動,,,,
-2016-08-25,第肆次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2016-10-01,第十七次萌典松,,,萌典,,,,https://g0v.hackpad.tw/-moed17ct-lSO9U2PIh2X
-2016-10-08,第伍次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2016-10-15,第貳拾壹次根留台灣黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath21n
-2016-10-15,tkirby,提案,g0v Project Hub,基礎建設,,,,
-2016-10-15,MrOrz,提案,真的假的 Line bot,假訊息,,g0v的hackath21n,,https://g0v.hackpad.tw/-LINE-bot-Zb4bFLB7pnv
-2016-10-15,蕭A,提案,散落在世界的國家寶藏,歷史,,,,
-2016-11-05,g0v@NYC hackathon,,,美東松,,,,https://hackmd.io/@ttcat/Hy_2DQTzg?type=view#g0vNYC-201611-%E7%B4%80%E9%8C%84-by-ttcat
-2016-11-06,g0v@NYC hackathon,,,美東松,,,,https://hackmd.io/@ttcat/Hy_2DQTzg?type=view#g0vNYC-201611-%E7%B4%80%E9%8C%84-by-ttcat
-2016-11-12,第十八次萌典松,,,萌典,,,,https://g0v.hackpad.tw/-moed18ct-F1PorqHPw1v
-2016-12-17,第貳拾貳次公民科學黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath22n
-2016-12-17,ttcat,提案,OCF x g0v.news,國際交流,,,,
-2017-01-09,真的假的,媒體曝光,,假訊息,社群貼文、名人轉發後在媒體上初次曝光，LINE bot 好友數破萬,,,"https://www.facebook.com/groups/1847232902175197/permalink/1894866897411797
+希望參與的設計師、前端工程師，都能從彼此身上學到東西，形成學伴的概念",,遠傳大樓,,,,https://g0v.hackpad.tw/x-FrFF9dZJK6z
+2015-04-18,第拾參次無殼蝸牛黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath13n
+2015-05-02,g0v summit 2014 回味松,,,,,,summit,,,,,,,,https://g0v.hackpad.tw/g0v-summit-2014--XmxOuuxLxpo
+2015-05-30,第十次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/5-moed10ct#5-moed10ct
+2015-06-13,第拾肆次野百合黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath14n
+2015-06-27,沒有人,,製作,,八仙粉塵爆炸傷者開放資料查詢,,八仙粉塵爆炸,,八仙粉塵爆炸傷者開放資料查詢,,,,,,https://g0v.github.io/color/
+2015-06-28,沒有人,,彙整,,八仙塵暴資訊,,八仙粉塵爆炸,,八仙塵爆資訊匯整,,,,,,https://beta.hackfoldr.org/627pray/?fbclid=IwAR0RS6GOPXYuK88pXA2wJTaUtk2eNxUQDLJXORInkXmkZMzFNVLiBFXZnmI
+2015-07-18,第十一次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/7-moed11ct#7-moed11ct
+2015-08-22,第拾伍次資料科學黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath15n
+2015-08-27,Uber X 自用車載客,,舉辦,,線上諮詢會議,,vTaiwan,,,,,,,,https://g0v.hackpad.tw/2015-08-27-uberX--y4uRD0dNFMq
+2015-10-01,Airbnb自用住宅招租,,舉辦,,線上諮詢會議,,vTaiwan,,,,,,,,https://g0v.hackpad.tw/2015-10-01-Airbnb--pThtjijpXQi
+2015-10-03,第十二次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/10-moed12ct
+2015-10-24,第拾陸次刑法一百黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath16n
+2015-11-14,第十三次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/-moed13ct-fC9waMmFmnN
+2015-12-26,第拾柒次立委改選黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath17n
+2015-12-26,Liz,,提案,,iTaigi嘛愛講台語,,萌典,,,,,,,,
+2016-01-01,g0v 揪松團,,招募,,職工,,揪松,,,,,,,,
+2016-02-20,第十四次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/-moed14ct-oeBceDBeNA2
+2016-03-05,第拾捌次亞太營運黑客松,,,,,,大松,,,,,,,,http://beta.hackfoldr.org/g0v-hackath18n
+2016-03-31,開放網路販酒之配套管控措施,,舉辦,,線上諮詢會議,,vTaiwan,,,,,,,,https://g0v.hackpad.tw/331--bBnrU7BLhAL
+2016-04-16,第十五次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/-moed15ct-Ksr7HH0T9Pd
+2016-04-28,菸酒管理法部分條文修正草案,,送交院會,,,,vTaiwan,,,,,,,,https://www.ey.gov.tw/Page/9277F759E41CCD91/5d8b4a1c-2e2c-4b3f-9902-99f39f9574fc
+2016-05-14,g0v Summit 2016 拆後重建,,,,,,summit ,,,,中央研究院,,,,https://summit.g0v.tw/2016/
+2016-05-15,g0v Summit 2016 拆後重建,,,,,,summit ,,,,中央研究院,,,,https://summit.g0v.tw/2016/
+2016-06-12,第壹次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2016-06-18,第拾玖次飛彈試射黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath19n
+2016-06-18,Lafudoci,,提案,,g0v 零時空汙觀測網,,環境,,,,,,,,
+2016-06-18,Y.D Lin,,提案,,看見思法：屬於人民的視覺司法資料庫,,司法,,,,,,,,
+2016-07-03,第貳次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2016-07-23,第十六次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/-moed16ct-5u9QrhicuIy
+2016-07-23,第參次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2016-08-06,第貳拾次總統直選黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath20n
+2016-08-06,Yuren,,提案,,勞基法計算機 - 變形工時實作,,勞動,,,,,,,,
+2016-08-25,第肆次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2016-10-01,第十七次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/-moed17ct-lSO9U2PIh2X
+2016-10-08,第伍次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2016-10-15,第貳拾壹次根留台灣黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath21n
+2016-10-15,tkirby,,提案,,g0v Project Hub,,基礎建設,,,,,,,,
+2016-10-15,MrOrz,,提案,,真的假的 Line bot,,假訊息,,,,g0v的hackath21n,,,,https://g0v.hackpad.tw/-LINE-bot-Zb4bFLB7pnv
+2016-10-15,蕭A,,提案,,散落在世界的國家寶藏,,歷史,,,,,,,,
+2016-11-05,g0v@NYC hackathon,,,,,,美東松,,,,,,,,https://hackmd.io/@ttcat/Hy_2DQTzg?type=view#g0vNYC-201611-%E7%B4%80%E9%8C%84-by-ttcat
+2016-11-06,g0v@NYC hackathon,,,,,,美東松,,,,,,,,https://hackmd.io/@ttcat/Hy_2DQTzg?type=view#g0vNYC-201611-%E7%B4%80%E9%8C%84-by-ttcat
+2016-11-10,公司英文名稱登記,,舉辦,,線上諮詢會議,,vTaiwan,,,,,,,,https://g0v.hackpad.tw/2016-11-10-vTaiwan--mYsKL2gvcWw
+2016-11-12,第十八次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/-moed18ct-F1PorqHPw1v
+2016-12-17,第貳拾貳次公民科學黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath22n
+2016-12-17,ttcat,,提案,,OCF x g0v.news,,國際交流,,,,,,,,
+2017-01-09,真的假的,,媒體曝光,,,,假訊息,,社群貼文、名人轉發後在媒體上初次曝光，LINE bot 好友數破萬,,,,,,"https://www.facebook.com/groups/1847232902175197/permalink/1894866897411797
 https://www.facebook.com/groups/cofacts/posts/1896817880550032/"
-2017-01-21,第陸次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-hackath21n
-2017-01-31,揪松團,舉辦,2017 春季公民科技創新獎助金,公民科技創新獎助金,,,,https://grants.g0v.tw/dashboards/2017spring?sort=showcase
-2017-02-16,第柒次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-hackath21n
-2017-03-04,第貳拾參次開放資料黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath23n
-2017-03-25,第十九次萌典松,,,萌典,,,,https://g0v.hackpad.tw/-moed19ct-thf3yfLZhVq
-2017-03-29,真的假的,上線,,假訊息,網站上線、chatbot 改版、資料庫換成 Elasticsearch,,,https://www.facebook.com/notes/cofacts-%E7%9C%9F%E7%9A%84%E5%81%87%E7%9A%84%E7%B7%A8%E8%BC%AF%E4%BA%A4%E6%B5%81%E5%A4%A9%E5%9C%B0/2017329%E9%81%8E%E5%8E%BB%E4%B8%80%E5%80%8B%E6%9C%88%E7%9A%84%E6%9B%B4%E6%96%B0/1933902890174864/
-2017-04-04,真的假的,取名,Cofacts,假訊息,確立英文專案名 Cofacts,,,https://github.com/cofacts/rumors-api/issues/28
-2017-04-20,第捌次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-hackath23n
-2017-05-06,第貳拾肆次凍省黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath24n
-2017-05-28,第二十次萌典松 ,,,萌典,,,,https://g0v.hackpad.tw/-moed20ct-LW9I2dPOWdY
-2017-06-10,搶救 g0v Hackpad 松,,,小松,,,,https://hackmd.io/LiP2YS_zSPqMGK6ciSe-Lw?both
-2017-06-19,Cofacts 真的假的,舉辦,第一次編輯小聚,假訊息,第一次編輯小聚。2017 年每月進行，2018 年改為雙月進行,,,https://cofacts.kktix.cc/
-2017-07-01,第貳拾伍次一綱多本黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath25n
-2017-07-02,g0v黑客松X海台青年會,,,美東松,,"Pennsylvania, USA",,https://otd4tw.github.io/?fbclid=IwAR3a4oAH_4IfIWaxZ26JPTOX3ybZfpKTCjtacYUIjG7uibZFQX8BEWhIrTc
-2017-07-03,g0v黑客松X海台青年會,,,美東松,,"Pennsylvania, USA",,https://otd4tw.github.io/?fbclid=IwAR3a4oAH_4IfIWaxZ26JPTOX3ybZfpKTCjtacYUIjG7uibZFQX8BEWhIrTc
-2017-07-04,g0v黑客松X海台青年會,,,美東松,,"Pennsylvania, USA",,https://otd4tw.github.io/?fbclid=IwAR3a4oAH_4IfIWaxZ26JPTOX3ybZfpKTCjtacYUIjG7uibZFQX8BEWhIrTc
-2017-07-16,揪松團,舉辦,2017 秋季公民科技創新獎助金 ,公民科技創新獎助金,,,,https://grants.g0v.tw/dashboards/2017autumn?sort=showcase
-2017-07-29,g0v@Bangkok hackath0n,,,國際交流,,,,https://beta.hackfoldr.org/bangkok-hackath0n
-2017-09-16,第貳拾陸次五週年黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath26n
-2017-10-21,第玖次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2017-11-25,第貳拾柒次全球開放立法松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath27n
-2017-11-25,tkirby,提案,g0v 揪松網,基礎建設,,,,
-2017-12-23,第二十一次萌典松,,,萌典,,,,https://g0v.hackpad.tw/-moed21ct-BImxnSxaaIc
-2018-01-01,揪松團,舉辦,2018 公民科技創新獎助金,公民科技創新獎助金,,,,https://grants.g0v.tw/dashboards/2018a?sort=showcase
-2018-01-13,第貳拾捌次高牆功德黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath28n
-2018-03-03,第貳拾玖次開放資料黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath29n
-2018-04-14,第二十二次萌典松,,,萌典,,,,https://g0v.hackpad.tw/-moed22ct-Y__Y-cYnLXfOuzNY
-2018-04-14,第拾次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2018-05-05,第參拾次佛系黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath30n
-2018-05-05,ddio,提案,開放租屋之不住頂加有多難？(Rentea 前身),居住,,,,
-2018-06-19,第拾壹次基礎建設 ft 傍晚熱炒晚上松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2018-07-07,第參拾壹次香蕉吃到飽松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath31n
-2018-08-15,第二十三次萌典松,,,萌典,,,,https://moe.kktix.cc/events/moed24ct
-2018-09-02,第拾貳次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2018-10-05,g0v Summit 2018 開放了？然後咧！,,,summit,,中央研究院,,https://summit.g0v.tw/2018/
-2018-10-06,g0v Summit 2018 開放了？然後咧！,,,summit,,中央研究院,,https://summit.g0v.tw/2018/
-2018-11-07,"g0ver, Parti",討論,SGP (Stupid Government Partnership),國際交流,"pm5, Chihao, Yutin, Isabel參加OGP會議後，與韓國Parti 社群聚會，發現台韓政府都做了很多奇妙的計畫做了很多奇妙的計畫，比如河流裡放機器魚。",韓國首爾的咖啡店,,
-2018-11-11,第拾參次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2018-11-11,沒有人,討論,g0v 社群的國際交流,國際交流,,,,https://g0v.hackmd.io/7zKnMuMiQ3iLVxbAg-4RKw
-2018-12-28,第参拾貳次蜂蜜檸檬黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath32n
-2019-01-01,揪松團,舉辦,2019 公民科技創新獎助金,公民科技創新獎助金,,,,https://grants.g0v.tw/
-2019-03-09,第參拾參次不顧北京反對___黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath33n
-2019-03-09,"pm5, isabel, chihao",提案,g0v 國際交流小組,國際交流,https://www.youtube.com/watch?v=vXit-3sJoP4&list=PLdwQWxpS513B0GRQ4b5Yoo5etZgSZvs9f&index=15,g0v的hackath33n,,
-2019-04-28,第零次電視松,,,小松,,,,
-2019-05-25,第參拾肆次再開放空總黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath34n
-2019-05-26,資料申請小幫手,提案,,開放資料,總統盃黑客松第一次工作坊,,,https://hackmd.io/@y56/r1O6G6vpN?type=view
-2019-06-08,Facing the Ocean Okinawa 2019,,,國際交流,,日本沖繩的Startup Lab Lagoon in Okinawa City,,https://g0v.hackmd.io/@chihao/HJuTOqB74?type=view
-2019-06-22,第壹次電視松 × 公視 hackatv1n × PTS,,,小松,,,,
-2019-07-01,g0v.NEWS,成立,,國際交流,連結全球公民科技社群,,,https://g0v.news/
-2019-07-20,資料申請小幫手,討論,,開放資料,g0v 獎助金 2019 年 期中報告,中央研究院,,https://www.youtube.com/watch?v=BDLv_udptiI
-2019-07-25,第參拾伍次最旁邊黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath35n
-2019-07-30,Disfactory農地違章工廠回報系統,提案,,環境保護,農地工廠回報系統第一次提案,g0v的hackath35n,,https://www.youtube.com/watch?v=OOKWIy86-Mk
-2019-09-03,資料申請小幫手,得獎,,開放資料,獲選 2019年 總統盃黑客松Top 10,總統府,,https://presidential-hackathon.taiwan.gov.tw/2019/NewDraft0903.aspx
-2019-09-07,第參拾陸次開放台北市議會黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath36n
-2019-10-14,Cofacts 真的假的,得獎,,假訊息,獲選 NPOwer 公益行動家,,,https://npost.tw/archives/53031
-2019-10-20,第拾肆次基礎建設松,,,基礎松,,,,https://g0v.hackpad.tw/g0v--9MbKWNVW1Is
-2019-11-04,g0v 國際交流小組,參與,United Nations of Innovation - #HackingDemocracy,國際交流,"g0v 社群受德國 Friedrich-Naumann-Stiftung für die Freiheit（FNF 基金會）邀請至柏林參與 ""United Nations of Innovation - #HackingDemocracy"" conference. 同時與基金會內部對談g0v的發展運作、向基金會所屬在野黨的議員們分享台灣的公民參與運動。
-參與者：pm5, tmonk, chihao, bess, choulin, g0v 國際交流小組",德國柏林的Cafe Moskau,,
-2019-11-09,第二屆紐約 g0v 黑客松,,,美東松,,,,https://www.facebook.com/events/2264036587178364/
-2019-11-10,第二屆紐約 g0v 黑客松,,,美東松,,,,
-2019-11-16,g0v 社群忘年會,,,基礎建設,,,,https://g0v-jothon.kktix.cc/events/g0v-year-end-banquet-2019
-2019-11-30,台南新手村,,,大松,,,,https://g0v-jothon.kktix.cc/events/g0villagetainan
-2019-12-21,第參拾柒次全臺首學黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath37n
-2020-01-18,第拾伍次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2020-02-02,坑抗 Keng of Conf - 坑主小聚,,,小松,,,,
-2020-02-06,藥局口罩採購地圖,上線,,covid-19,,Covid-19,,"https://link.medium.com/1l8VVhD3Dkb
+2017-01-21,第陸次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath21n
+2017-01-31,揪松團,,舉辦,,2017 春季公民科技創新獎助金,,公民科技創新獎助金,,,,,,,,https://grants.g0v.tw/dashboards/2017spring?sort=showcase
+2017-02-16,第柒次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath21n
+2017-03-04,第貳拾參次開放資料黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath23n
+2017-03-25,第十九次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/-moed19ct-thf3yfLZhVq
+2017-03-29,真的假的,,上線,,,,假訊息,,網站上線、chatbot 改版、資料庫換成 Elasticsearch,,,,,,https://www.facebook.com/notes/cofacts-%E7%9C%9F%E7%9A%84%E5%81%87%E7%9A%84%E7%B7%A8%E8%BC%AF%E4%BA%A4%E6%B5%81%E5%A4%A9%E5%9C%B0/2017329%E9%81%8E%E5%8E%BB%E4%B8%80%E5%80%8B%E6%9C%88%E7%9A%84%E6%9B%B4%E6%96%B0/1933902890174864/
+2017-04-04,真的假的,,取名,,Cofacts,,假訊息,,確立英文專案名 Cofacts,,,,,,https://github.com/cofacts/rumors-api/issues/28
+2017-04-20,第捌次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath23n
+2017-05-06,第貳拾肆次凍省黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath24n
+2017-05-28,第二十次萌典松 ,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/-moed20ct-LW9I2dPOWdY
+2017-06-10,搶救 g0v Hackpad 松,,,,,,小松,,,,,,,,https://hackmd.io/LiP2YS_zSPqMGK6ciSe-Lw?both
+2017-06-19,Cofacts 真的假的,,舉辦,,第一次編輯小聚,,假訊息,,第一次編輯小聚。2017 年每月進行，2018 年改為雙月進行,,,,,,https://cofacts.kktix.cc/
+2017-07-01,第貳拾伍次一綱多本黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath25n
+2017-07-02,g0v黑客松X海台青年會,,,,,,美東松,,,,"Pennsylvania, USA",,,,https://otd4tw.github.io/?fbclid=IwAR3a4oAH_4IfIWaxZ26JPTOX3ybZfpKTCjtacYUIjG7uibZFQX8BEWhIrTc
+2017-07-03,g0v黑客松X海台青年會,,,,,,美東松,,,,"Pennsylvania, USA",,,,https://otd4tw.github.io/?fbclid=IwAR3a4oAH_4IfIWaxZ26JPTOX3ybZfpKTCjtacYUIjG7uibZFQX8BEWhIrTc
+2017-07-04,g0v黑客松X海台青年會,,,,,,美東松,,,,"Pennsylvania, USA",,,,https://otd4tw.github.io/?fbclid=IwAR3a4oAH_4IfIWaxZ26JPTOX3ybZfpKTCjtacYUIjG7uibZFQX8BEWhIrTc
+2017-07-16,揪松團,,舉辦,,2017 秋季公民科技創新獎助金 ,,公民科技創新獎助金,,,,,,,,https://grants.g0v.tw/dashboards/2017autumn?sort=showcase
+2017-07-29,g0v@Bangkok hackath0n,,,,,,國際交流,,,,,,,,https://beta.hackfoldr.org/bangkok-hackath0n
+2017-09-14,違反本人意願而散布本人的身體私密影像,,舉辦,,線上諮詢會議,,vTaiwan,,,,,,,,https://hackpad.tw/914-vTaiwan--9KgHMVukJS4#:h=%E9%80%90%E5%AD%97%E7%A8%BF
+2017-09-16,第貳拾陸次五週年黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath26n
+2017-09-21,無人載具科技創新實驗條例,,舉辦,,線上諮詢會議,,vTaiwan,,遙控無人機應用與管理機制,,,,,,https://hackpad.tw/2017-09-21-vTaiwan--JyX2o9S6gJq
+2017-10-21,第玖次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2017-10-26,民用航空法修正草案,,送交院會,,,,vTaiwan,,增訂專章方式完整規劃遙控無人機的管理制度,,,,,,https://www.ey.gov.tw/Page/9277F759E41CCD91/d8343392-4e36-4efc-9461-7239ae4744e6
+2017-10-26,醫師、心理師透過網路平台提供服務,,舉辦,,線上諮詢會議,,vTaiwan,,,,,,,,https://hackpad.tw/2017-10-26-vTaiwan--F5xjNYnX8ty
+2017-11-25,第貳拾柒次全球開放立法松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath27n
+2017-11-25,tkirby,,提案,,g0v 揪松網,,基礎建設,,,,,,,,
+2017-12-23,第二十一次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/-moed21ct-BImxnSxaaIc
+2018-01-01,揪松團,,舉辦,,2018 公民科技創新獎助金,,公民科技創新獎助金,,,,,,,,https://grants.g0v.tw/dashboards/2018a?sort=showcase
+2018-01-10,通訊診療辦法草案,,送交院會,,,,vTaiwan,,,,,,,,https://join.gov.tw/policies/detail/c11f9a16-6bea-47e5-ae16-010610eadf58
+2018-01-13,第貳拾捌次高牆功德黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath28n
+2018-03-03,第貳拾玖次開放資料黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath29n
+2018-04-14,第二十二次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackpad.tw/-moed22ct-Y__Y-cYnLXfOuzNY
+2018-04-14,第拾次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2018-05-05,第參拾次佛系黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath30n
+2018-05-05,ddio,,提案,,開放租屋之不住頂加有多難？(Rentea 前身),,居住,,,,,,,,
+2018-05-17,無人載具科技創新實驗條例草案,,送交院會,,,,vTaiwan,,經濟部擬具無人載具科技創新實驗條例草案，送請立法院審議,,,,,,https://www.ey.gov.tw/Page/9277F759E41CCD91/60a8e74e-d09e-4fac-b7c8-a0f1b3c2e1ab
+2018-06-19,第拾壹次基礎建設 ft 傍晚熱炒晚上松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2018-07-07,第參拾壹次香蕉吃到飽松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath31n
+2018-08-15,第二十三次萌典松,,,,,,萌典,,,,,,,,https://moe.kktix.cc/events/moed24ct
+2018-08-22,政府資料公開之議題研析,,舉辦,,座談會,,vTaiwan,,政府資料跨部門運用之法制研析-政府資料公開之議題研析(G2C),,,,,,https://www.facebook.com/vtaiwan.tw/videos/281225709327719/
+2018-08-30,民間資料如何進入政府部門決策系統之探討,,舉辦,,座談會,,vTaiwan,,政府資料跨部門運用之法制研析—民間資料如何進入政府部門決策系統之探討(C2G),,,,,,https://www.facebook.com/vtaiwan.tw/videos/421514058374561/
+2018-09-02,第拾貳次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2018-10-05,g0v Summit 2018 開放了？然後咧！,,,,,,summit,,,,中央研究院,,,,https://summit.g0v.tw/2018/
+2018-10-06,g0v Summit 2018 開放了？然後咧！,,,,,,summit,,,,中央研究院,,,,https://summit.g0v.tw/2018/
+2018-10-17,談網路內容之管制措施,,線上諮詢會議,,,,vTaiwan,,,,,,,,https://www.facebook.com/vtaiwan.tw/videos/192274775006375/
+2018-10-31,政府資料跨部門運用之法制研析,,線上諮詢會議,,,,vTaiwan,,,,,,,,https://g0v.hackpad.tw/2018-10-31-vTaiwan--piqja95kk07
+2018-11-07,"g0ver, Parti",,討論,,SGP (Stupid Government Partnership),,國際交流,,"pm5, Chihao, Yutin, Isabel參加OGP會議後，與韓國Parti 社群聚會，發現台韓政府都做了很多奇妙的計畫做了很多奇妙的計畫，比如河流裡放機器魚。",,韓國首爾的咖啡店,,,,
+2018-11-11,第拾參次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2018-11-11,沒有人,,討論,,g0v 社群的國際交流,,國際交流,,,,,,,,https://g0v.hackmd.io/7zKnMuMiQ3iLVxbAg-4RKw
+2018-12-28,第参拾貳次蜂蜜檸檬黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath32n
+2019-01-01,揪松團,,舉辦,,2019 公民科技創新獎助金,,公民科技創新獎助金,,,,,,,,https://grants.g0v.tw/
+2019-03-09,第參拾參次不顧北京反對___黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath33n
+2019-03-09,"pm5, isabel, chihao",,提案,,g0v 國際交流小組,,國際交流,,https://www.youtube.com/watch?v=vXit-3sJoP4&list=PLdwQWxpS513B0GRQ4b5Yoo5etZgSZvs9f&index=15,,g0v的hackath33n,,,,
+2019-04-28,第零次電視松,,,,,,小松,,,,,,,,
+2019-05-25,第參拾肆次再開放空總黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath34n
+2019-05-25,新聞自由的界限,,舉辦,,線上諮詢會議,,vTaiwan,,,,,,,,https://g0v.hackmd.io/rPUpdQTYS9O5oP7r9sbHTA
+2019-05-26,資料申請小幫手,,提案,,,,開放資料,,總統盃黑客松第一次工作坊,,,,,,https://hackmd.io/@y56/r1O6G6vpN?type=view
+2019-06-08,Facing the Ocean Okinawa 2019,,,,,,國際交流,,,,日本沖繩的Startup Lab Lagoon in Okinawa City,,,,https://g0v.hackmd.io/@chihao/HJuTOqB74?type=view
+2019-06-22,第壹次電視松 × 公視 hackatv1n × PTS,,,,,,小松,,,,,,,,
+2019-07-01,g0v.NEWS,,成立,,,,國際交流,,連結全球公民科技社群,,,,,,https://g0v.news/
+2019-07-20,資料申請小幫手,,討論,,,,開放資料,,g0v 獎助金 2019 年 期中報告,,中央研究院,,,,https://www.youtube.com/watch?v=BDLv_udptiI
+2019-07-22,非汽車之動力載具的道路安全管理討論,,舉辦,,線上諮詢會議,,vTaiwan,,平衡車、電動滑板，台灣上路可以嗎？,,,,,,
+2019-07-25,第參拾伍次最旁邊黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath35n
+2019-07-30,Disfactory農地違章工廠回報系統,,提案,,,,環境保護,,農地工廠回報系統第一次提案,,g0v的hackath35n,,,,https://www.youtube.com/watch?v=OOKWIy86-Mk
+2019-09-03,資料申請小幫手,,得獎,,,,開放資料,,獲選 2019年 總統盃黑客松Top 10,,總統府,,,,https://presidential-hackathon.taiwan.gov.tw/2019/NewDraft0903.aspx
+2019-09-07,第參拾陸次開放台北市議會黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath36n
+2019-10-14,Cofacts 真的假的,,得獎,,,,假訊息,,獲選 NPOwer 公益行動家,,,,,,https://npost.tw/archives/53031
+2019-10-20,第拾肆次基礎建設松,,,,,,基礎松,,,,,,,,https://g0v.hackpad.tw/g0v--9MbKWNVW1Is
+2019-11-04,g0v 國際交流小組,,參與,,United Nations of Innovation - #HackingDemocracy,,國際交流,,"g0v 社群受德國 Friedrich-Naumann-Stiftung für die Freiheit（FNF 基金會）邀請至柏林參與 ""United Nations of Innovation - #HackingDemocracy"" conference. 同時與基金會內部對談g0v的發展運作、向基金會所屬在野黨的議員們分享台灣的公民參與運動。
+參與者：pm5, tmonk, chihao, bess, choulin, g0v 國際交流小組",,德國柏林的Cafe Moskau,,,,
+2019-11-09,第二屆紐約 g0v 黑客松,,,,,,美東松,,,,,,,,https://www.facebook.com/events/2264036587178364/
+2019-11-10,第二屆紐約 g0v 黑客松,,,,,,美東松,,,,,,,,
+2019-11-16,g0v 社群忘年會,,,,,,基礎建設,,,,,,,,https://g0v-jothon.kktix.cc/events/g0v-year-end-banquet-2019
+2019-11-30,台南新手村,,,,,,大松,,,,,,,,https://g0v-jothon.kktix.cc/events/g0villagetainan
+2019-12-21,第參拾柒次全臺首學黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath37n
+2020-01-18,第拾伍次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2020-02-02,坑抗 Keng of Conf - 坑主小聚,,,,,,小松,,,,,,,,
+2020-02-06,藥局口罩採購地圖,,上線,,,,covid-19,,,,Covid-19,,,,"https://link.medium.com/1l8VVhD3Dkb
 https://g0v.hackmd.io/@kiang/mask-info"
-2020-03-20,第參拾捌次在家黑客松,,,大松,,,,https://g0v.hackmd.io/@jothon/g0v-hackath38n
-2020-03-14,Disfactory農地違章工廠回報系統,上線,,環境保護,農地工廠回報系統上線,地球公民基金會的記者會,,https://www.cet-taiwan.org/info/news/3683
-2020-04-05,第拾陸次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2020-05-16,2020 南庄桐花松,,,南庄桐花松,g0v 揪松團、數位農民組合、竹塹社區大學、臺灣社區協力農業協會一起舉辦,南埔共學空間,,https://g0v.hackmd.io/@jothon/tungflowerthon
-2020-05-23,第參拾玖次又在家黑客松,,,大松,,,,https://g0v.hackmd.io/c/g0v-hackath39n
-2020-07-25,第肆拾次集合啦！老地方黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath40n
-2020-08-30,零時小學校 Demo Day,,,零時小學校,,,,
-2020-10-24,第肆拾壹次八週年黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath41n
-2020-11-01,第二十四次萌典松,,,萌典,,,,https://g0v.hackmd.io/@tmonk/HyWeQ9cww
-2020-11-12,新版 g0v.tw,上線,,基礎建設,,,,
-2020-12-03,g0v Summit 2020,,,summit,,台南,,https://summit.g0v.tw/2020/
-2020-12-03,Facing the Ocean Tainan 2020,,,國際交流,,,,
-2021-01-10,第拾柒次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2021-01-23,第肆拾貳次生命、宇宙以及萬事萬物的終極答案黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath42n
-2021-01-23,ckxpress,提案,#decentralizehk 去中心香港,社運,,,,
-2021-02-04,Cofacts 真的假的,獲得,AI4SG 獎項,假訊息,,,,https://tw.systex.com/ai4sg-award-2021/
-2021-03-20,第肆拾參次源力犇騰黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath43n
-2021-04-02,太魯閣號列車脫軌事故災情整合平台,,,災難救助,,,,https://g0v.hackmd.io/20210402TarokoCrash
-2021-05-01,2021 南庄桐花松,,,南庄桐花松,,,,
-2021-05-17,簡訊實聯制,討論,,covid-19,,,,https://g0v.hackmd.io/@jothon/BJlq5K1tO/https%3A%2F%2Fhackmd.io%2F1ksNeXo0QhyPgWS9lJW1tg
-2021-05-21,COVID-19 Info 疫情資訊野生整合平台 powered by g0v.tw,上線,,covid-19,,,,
-2021-05-22,第拾捌次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2021-05-23,蔬菜箱、食材線上訂購共筆,上線,,covid-19,,,,
-2021-05-30,遠距心理諮詢資訊彙整,上線,,covid-19,,,,
-2021-06-02,台灣開放教育推動團隊,成立,,教育,,,,
-2021-06-21,2021 疫情紓困振興方案整理,上線,,災難救助,,,,
-2021-06-26,第肆拾肆次世界最危險黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath44n
-2021-06-26,Disfactory 大家來找廠,提案,,環境保護,,g0v的hackath44n,,https://www.youtube.com/watch?v=bMn63Uju7uM
-2021-07-17,零時小學校「夏日源理」線上源力增能營,開跑,,零時小學校,,,,
-2021-08-21,第肆拾伍次原本在台中黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath45n
-2021-10-22,Cofacts 真的假的,獲選,2021 未來大人物,假訊息,,,,https://2021event.becomingaces.com/2021aces
-2021-10-23,第肆拾陸次九週年黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath46n
-2021-10-24,藥局口罩採購地圖,停止更新,,covid-19,,Covid-19,,https://link.medium.com/myx6nQPrCkb
-2021-11-20,零時小學校 × LASS 新竹小松,,,零時小學校,,,,
-2021-12-11,第肆拾柒次板橋油庫口黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath47n
-2022-02-19,第肆拾捌次虎來俱進黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath48n
-2022-02-25,俄羅斯入侵烏克蘭資訊野生整合平台,上線,,戰爭,,,,https://g0v.hackmd.io/@chihao/ukraine/%2Fm8_-IXlsSNGxIKOxsEDhxw%3Fview
-2022-03-02,第拾玖次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2022-03-09,零時電台 g0v Podcast,發布,EP0,g0v podcast,,,共筆,https://g0v.hackmd.io/@podcast/main
-2022-03-12,第拾玖次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2022-04-09,第肆拾玖次全糖去冰黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath49n
-2022-05-01,2022 南庄桐花松,,,南庄桐花松,,,,
-2022-06-18,第伍拾次來電五十黑客松,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath50n
-2022-07-09,第貳拾次基礎建設松,,,基礎松,,,,https://beta.hackfoldr.org/g0v-infras/
-2022-08-20,第伍拾壹次大肚山海豚黑客松 x 水保局,,,大松,,,,https://beta.hackfoldr.org/g0v-hackath51n
+2020-03-20,第參拾捌次在家黑客松,,,,,,大松,,,,,,,,https://g0v.hackmd.io/@jothon/g0v-hackath38n
+2020-03-14,Disfactory農地違章工廠回報系統,,上線,,,,環境保護,,農地工廠回報系統上線,,地球公民基金會的記者會,,,,https://www.cet-taiwan.org/info/news/3683
+2020-04-05,第拾陸次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2020-05-16,2020 南庄桐花松,,,,,,南庄桐花松,,g0v 揪松團、數位農民組合、竹塹社區大學、臺灣社區協力農業協會一起舉辦,,南埔共學空間,,,,https://g0v.hackmd.io/@jothon/tungflowerthon
+2020-05-23,第參拾玖次又在家黑客松,,,,,,大松,,,,,,,,https://g0v.hackmd.io/c/g0v-hackath39n
+2020-07-25,第肆拾次集合啦！老地方黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath40n
+2020-08-30,零時小學校 Demo Day,,,,,,零時小學校,,,,,,,,
+2020-10-24,第肆拾壹次八週年黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath41n
+2020-11-01,第二十四次萌典松,,,,,,萌典,,,,,,,,https://g0v.hackmd.io/@tmonk/HyWeQ9cww
+2020-11-12,新版 g0v.tw,,上線,,,,基礎建設,,,,,,,,
+2020-12-03,g0v Summit 2020,,,,,,summit,,,,台南,,,,https://summit.g0v.tw/2020/
+2020-12-03,Facing the Ocean Tainan 2020,,,,,,國際交流,,,,,,,,
+2021-01-10,第拾柒次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2021-01-23,第肆拾貳次生命、宇宙以及萬事萬物的終極答案黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath42n
+2021-01-23,ckxpress,,提案,,#decentralizehk 去中心香港,,社運,,,,,,,,
+2021-02-04,Cofacts 真的假的,,獲得,,AI4SG 獎項,,假訊息,,,,,,,,https://tw.systex.com/ai4sg-award-2021/
+2021-03-20,第肆拾參次源力犇騰黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath43n
+2021-04-02,太魯閣號列車脫軌事故災情整合平台,,,,,,災難救助,,,,,,,,https://g0v.hackmd.io/20210402TarokoCrash
+2021-05-01,2021 南庄桐花松,,,,,,南庄桐花松,,,,,,,,
+2021-05-17,簡訊實聯制,,討論,,,,covid-19,,,,,,,,https://g0v.hackmd.io/@jothon/BJlq5K1tO/https%3A%2F%2Fhackmd.io%2F1ksNeXo0QhyPgWS9lJW1tg
+2021-05-21,COVID-19 Info 疫情資訊野生整合平台 powered by g0v.tw,,上線,,,,covid-19,,,,,,,,
+2021-05-22,第拾捌次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2021-05-23,蔬菜箱、食材線上訂購共筆,,上線,,,,covid-19,,,,,,,,
+2021-05-30,遠距心理諮詢資訊彙整,,上線,,,,covid-19,,,,,,,,
+2021-06-02,台灣開放教育推動團隊,,成立,,,,教育,,,,,,,,
+2021-06-21,2021 疫情紓困振興方案整理,,上線,,,,災難救助,,,,,,,,
+2021-06-26,第肆拾肆次世界最危險黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath44n
+2021-06-26,Disfactory 大家來找廠,,提案,,,,環境保護,,,,g0v的hackath44n,,,,https://www.youtube.com/watch?v=bMn63Uju7uM
+2021-07-17,零時小學校「夏日源理」線上源力增能營,,開跑,,,,零時小學校,,,,,,,,
+2021-08-21,第肆拾伍次原本在台中黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath45n
+2021-10-22,Cofacts 真的假的,,獲選,,2021 未來大人物,,假訊息,,,,,,,,https://2021event.becomingaces.com/2021aces
+2021-10-23,第肆拾陸次九週年黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath46n
+2021-10-24,藥局口罩採購地圖,,停止更新,,,,covid-19,,,,Covid-19,,,,https://link.medium.com/myx6nQPrCkb
+2021-11-20,零時小學校 × LASS 新竹小松,,,,,,零時小學校,,,,,,,,
+2021-12-11,第肆拾柒次板橋油庫口黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath47n
+2022-02-19,第肆拾捌次虎來俱進黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath48n
+2022-02-25,俄羅斯入侵烏克蘭資訊野生整合平台,,上線,,,,戰爭,,,,,,,,https://g0v.hackmd.io/@chihao/ukraine/%2Fm8_-IXlsSNGxIKOxsEDhxw%3Fview
+2022-03-02,第拾玖次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2022-03-09,零時電台 g0v Podcast,,發布,,EP0,,g0v podcast,,,,,,共筆,,https://g0v.hackmd.io/@podcast/main
+2022-03-12,第拾玖次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2022-04-09,第肆拾玖次全糖去冰黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath49n
+2022-05-01,2022 南庄桐花松,,,,,,南庄桐花松,,,,,,,,
+2022-06-18,第伍拾次來電五十黑客松,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath50n
+2022-07-09,第貳拾次基礎建設松,,,,,,基礎松,,,,,,,,https://beta.hackfoldr.org/g0v-infras/
+2022-08-20,第伍拾壹次大肚山海豚黑客松 x 水保局,,,,,,大松,,,,,,,,https://beta.hackfoldr.org/g0v-hackath51n
