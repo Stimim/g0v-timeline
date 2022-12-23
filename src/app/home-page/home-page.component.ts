@@ -28,6 +28,7 @@ export class HomePageComponent implements OnInit {
   maxOffsetX: number = 0;
 
   autoScrolling: boolean = false;
+  showNotificationsEnabled: boolean = false;
 
   predefinedEvents: PredefinedEvent[] = [];
   predefinedEventsOffset: number[][] = [];
@@ -606,6 +607,11 @@ export class HomePageComponent implements OnInit {
     if (this.autoScrolling) {
       this.startScrolling();
     }
+  }
+
+  onShowNotificationsChanged(newValue: boolean) {
+    this.showNotificationsEnabled = newValue;
+    console.info(this.showNotificationsEnabled);
   }
 
   onSpeedChanged(newSpeed: number) {

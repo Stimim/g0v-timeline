@@ -34,9 +34,10 @@
     [(enable)]="settingsModalEnabled"
     (speedChangedEvent)="onSpeedChanged($event)"
     (autoScrollChangedEvent)="onAutoScrollChanged($event)"
+    (showNotificationsChangedEvent)="onShowNotificationsChanged($event)"
     >
   </app-settings-modal>
 
-  <app-notification-area>
+  <app-notification-area *ngIf="showNotificationsEnabled">
   </app-notification-area>
 </div>

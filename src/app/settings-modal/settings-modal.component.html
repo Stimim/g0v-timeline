@@ -1,5 +1,4 @@
 <div
-  #modal
   class="dialog"
   tabindex="0"
   >
@@ -30,6 +29,18 @@
         [(ngModel)]="speed"
          #ngSlider><input matSliderThumb (input)="onSpeedChanged({source: ngSliderThumb, parent: ngSlider, value: ngSliderThumb.value})" #ngSliderThumb="matSliderThumb" />
       </mat-slider>
+    </section>
+
+    <section class="show-notifications-section">
+      <mat-slide-toggle
+        i18n="slide-toggle: show notification"
+        color="primary"
+        labelPosition="before"
+        (change)="onShowNotificationsChanged()"
+        [(ngModel)]="showNotificationsEnabled"
+        >
+        Show Notifications
+      </mat-slide-toggle>
     </section>
 
     <section class="close-button-section">
