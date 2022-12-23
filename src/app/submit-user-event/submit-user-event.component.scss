@@ -17,7 +17,11 @@ mat-card-title, mat-card-subtitle, mat-card-actions {
   text-align: center;
 }
 
-mat-card {
+.card {
   width: 80%;
   max-width: 30em;
+}
+
+button {
+  margin: 0px 5px;
 }

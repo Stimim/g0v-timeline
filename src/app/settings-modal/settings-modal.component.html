@@ -28,8 +28,7 @@
         min="20"
         max="100"
         [(ngModel)]="speed"
-        (input)="onSpeedChanged($event)"
-        >
+         #ngSlider><input matSliderThumb (input)="onSpeedChanged({source: ngSliderThumb, parent: ngSlider, value: ngSliderThumb.value})" #ngSliderThumb="matSliderThumb" />
       </mat-slider>
     </section>
 
