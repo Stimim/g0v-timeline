@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Output, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-settings-modal',
@@ -9,13 +9,13 @@ export class SettingsModalComponent implements OnInit {
   @Input() enable: boolean = true;
   @Output() enableChange = new EventEmitter<boolean>();
 
-  @Output() speedChangedEvent = new EventEmitter<number>();
   @Output() autoScrollChangedEvent = new EventEmitter<boolean>();
+  @Output() showNotificationsChangedEvent = new EventEmitter<boolean>();
+  @Output() speedChangedEvent = new EventEmitter<number>();
 
-  @ViewChild('modal') modalElement!: ElementRef;
-
-  speed: number = 20;
   autoScrollEnabled = false;
+  showNotificationsEnabled = false;
+  speed: number = 20;
 
   constructor() { }
 
@@ -29,6 +29,10 @@ export class SettingsModalComponent implements OnInit {
 
   onAutoScrollChanged() {
     this.autoScrollChangedEvent.emit(this.autoScrollEnabled);
+  }
+
+  onShowNotificationsChanged() {
+    this.showNotificationsChangedEvent.emit(this.showNotificationsEnabled);
   }
 
   onClose() {

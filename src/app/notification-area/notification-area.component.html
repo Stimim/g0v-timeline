@@ -6,4 +6,9 @@
       <span class="description">{{x.description}}</span>
     </mat-card-content>
   </mat-card>
+  <mat-card appearance="outlined" *ngIf="notifications.length === 0" class="card">
+    <mat-card-content>
+      Loading notifications...
+    </mat-card-content>
+  </mat-card>
 </div>
