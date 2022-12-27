@@ -1,4 +1,7 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-settings-modal',
@@ -13,26 +16,33 @@ export class SettingsModalComponent implements OnInit {
   @Output() showNotificationsChangedEvent = new EventEmitter<boolean>();
   @Output() speedChangedEvent = new EventEmitter<number>();
 
-  autoScrollEnabled = false;
-  showNotificationsEnabled = false;
-  speed: number = 20;
+  settingsForm = new FormGroup({
+    autoScrollEnabled: new FormControl(false),
+    selectedLanguage: new FormControl('zh'),
+    showNotificationsEnabled: new FormControl(false),
+    speed: new FormControl(20),
+  });
 
-  constructor() { }
+  constructor(private translate: TranslateService) { }
 
   ngOnInit(): void {
   }
 
-  onSpeedChanged(event: any) {
-    this.speed = event.value;
-    this.speedChangedEvent.emit(this.speed);
+  onSpeedChanged() {
+    this.speedChangedEvent.emit(this.settingsForm.value.speed!);
   }
 
   onAutoScrollChanged() {
-    this.autoScrollChangedEvent.emit(this.autoScrollEnabled);
+    this.autoScrollChangedEvent.emit(this.settingsForm.value.autoScrollEnabled!);
   }
 
   onShowNotificationsChanged() {
-    this.showNotificationsChangedEvent.emit(this.showNotificationsEnabled);
+    this.showNotificationsChangedEvent.emit(this.settingsForm.value.showNotificationsEnabled!);
+  }
+
+  onSelectedLanguageChanged() {
+    console.debug('Changing language to:', this.settingsForm.value.selectedLanguage!);
+    this.translate.use(this.settingsForm.value.selectedLanguage!);
   }
 
   onClose() {

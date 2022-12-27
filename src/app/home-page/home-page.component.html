@@ -14,7 +14,7 @@
   <app-event-modal> </app-event-modal>
 
   <button mat-raised-button class="settings-button" (click)="showSettings()">
-    設定
+    {{ 'SETTINGS' | translate }}
   </button>
 
   <button
@@ -22,7 +22,7 @@
     mat-raised-button
     class="here-am-i-button"
     (click)="gotoHereAmI()">
-    輸入你的關鍵字
+    {{ 'ENTER_YOUR_KEYWORDS' | translate }}
   </button>
 
   <app-settings-modal
