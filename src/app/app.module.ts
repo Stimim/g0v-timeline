@@ -55,17 +55,17 @@ import { TakeDownEventComponent } from './take-down-event/take-down-event.compon
       {
         path: '',
         component: HomePageComponent,
-        title: $localize `g0v timeline`,
+        title: 'g0v Timeline',
       },
       {
         path: 'here-am-i',
         component: UploadEventComponent,
-        title: $localize `g0v timeline - Enter Your Keywords`,
+        title: 'g0v Timeline - 輸入你的關鍵字',
       },
       {
         path: 'take-down-event',
         component: TakeDownEventComponent,
-        title: $localize `g0v timeline - Take Down Event`,
+        title: 'g0v Timeline - Take Down Event',
       },
     ]),
   ],
