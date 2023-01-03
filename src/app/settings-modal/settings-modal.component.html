@@ -3,56 +3,69 @@
   tabindex="0"
   >
 
-  <div class="box" *ngIf="enable" >
-    <section>
-      <mat-slide-toggle
-        i18n="slide-toggle: autoplay mode"
-        color="primary"
-        labelPosition="before"
-        (change)="onAutoScrollChanged()"
-        [(ngModel)]="autoScrollEnabled"
-        >
-        AutoPlay Mode
-      </mat-slide-toggle>
-    </section>
+    <mat-card class="box" *ngIf="enable">
+      <mat-card-content>
+        <form [formGroup]="settingsForm">
+          <mat-slide-toggle
+            color="primary"
+            labelPosition="before"
+            (change)="onAutoScrollChanged()"
+            formControlName="autoScrollEnabled"
+            >
+            {{ 'AUTO_SCROLL_MODE' | translate }}
+          </mat-slide-toggle>
+          <br>
 
-    <section>
-      <span
-        i18n="text: sleep"
-        >
-        AutoPlay Speed: {{speed}}
-      </span>
-      <mat-slider
-        color="primary"
-        min="20"
-        max="100"
-        [(ngModel)]="speed"
-         #ngSlider><input matSliderThumb (input)="onSpeedChanged({source: ngSliderThumb, parent: ngSlider, value: ngSliderThumb.value})" #ngSliderThumb="matSliderThumb" />
-      </mat-slider>
-    </section>
+          <label>
+            {{ 'SCROLL_SPEED' | translate }} : {{settingsForm.value.speed}}
+          </label>
+          <mat-slider
+            color="primary"
+            min="20"
+            max="100"
+            #ngSlider>
+            <input
+              matSliderThumb
+              formControlName="speed"
+              (valueChange)="onSpeedChanged()"
+              #ngSliderThumb="matSliderThumb" />
+          </mat-slider>
+          <br>
 
-    <section class="show-notifications-section">
-      <mat-slide-toggle
-        i18n="slide-toggle: show notification"
-        color="primary"
-        labelPosition="before"
-        (change)="onShowNotificationsChanged()"
-        [(ngModel)]="showNotificationsEnabled"
-        >
-        Show Notifications
-      </mat-slide-toggle>
-    </section>
+          <mat-slide-toggle
+            color="primary"
+            labelPosition="before"
+            (change)="onShowNotificationsChanged()"
+            formControlName="showNotificationsEnabled"
+            >
+            {{ 'SHOW_NOTIFICATIONS' | translate }}
+          </mat-slide-toggle>
+          <br>
+          <br>
+          <br>
 
-    <section class="close-button-section">
-      <button
-        i18n="button: close"
-        mat-raised-button
-        color="primary"
-        (click)="onClose()"
-        >
-        Close
-      </button>
-    </section>
-  </div>
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'SELECT_LANGUAGE' | translate }}</mat-label>
+            <mat-select
+              formControlName="selectedLanguage"
+              (selectionChange)="onSelectedLanguageChanged()">
+              <mat-option value="en">English</mat-option>
+              <mat-option value="zh">中文</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br>
+        </form>
+      </mat-card-content>
+
+      <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="onClose()"
+            >
+            {{ 'CLOSE' | translate }}
+          </button>
+      </mat-card-actions>
+    </mat-card>
 </div>
 

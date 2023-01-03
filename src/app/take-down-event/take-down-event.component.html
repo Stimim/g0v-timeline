@@ -3,30 +3,18 @@
 
   <form [formGroup]="form">
     <mat-form-field appearance="fill">
-      <mat-label
-        i18n="label: event-id">
-        Event ID
-      </mat-label>
+      <mat-label>Event ID</mat-label>
       <input matInput type="text" formControlName="event_id" required>
     </mat-form-field>
 
     <br>
     <mat-form-field appearance="fill">
-      <mat-label
-        i18n="label: secret">
-        Secret
-      </mat-label>
+      <mat-label>Secret</mat-label>
       <input matInput type="text" formControlName="secret" required>
     </mat-form-field>
 
     <div class="actions">
-      <button
-        i18n="button: submit"
-        mat-raised-button
-        color="primary"
-        (click)="onClick()">
-        Submit
-      </button>
+      <button mat-raised-button color="primary" (click)="onClick()">送出</button>
     </div>
   </form>
 </div>

@@ -13,21 +13,16 @@
 
   <app-event-modal> </app-event-modal>
 
-  <button
-    i18n="button: settings"
-    mat-raised-button
-    class="settings-button"
-    (click)="showSettings()">
-    Settings
+  <button mat-raised-button class="settings-button" (click)="showSettings()">
+    {{ 'SETTINGS' | translate }}
   </button>
 
   <button
-    i18n="button: enter your keywords"
     *ngIf="!autoScrolling"
     mat-raised-button
     class="here-am-i-button"
     (click)="gotoHereAmI()">
-    Enter Your Keywords
+    {{ 'ENTER_YOUR_KEYWORDS' | translate }}
   </button>
 
   <app-settings-modal
