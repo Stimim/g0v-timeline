@@ -1,1 +1,2 @@
-google-cloud-datastore
+google-cloud-datastore==2.14.0
+google-auth==2.16.2

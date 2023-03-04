@@ -4,6 +4,8 @@ import os
 
 import functions_framework
 from google.cloud import datastore as datastore_module
+from google.oauth2 import id_token
+from google.auth.transport import requests as auth_requests
 
 
 _DATASTORE_NAMESPACE = 'g0v-timeline'
@@ -151,13 +153,31 @@ def get_events(request):
 @functions_framework.http
 @allow_cors
 def take_down_event(request):
+  OAUTH_CLIENT_ID = '1051382277094-rpj78qldqe8vi8fueudei8gho2geeqoj.apps.googleusercontent.com'
+
   client = GetDatastoreClient()
 
   try:
     event_id = int(request.form.get('event_id'))
-    assert request.form.get('secret') == os.environ.get('TAKE_DOWN_SECRET')
+    token = request.form.get('token')
   except Exception:
     return ({'message': 'bad request'}, 401)
+
+  try:
+    id_info = id_token.verify_oauth2_token(
+      token,
+      auth_requests.Request(),
+      OAUTH_CLIENT_ID)
+    if not id_info['email_verified']:
+      return ({'message': 'email not verified'}, 403)
+    user_email = id_info['email']
+  except ValueError:
+    return ({'message': 'invalid token'}, 403)
+
+  valid_emails = set(
+      email for email in os.environ.get('VALID_EMAILS').split(';') if email)
+  if user_email not in valid_emails:
+    return ({'message': f'unrecognized email: {user_email}'}, 403)
 
   key = client.key(_DATASTORE_KEY, event_id)
   entity = client.get(key)
