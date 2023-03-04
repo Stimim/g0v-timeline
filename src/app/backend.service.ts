@@ -80,12 +80,14 @@ export class BackendService {
     return EVENTS;
   }
 
-  TakeDownEvent(event_id: string, secret: string) {
+  TakeDownEvent(event_id: string, token: string) {
     const formData = new FormData();
     formData.append('event_id', event_id);
-    formData.append('secret', secret);
+    formData.append('token', token);
+
     return this.http.post<UserSubmittedEvent>(
       'https://g0v-10th-timeline-take-down-event-wo3ndgqh4q-de.a.run.app/',
-      formData);
+      formData,
+    );
   }
 };
