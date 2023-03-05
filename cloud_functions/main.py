@@ -150,6 +150,11 @@ def get_events(request):
   return ({'results': results}, 200)
 
 
+# Note that we cannot use `Authorization` header to do user validation. Because
+# the authorization header won't be included in the preflight requests.  See
+# this page for more details.
+# https://cloud.google.com/functions/docs/writing/write-http-functions#cors-limitations
+#
 @functions_framework.http
 @allow_cors
 def take_down_event(request):
@@ -174,6 +179,7 @@ def take_down_event(request):
   except ValueError:
     return ({'message': 'invalid token'}, 403)
 
+  # TODO(stimim): check if the user is a member of g0v-timeline-admin@googlegroups.com
   valid_emails = set(
       email for email in os.environ.get('VALID_EMAILS').split(';') if email)
   if user_email not in valid_emails:
